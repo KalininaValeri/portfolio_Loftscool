@@ -7,13 +7,15 @@
   "devDependencies": {
     "browser-sync": "~2.18.7",
     "del": "~2.2.2",
-    "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
+    "gm": "^1.23.0",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "~3.1.1",
     "gulp-cheerio": "~0.6.2",
     "gulp-concat": "~2.6.1",
     "gulp-concat-css": "~2.3.0",
     "gulp-csso": "~2.0.0",
     "gulp-eslint": "~3.0.1",
+    "gulp-if": "^2.0.2",
     "gulp-load-plugins": "~1.5.0",
     "gulp-notify": "~3.0.0",
     "gulp-pug": "~3.2.0",
@@ -25,6 +27,9 @@
     "jquery": "~3.1.1"
   },
   "dependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp.spritesmith": "^6.3.0",
     "normalize.css": "~5.0.0"
   }
 }

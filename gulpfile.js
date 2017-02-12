@@ -35,3 +35,13 @@ $.gulp.task('default', $.gulp.series(
     'serve'
   )
 ));
+
+$.gulp.task('sprite', function () {
+  return $.gulp.src('./source/images/sprites/png/*.*') // путь, откуда берем картинки для спрайта
+      .pipe($.gp.spritesmith({
+        imgName: 'sprite.png',
+        cssName: 'sprite.css'
+      }))
+      .pipe($.gp.if('*.png', $.gulp.dest('./build/assets/img/')))
+      .pipe($.gp.if('*.css', $.gulp.dest('./build/assets/css/')));
+});
