@@ -8,7 +8,7 @@ module.exports = function() {
                 cssName: 'sprite.css'
             }))
             .pipe($.gp.if('*.png', $.gulp.dest('./build/assets/img/')))
-            .pipe($.gp.if('*.css', $.gulp.dest('./source/style/common/')));
+            .pipe($.gp.if('*.css', $.gulp.dest('./source/style/blocks/')));
     });
 };
 
