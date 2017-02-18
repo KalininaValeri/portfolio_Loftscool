@@ -10,12 +10,15 @@ block content
                 li.social__item
                     a.social__link
             .l-hero__bg
+                img(src="/assets/img/bg/portfolio.jpg")
             .l-hero__container
-                img.c-hero_title-pic
+                svg.c-hero-title-pic
+                    use(xlink:href="/assets/img/sprite.svg#stars1")
                 .c-user
-                    img.c-user__pic
+                    .c-user__pic-container
+                        img.c-user__pic(src="/assets/img/content/user.jpg")
                     .c-user__name Калинина Валерия
-                    .c-user__occ Личный сайт веб разработчика
+                    .c-user__desc Личный сайт веб разработчика
 
         section.l-section.l-about
             .l-about__col.l-about__col_left
