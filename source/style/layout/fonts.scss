@@ -1,0 +1,47 @@
+$fontTypes : (Bold, Italic, Light, LightItalic, Medium, MediumItalic, Regular, BoldItalic);
+
+@each $fontType in $fontTypes {
+  @font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto-#{$fontType}.ttf");
+
+    @if $fontType == Bold {
+      font-weight: bold;
+      font-style: normal;
+    } @else if $fontType == Italic {
+      font-weight: normal;
+      font-style: italic;
+    }@else if $fontType == Light {
+      font-weight: 100;
+      font-style: normal;
+    }@else if $fontType == LightItalic {
+      font-weight: 100;
+      font-style: normal;
+    } @else if $fontType == LightItalic {
+      font-weight: 100;
+      font-style: italic;
+    } @else if $fontType == Medium {
+      font-weight: 500;
+      font-style: normal;
+    } @else if $fontType == MediumItalic {
+      font-weight: 500;
+      font-style: italic;
+    } @else if $fontType == Regular {
+      font-weight: normal;
+      font-style: normal;
+    } @else if $fontType == BoldItalic {
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Awesome";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/FontAwesome.otf"), url("../fonts/fontawesome-webfont.ttf");
+}
+
+
+
