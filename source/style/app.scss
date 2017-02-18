@@ -1,6 +1,4 @@
-body {
-  margin: 0;
-}
+@import "helpers/mixins";
 
 @import 'layout/setups';
 @import 'layout/fonts';

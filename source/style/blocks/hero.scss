@@ -5,17 +5,12 @@
 }
 
 .l-hero__bg {
-  position: absolute;
-  top: -30%;
-  left: 50%;
-  transform: translate(-50%);
+  @include centered(x);
   width: 100%;
 }
 
 .l-hero__container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  @include centered(y);
   width: 100%;
 }
 
@@ -24,7 +19,5 @@
   stroke: rgba(#fff, 0.05);
   stroke-width: 2px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @include centered();
 }
