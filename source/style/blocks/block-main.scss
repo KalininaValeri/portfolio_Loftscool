@@ -1,0 +1,21 @@
+.l-block-main {
+  background: $white;
+}
+
+.l-block-main__container   {
+  @extend %clearfix;
+  width: 1270px;
+  margin: auto;
+}
+
+.l-page-nav_aside {
+  width: 270px;
+
+}
+
+.l-block-main_content {
+  float: right;
+  width: 880px;
+  height: 10px;
+  background: red;
+}
