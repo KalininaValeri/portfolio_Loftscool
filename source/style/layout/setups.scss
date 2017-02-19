@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   height: 100%;
   margin: 0;
@@ -17,6 +21,12 @@ ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+.l-footer {
+  margin-top: -190px;
+}
+.push {
+  height: 190px;
 }
 
 .l-hero__container > img {
