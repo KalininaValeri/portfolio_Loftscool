@@ -16,7 +16,10 @@
     top: 50%;
     transform: translateY(-50%);
   }
+}
 
+%fontTitle {
+  font-family: 'titleFont';
 }
 
 %clearfix {

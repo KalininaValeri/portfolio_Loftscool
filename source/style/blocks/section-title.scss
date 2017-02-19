@@ -1,5 +1,5 @@
 .c-section-title {
-  color:  #474b57;
+  color:  $textBlack;
   font-size: 63px;/* Приближение из-за подстановки шрифтов */
   text-align: center;
   padding: 45px 80px;
@@ -7,7 +7,12 @@
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  font-family: "Webissimo";
+  @extend %fontTitle;
   text-transform: uppercase;
-  //transform: scale(-1, -1);
 }
+
+.c-block-text {
+  color: $textBlack;
+  font-size: 16px;
+}
+
