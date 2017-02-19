@@ -5,7 +5,7 @@ module.exports = function() {
 
     return $.gulp.src('./source/template/pages/*.pug')
       .pipe($.gp.pug({
-          locals : locals,
+          // locals : locals,
           pretty: true
       }))
       .on('error', $.gp.notify.onError(function(error) {
