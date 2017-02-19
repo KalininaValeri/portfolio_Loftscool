@@ -1,0 +1,10 @@
+@function myCircumference ($r) {
+  $circumference : 2 * $r * 3.141592653589793;
+  @return $circumference;
+}
+
+@function mySection ($r, $percent) {
+  $circumference : 2 * $r * 3.141592653589793;
+  $section : $circumference * $percent;
+  @return $section;
+}

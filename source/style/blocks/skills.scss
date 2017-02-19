@@ -9,19 +9,33 @@
   font-weight: 500;
 }
 
+.c-skill {
+  position: relative;
+  float: left;
+  width: percentage(1 / 6);
+}
+
 .c-skill__circle {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   display: block;
   fill: transparent;
-stroke-width: 20;
+  stroke-width: 20;
   stroke: red;
+  margin:auto;
 }
 
-.c-skills__circle-under{
- stroke: gray;
+.c-skills__circle-under {
+  stroke: #dfdcd5;
 }
 
-.c-skills__circle-above{
- stroke: green;
+.c-skills__circle-above {
+  stroke: #004cd1;
+  stroke-dasharray: mySection($radiusCircle, 0.9) myCircumference($radiusCircle);
+}
+
+.c-skill__title {
+  @include centered();
+  font-size: 14px;
+  color: #243994;
 }

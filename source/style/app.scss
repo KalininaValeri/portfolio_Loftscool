@@ -3,9 +3,11 @@
 $white:#f1efe7;
 $bej: #e9e7e1;
 $textBlack: #474b57;
+$radiusCircle: 45;
 
 
 @import "helpers/mixins";
+@import "helpers/functions";
 
 @import 'layout/setups';
 @import 'layout/fonts';
