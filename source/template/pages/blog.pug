@@ -1,0 +1,17 @@
+extends ../_template
+
+block variables
+    - var title = 'About'
+
+block content
+    .wrapper
+        section.l-section.l-hero
+            include partails/_header_insides
+            +header("Блог", "Статьи, которые я написал")
+
+
+
+        .push
+    include partails/_footer
+
+
