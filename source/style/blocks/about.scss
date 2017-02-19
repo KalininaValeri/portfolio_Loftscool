@@ -3,12 +3,14 @@
 }
 
 .l-about__col {
-  float: left;
-  width: 50%;
+  @extend %float50;
+  padding: 20px;
+  box-sizing: border-box;
   position: relative;
 
   &_left {
     background: $white;
+    @extend %clearfix;
 
     .l-about__triangle {
       left: 0;
@@ -32,4 +34,15 @@
   height: 110px;
   position: absolute;
   bottom: 100%;
+}
+
+.l-about-col__item {
+  @extend %float50;
+  box-sizing: border-box;
+}
+
+.c-about__pic-cotainer {
+  height: 390px;
+  overflow: hidden;
+  margin-bottom: 40px;
 }
