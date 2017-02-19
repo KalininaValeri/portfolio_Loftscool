@@ -16,14 +16,32 @@
   padding: 30px;
   height: 150px;
   color: rgba(white, 0.5);
+  position: relative;
+
+
+  &:after{
+    content: '';
+    height: 90px;
+    width: 1px;
+    display: block;
+    background: rgba(white, .2);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -45px;
+  }
+
+  &:last-child:after {
+    width: 0;
+  }
 }
+
 .l-footer__down {
   background: rgba($blue, 0.85);
   height: 40px;
   text-align: center;
   padding-top: 10px;
-
-
+  box-sizing: border-box;
 }
 
 .c-nav_footer {
