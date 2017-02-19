@@ -21,3 +21,78 @@
   color: $textBlack;
   font-size: 16px;
 }
+
+.c-block-text_blue {
+  color: rgba($blue, 0.85);
+  margin-bottom: 88px;
+}
+
+.c-block-link_blue {
+  background: $lightBlue;
+  padding: 15px 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(white, 0.5);
+  font-size: 16px;
+  vertical-align: middle;
+
+  &:hover {
+    color: rgba(white, 1);
+
+    .c-block-link__pic {
+      fill: rgba(white, 1);
+    }
+  }
+}
+
+
+.c-block-link__icon {
+  display: inline-block;
+  width: 20px;
+  height: 25px;
+  margin-right: 10px;
+  vertical-align: middle;
+
+}
+
+.c-block-link__pic {
+  width: 20px;
+  height: 20px;
+  fill: rgba(white, 0.5);
+  vertical-align: middle;
+}
+
+.c-block-arrow {
+  display: inline-block;
+  text-decoration: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+
+  &:after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0px;
+    color: red;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    .c-block-arrow__pic {
+      fill: rgba(white, 1);
+    }
+  }
+}
+
+.c-block-arrow__pic {
+  width: 45px;
+  height: 30px;
+  fill: rgba(white, .5);
+  vertical-align: middle;
+}
+
+
+

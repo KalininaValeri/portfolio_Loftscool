@@ -15,7 +15,35 @@ block content
                     .c-page-title__triangle-item
                         svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
                             polygon(points="0,110 1000,110 1000,0")
-                .c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Мои работы
+                h1.c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Мои работы
+        section.l-section.l-slider
+            .l-slider__container
+                .l-slider__item.l-slider__item_left
+                    .l-slider__wrapper
+                        .c-block-title Сайт школы онлайн образования
+                        .c-block-text_blue HTML , CSS, JAVASCRIPTttt
+                        a(href="#").c-block-link_blue
+                            span.c-block-link__icon
+                                svg.c-block-link__pic
+                                    use(xlink:href="/assets/img/sprite.svg#link")
+                            | Посмотреть сайт
+                .l-slider__item.l-slider__item_right
+                    .l-slider__pic-wrapper
+                        img(src="/assets/img/content/site.png").l-slider__pic
+                    .l-slider__arrows
+                        .l-slider__arrows-down.l-slider__arrows-item
+                            img(src="/assets/img/content/site.png").l-slider__arrow-pic
+                            .l-slider__arrow-dark
+                            a(href="#").c-block-arrow
+                                svg.c-block-arrow__pic
+                                    use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
+                        .l-slider__arrows-up.l-slider__arrows-item
+                            img(src="/assets/img/content/site.png").l-slider__arrow-pic
+                            .l-slider__arrow-dark
+                            a(href="#").c-block-arrow
+                                svg.c-block-arrow__pic
+                                    use(xlink:href="/assets/img/sprite.svg#portf_arrow_up")
+
 
 
     include partails/_footer
