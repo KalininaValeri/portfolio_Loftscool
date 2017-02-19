@@ -6,29 +6,7 @@ block variables
 block content
     .wrapper
         section.l-section.l-hero
-            .l-hero__bg
-                img(src="/assets/img/bg/portfolio.jpg")
-            .l-hero__container
-                svg.c-hero-title-pic
-                    use(xlink:href="/assets/img/sprite.svg#stars1")
-                .c-user
-                    .c-user__pic-container
-                        img.c-user__pic(src="/assets/img/content/user.jpg")
-                    .c-user__name Калинина Валерия
-                    .c-user__desc Личный сайт веб разработчика
-            ul.socials
-                li.social__item
-                    a(href="#").social__link
-                        svg.social__icon
-                            use(xlink:href="/assets/img/sprite.svg#vk")
-                li.social__item
-                    a(href="#").social__link
-                        svg.social__icon
-                            use(xlink:href="/assets/img/sprite.svg#github")
-                li.social__item
-                    a(href="#").social__link
-                        svg.social__icon
-                            use(xlink:href="/assets/img/sprite.svg#in")
+            include partails/_header_insides
 
 
         section.l-section.l-about
@@ -109,43 +87,6 @@ block content
                                 svg.c-contacts__icon
                                     use(xlink:href="/assets/img/sprite.svg#" + `${contact[0]}` + "_n")
                             .c-contacts__title.c-contacts_col= contact[1]
-    .push
-    footer.l-footer
-        .l-footer__container
-            .l-footer__item Этот сайт я сделал в рамках обучения в Школе
-                            br
-                            |онлайн образования LoftSchool.
-            .l-footer__item
-                ul.c-nav_footer
-                    li.c-nav_footer__item
-                        a.c-nav_footer__link(href="#") Мои работы
-                    li.c-nav_footer__item
-                        a.c-nav_footer__link(href="#") Обо мне
-                    li.c-nav_footer__item
-                        a.c-nav_footer__link(href="#") Блог
-                    li.c-nav_footer__item
-                        a.c-nav_footer__link(href="#") Авторизация
-                ul.socials.socials_footer
-                    li.social__item
-                        a(href="#").social__link
-                            svg.social__icon
-                                use(xlink:href="/assets/img/sprite.svg#vk")
-                    li.social__item
-                        a(href="#").social__link
-                            svg.social__icon
-                                use(xlink:href="/assets/img/sprite.svg#github")
-                    li.social__item
-                        a(href="#").social__link
-                            svg.social__icon
-                                use(xlink:href="/assets/img/sprite.svg#in")
-
-            .l-footer__item
-                ul.c-footer__contacts
-                    li skype_kdn
-                    li astahov@gmail.com
-                    li +7 931 200 93 24
-                    li г. Новосибирск, ул. Инская, д.4
-        .l-footer__down © Владимир Астахов | Создано с любовью в LoftSchool | 2016
-
+    include partails/_footer
 
 
