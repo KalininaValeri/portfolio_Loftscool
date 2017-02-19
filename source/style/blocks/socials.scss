@@ -1,0 +1,23 @@
+.socials {
+  top: 30px;
+  left: 30px;
+  position: absolute;
+}
+
+.social__item {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 30px;
+}
+
+.social__icon {
+  width: 35px;
+  height: 25px;
+  fill: white;
+}
+
+.social__link:hover {
+  .social__icon {
+    fill: $lightBlue;
+  }
+}

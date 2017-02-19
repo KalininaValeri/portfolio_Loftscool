@@ -6,9 +6,6 @@ block variables
 block content
     .wrapper
         section.l-section.l-hero
-            ul.socials
-                li.social__item
-                    a.social__link
             .l-hero__bg
                 img(src="/assets/img/bg/portfolio.jpg")
             .l-hero__container
@@ -19,6 +16,25 @@ block content
                         img.c-user__pic(src="/assets/img/content/user.jpg")
                     .c-user__name Калинина Валерия
                     .c-user__desc Личный сайт веб разработчика
+            ul.socials
+                li.social__item
+                    a(href="#").social__link
+                        svg.social__icon
+                            use(xlink:href="/assets/img/sprite.svg#vk")
+                li.social__item
+                    a(href="#").social__link
+                        svg.social__icon
+                            use(xlink:href="/assets/img/sprite.svg#github")
+                li.social__item
+                    a(href="#").social__link
+                        svg.social__icon
+                            use(xlink:href="/assets/img/sprite.svg#in")
+                //- var icons = ['vk', 'github', 'in'];
+                //each item in icons
+                //    li.social__item
+                //        a(href="#").social__link
+                //            svg.social__icon
+                //                use(xlink:href="/assets/img/sprite.svg#{item}")
 
         section.l-section.l-about
             .l-about__col.l-about__col_left
@@ -49,16 +65,16 @@ block content
                                 .c-skill
                                     svg.c-skill__circle
                                         circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                        circle(r="45" cx="50%" cy="50%").c-skills__circle-above
+                                        circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").c-skills__circle-above
                                     .c-skill__title html5
                                 .c-skill
                                     svg.c-skill__circle
                                         circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                        circle(r="45" cx="50%" cy="50%").c-skills__circle-above
-                                    .c-skill__title html5
+                                        circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").c-skills__circle-above
+                                    .c-skill__title html
                                 .c-skill
                                     svg.c-skill__circle
                                         circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                        circle(r="45" cx="50%" cy="50%").c-skills__circle-above
+                                        circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)").c-skills__circle-above
                                     .c-skill__title html5
         section.l-section.l-map карта
