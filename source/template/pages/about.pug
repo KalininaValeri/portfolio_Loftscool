@@ -102,11 +102,17 @@ block content
                 .c-block-title Контакты
                 ul.c-contacts__container
                     -
-                        var contacts = ["envelope", "skype", "phone", "map"]
+                        var contacts = [["envelope", "kalinina.valeri@gmail.com"], ["skype", "skype_kdn"], ["phone", "+7 923 183 8521"], ["map", "Новосибирск, р-н Кировский"]]
                     each contact in contacts
                         li.c-contacts__item
-                            a(href="#").c-contacts__link
+                            a(href="#").c-contacts__link.c-contacts_col
                                 svg.c-contacts__icon
-                                    use(xlink:href="/assets/img/sprite.svg#" + `${contact}` + "_n")
-                            .c-contacts__title
+                                    use(xlink:href="/assets/img/sprite.svg#" + `${contact[0]}` + "_n")
+                            .c-contacts__title.c-contacts_col= contact[1]
+        footer.l-footer
+            .l-footer__item
+            .l-footer__item
+            .l-footer__item
+
+
 
