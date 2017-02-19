@@ -1,0 +1,56 @@
+.l-section_bg {
+  position: relative;
+}
+
+
+.l-reviews {
+  padding: 70px;
+  text-align: center;
+}
+
+.l-reviews__container {
+  @extend %clearfix;
+  margin-bottom: 70px;
+}
+
+.l-review__item {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.l-review__item_offset {
+  float: left;
+  width: 25%;
+  height: 10px;
+}
+
+.l-review__pic-cotainer {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid $green;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.l-reviews_pic {
+  width: 100%;
+}
+
+.l-review__content {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.l-review__name {
+  font-weight: bold;
+}
+

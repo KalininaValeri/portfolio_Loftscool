@@ -1,0 +1,51 @@
+.c-form {
+  width: 380px;
+  margin: auto;
+  background: rgba(white, .05);
+  padding: 40px 20px 0;
+}
+
+.c-form__input {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  background: rgba(white, .1);
+  padding: 16px;
+  box-sizing: border-box;
+  color: white;
+
+  ::-webkit-input-placeholder {
+    color: rgba(white, .5);
+    font-size: 16px;
+  }
+
+}
+
+.c-form__input_textarea {
+  height: 130px;
+}
+
+.c-form__button-container {
+  margin-right: -20px;
+  margin-left: -20px;
+}
+
+.c-form__buttom-item {
+  display: inline-block;
+  width: 50%;
+  margin: 0;
+  margin-right: -4px;
+  padding: 15px;
+  color: rgba(white, .5);
+  background: none;
+  border: none;
+
+  &:hover {
+    background: $lightBlue;
+    color: white;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
