@@ -1,0 +1,33 @@
+.l-map {
+  height: 930px;
+  background: url("/assets/img/content/map.jpg");
+  position: relative;
+}
+
+.c-contacts {
+  @include centered();
+  background: rgba(white, .7);
+  padding: 40px 20px;
+}
+
+.c-contacts__container {
+  @extend %clearfix;
+}
+
+
+.c-contacts__item {
+  @extend %float50;
+}
+
+
+.c-contacts_col {
+  display: inline-block;
+}
+
+.c-contacts__icon {
+  width: 45px;
+  height: 45px;
+}
+
+.c-contacts__icon_envelope {
+}

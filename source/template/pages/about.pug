@@ -97,4 +97,16 @@ block content
                                                     circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
                                                 .c-skill__title= item[0]
 
-        section.l-section.l-map карта
+        section.l-section.l-map
+            .c-contacts
+                .c-block-title Контакты
+                ul.c-contacts__container
+                    -
+                        var contacts = ["envelope", "skype", "phone", "map"]
+                    each contact in contacts
+                        li.c-contacts__item
+                            a(href="#").c-contacts__link
+                                svg.c-contacts__icon
+                                    use(xlink:href="/assets/img/sprite.svg#" + `${contact}` + "_n")
+                            .c-contacts__title
+
