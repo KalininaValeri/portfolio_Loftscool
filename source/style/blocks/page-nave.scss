@@ -1,0 +1,26 @@
+.l-page-nav__link {
+  color: $textGray;
+  text-decoration: none;
+  display: block;
+  padding: 20px 20px 20px 0;
+  text-align: right;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.l-page-nav__link.l-page-nav__link_active {
+  color: $blue;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    background-color:  #0548be;
+    width: 3px;
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    right: 0;
+  }
+
+}

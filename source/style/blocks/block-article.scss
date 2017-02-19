@@ -1,0 +1,39 @@
+.l-block-article {
+  &:after {
+    content: '';
+    display: block;
+    height: 5px;
+    background: rgba($bej, .7);
+    margin: 50px 0 70px;
+  }
+
+  &:last-child:after{
+    display: inline;
+  }
+}
+.l-block-article__title {
+  font-size: 36px;
+  color: $textGray;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.l-block-article__data {
+  color: rgba($lightBlue, .85);
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.l-block-article__content {
+  color: $textGray;
+  font-size: 16px;
+}
+
+.l-block-article__par {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.l-block-article__pic {
+  width: 100%;
+}
