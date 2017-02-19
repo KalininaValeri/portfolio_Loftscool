@@ -1,0 +1,27 @@
+.l-skills__text {
+  color: $textBlack;
+  font-size: 16px;
+}
+
+.c-skills-group__title {
+  color: $textBlack;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.c-skill__circle {
+  width: 100px;
+  height: 100px;
+  display: block;
+  fill: transparent;
+stroke-width: 20;
+  stroke: red;
+}
+
+.c-skills__circle-under{
+ stroke: gray;
+}
+
+.c-skills__circle-above{
+ stroke: green;
+}
