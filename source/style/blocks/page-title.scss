@@ -1,0 +1,32 @@
+.l-hero_work {
+  position: relative;
+  padding-bottom: 180px;
+
+  .c-section-title {
+    color: white;
+  }
+}
+.c-page-title {
+  height: 180px;
+  background: rgba($fonBlack, .85);
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+}
+
+.c-page-title__container {
+  @extend %clearfix;
+  width: 100%;
+  position: absolute;
+  top: -105px;
+}
+
+.c-page-title__triangle-item {
+  @extend %float50;
+}
+
+.c-page-title__triangle {
+  fill: rgba($fonBlack, .85);
+  stroke: none;
+}

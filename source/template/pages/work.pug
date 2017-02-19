@@ -5,10 +5,17 @@ block variables
 
 block content
     .wrapper
-        section.l-section.l-hero
+        section.l-section.l-hero.l-hero_work
             include partails/_header_insides
             .c-page-title
-
+                .c-page-title__container
+                    .c-page-title__triangle-item
+                        svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
+                            polygon(points="0,0 0,110 1000,110")
+                    .c-page-title__triangle-item
+                        svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
+                            polygon(points="0,110 1000,110 1000,0")
+                .c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Мои работы
 
 
     include partails/_footer
