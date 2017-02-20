@@ -5,14 +5,15 @@ footer.l-footer
             |онлайн образования LoftSchool.
         .l-footer__item
             ul.c-nav_footer
-                li.c-nav_footer__item
-                    a.c-nav_footer__link(href="#") Мои работы
-                li.c-nav_footer__item
-                    a.c-nav_footer__link(href="#") Обо мне
-                li.c-nav_footer__item
-                    a.c-nav_footer__link(href="#") Блог
-                li.c-nav_footer__item
-                    a.c-nav_footer__link(href="#") Авторизация
+                -
+                    var navItems = [["Мои работы", "work"],
+                    ["Обо мне", "about"],
+                    ["Блог", "blog"],
+                    ["Авторизация", "#"]]
+                each navItem in navItems
+                    li.c-nav_footer__item
+                        a.c-nav_footer__link(href="/" + `${navItem[1]}` +".html")= = navItem[0]
+
             ul.socials.socials_footer
                 li.social__item
                     a(href="#").social__link
