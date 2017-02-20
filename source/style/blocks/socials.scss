@@ -8,6 +8,10 @@
   display: inline-block;
   vertical-align: middle;
   padding-right: 30px;
+
+  &:last-child {
+    padding-right: 0;
+  }
 }
 
 .social__icon {
@@ -38,5 +42,10 @@
     }
   }
 
+}
+
+.socials_nav-page{
+  left: initial;
+  right: 30px;
 }
 

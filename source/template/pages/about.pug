@@ -88,6 +88,10 @@ block content
                                 svg.c-contacts__icon
                                     use(xlink:href="/assets/img/sprite.svg#" + `${contact[0]}` + "_n")
                             .c-contacts__title.c-contacts_col= contact[1]
+
+        include partails/_nav
+        +nav("about")
+
         .push
     include partails/_footer
 

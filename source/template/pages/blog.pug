@@ -43,7 +43,8 @@ block content
                                 a(href="#" + `${navItem[1]}`).l-page-nav__link.l-page-nav__link= navItem[0]
 
 
-
+        include partails/_nav
+        +nav("blog")
 
         .push
     include partails/_footer

@@ -1,0 +1,21 @@
+mixin nav(page)
+    .nav-site
+        a(href="#").c-block-close
+            svg.c-block-close__pic
+                use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
+        ul.nav-site__list
+            -
+                var navItems = [["Мои работы", "work"],
+                ["Обо мне", "about"],
+                ["Блог", "blog"],
+                ["Авторизация", "#"]]
+
+            each navItem in navItems
+
+                if page
+                    li.nav-site__item
+                        a.nav-site__link.nav-site__link_active(href="/" + `${navItem[1]}` +".html")= navItem[0]
+                else
+                    li.nav-site__item
+                        a.nav-site__link(href="/" + `${navItem[1]}` +".html")= navItem[0]
+
