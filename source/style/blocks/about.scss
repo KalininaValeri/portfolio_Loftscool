@@ -1,5 +1,6 @@
 .l-about {
   @extend %clearfix;
+  display: flex;
 }
 
 .l-about__col {
