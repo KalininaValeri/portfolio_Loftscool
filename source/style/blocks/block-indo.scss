@@ -1,0 +1,10 @@
+.c-block-info-container {
+  position: relative;
+}
+.c-block-info {
+  text-align: center;
+  width: 400px;
+  background: rgba($fonBlack, .5);
+  padding: 40px 65px 0;
+  @include centered();
+}

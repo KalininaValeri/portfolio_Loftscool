@@ -1,0 +1,38 @@
+.c-block-info-nav {
+  text-align: justify;
+  margin-left: -65px;
+  margin-right: -65px;
+  margin-bottom: -20px;
+
+  &:after {
+   content: '';
+    display: inline-block;
+    height: 0px;
+    width: 100%;
+    background: #000;
+  }
+}
+
+.c-block-info-nav__item {
+  display: inline-block;
+  margin-right: -4px;
+  border-right: 1px solid white;
+
+  &:last-child {
+    margin-right: 0;
+    border-right: none;
+  }
+}
+
+.c-block-info-nav__link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 14px 60px;
+  text-align: center;
+  background: $blue;
+  
+  &:hover {
+    background: $lightBlue;
+  }
+}

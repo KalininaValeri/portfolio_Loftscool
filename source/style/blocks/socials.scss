@@ -21,3 +21,22 @@
     fill: $lightBlue;
   }
 }
+
+.socials_index {
+  position: static;
+  margin-bottom: 40px;
+
+  .social__icon {
+    height: 26px;
+    width: 31px;
+    fill: $blue;
+  }
+
+  .social__link:hover {
+    .social__icon {
+      fill: $lightBlue;
+    }
+  }
+
+}
+

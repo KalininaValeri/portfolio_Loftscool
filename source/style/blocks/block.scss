@@ -27,6 +27,20 @@
   margin-bottom: 88px;
 }
 
+.c-block-link_to-avtor {
+  display: inline-block;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  
+  &:hover{
+    background: $blue;
+    border-color: $blue;
+  }
+}
+
 .c-block-link_blue {
   background: $lightBlue;
   padding: 15px 20px;

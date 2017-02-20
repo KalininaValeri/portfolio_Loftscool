@@ -1,0 +1,38 @@
+.c-user {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.c-user__pic-container {
+  width: 147px;
+  height: 147px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.c-user__pic {
+  height: 147px;
+}
+
+.c-user__name {
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+.c-user__desc{
+  font-weight: 100;
+  color: #ffffff;
+}
+
+.c-block-info .c-user{
+  position: static;
+  transform: none;
+  margin-bottom: 35px;
+}

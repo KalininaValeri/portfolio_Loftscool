@@ -21,3 +21,8 @@
   position: absolute;
   @include centered();
 }
+
+.l-header-index {
+  padding: 24px 100px;
+  text-align: right;
+}

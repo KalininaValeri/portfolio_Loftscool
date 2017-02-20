@@ -1,12 +1,49 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+  - var title = 'Work'
 
 block content
-  include ../common/_greating
-  a(href="/about.html") About
-  br
-  a(href="/work.html") work
-  br
-  a(href="/blog.html") blog
+  .wrapper.l-section_bg
+    .c-block-bg(style="background-image: url('/assets/img/bg/portfolio.jpg');")
+    header.l-header-index
+      a.c-block-link_to-avtor(href='#') Авторизоваться
+    .c-block-info
+      include partails/_header_insides
+      +user("Валерия Калинина", "Личный сайт веб разработчика")
+
+      ul.socials.socials_index
+        li.social__item
+          a(href="#").social__link
+            svg.social__icon
+              use(xlink:href="/assets/img/sprite.svg#vk")
+        li.social__item
+          a(href="#").social__link
+            svg.social__icon
+              use(xlink:href="/assets/img/sprite.svg#github")
+        li.social__item
+          a(href="#").social__link
+            svg.social__icon
+              use(xlink:href="/assets/img/sprite.svg#in")
+
+      ul.c-block-info-nav
+        -
+            var navItems = [["Мои работы", "work"],
+                            ["Обо мне", "about"],
+                            ["Блог", "blog"]]
+
+        each navItem in navItems
+
+          li.c-block-info-nav__item
+            a.c-block-info-nav__link(href="/" + `${navItem[1]}` +".html")= navItem[0]
+
+
+    .push-small
+  footer.l-footer-small © Владимир Астахов | создано с любовью в LoftSchool | 2016
+
+
+
+
+
+
+
