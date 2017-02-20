@@ -1,5 +1,5 @@
 mixin user(title, desc)
-    .c-user
+    .c-user(style="background-image: url(/assets/img/decor/strars1.png)")
         .c-user__pic-container
             img.c-user__pic(src="/assets/img/content/user.jpg")
         .c-user__name= title
@@ -7,10 +7,8 @@ mixin user(title, desc)
 
 mixin header(userTitle, userDesc)
     .l-hero__bg
-        img(src="/assets/img/bg/portfolio.jpg")
+        //img(src="/assets/img/bg/portfolio.jpg")
     .l-hero__container
-        svg.c-hero-title-pic
-            use(xlink:href="/assets/img/sprite.svg#stars1")
 
     +user(userTitle, userDesc)
 
