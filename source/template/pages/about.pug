@@ -1,13 +1,13 @@
 extends ../_template
 
 block variables
-    - var title = 'About'
+    - var title = "Обо мне"
 
 block content
     .wrapper
         section.l-section.l-hero
             include partails/_header_insides
-            +header("Валерия Калинина", "Личный сайт веб разработчика")
+            +header(userName, pageSignature)
 
         section.l-section.l-about
             .l-about__col.l-about__col_left
@@ -81,7 +81,7 @@ block content
                 .c-block-title Контакты
                 ul.c-contacts__container
                     -
-                        var contacts = [["envelope", "kalinina.valeri@gmail.com"], ["skype", "skype_kdn"], ["phone", "+7 923 183 8521"], ["map", "Новосибирск, р-н Кировский"]]
+                        var contacts = [["envelope", userContacts.email], ["skype", userContacts.skype], ["phone", userContacts.phone], ["map", userContacts.address]]
                     each contact in contacts
                         li.c-contacts__item
                             a(href="#").c-contacts__link.c-contacts_col
@@ -89,8 +89,7 @@ block content
                                     use(xlink:href="/assets/img/sprite.svg#" + `${contact[0]}` + "_n")
                             .c-contacts__title.c-contacts_col= contact[1]
 
-        include partails/_nav
-        +nav("about")
+        +navigationSite(1)
 
         .push
     include partails/_footer

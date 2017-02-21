@@ -1,0 +1,29 @@
+mixin socialIcons(className)
+    ul.socials(class=`${className}`)
+        -
+            var icons = mySocialsIcons
+        each icon in icons
+            li.social__item
+                a(href=`${icon[1]}` target="_blank").social__link
+                    svg.social__icon
+                        use(xlink:href="/assets/img/sprite.svg#" + `${icon[0]}`)
+
+mixin nav(className, list, active)
+    ul(class="c-nav_" + `${className}`)
+        -
+            var navList = list
+
+        each navItem, ndx in navList
+
+
+            li.c-nav_site__item
+                a.c-nav_site__link(href="/" + `${navItem[1]}` +".html" class=((ndx === active) ? 'c-nav_site__link_active' : ''))= navItem[0]
+
+
+mixin navigationSite(activeEl)
+    .c-nav_site
+        a(href="#").c-block-close
+            svg.c-block-close__pic
+                use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
+
+        +nav("site__list", siteNav, activeEl)

@@ -1,4 +1,4 @@
-.nav-site {
+.c-nav_site {
   position: absolute;
   top: 0;
   left: 0;
@@ -11,7 +11,7 @@
   display: none;
 }
 
-.nav-site_active {
+.c-nav_site_active {
   display: block;
 }
 
@@ -36,7 +36,7 @@
   }
 }
 
-.nav-site__link {
+.c-nav_site__link {
   @extend %fontTitle;
   display: block;
   text-align: center;
@@ -60,9 +60,11 @@
   }
 }
 
-.nav-site__link_active {
+.c-nav_site__link_active {
   &:after {
+    content: '';
     display: block;
+    margin: auto;
     width: 90px;
     height: 3px;
     background: white;

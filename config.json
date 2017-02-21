@@ -1,0 +1,22 @@
+{
+  "userName" : "Калинина Валерия",
+  "pageSignature" : "Личный сайт веб разработчика",
+  "userContacts" : {
+    "email" : "kalinina.valeri@gmail.com",
+    "phone" : "+7 923 183 8521",
+    "skype" : "bashinova.va",
+    "address" : "Новосибирск, р-н Кировский, м.Студенческая"
+  },
+  "siteNav" : {
+    "work" : ["Мои работы", "work"],
+    "about" : ["Обо мне", "about"],
+    "blog" : ["Блог", "blog"],
+    "authorization" : ["Авторизация", "#"]
+  },
+  "mySocialsIcons" : {
+    "vk": ["vk", "https://vk.com/bashinova_v"],
+    "github": ["github", "https://github.com/KalininaValeri"],
+    "in": ["in", "#"]
+  }
+
+}

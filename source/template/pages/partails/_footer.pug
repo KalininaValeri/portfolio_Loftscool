@@ -1,39 +1,24 @@
 footer.l-footer
     .l-footer__container
-        .l-footer__item Этот сайт я сделал в рамках обучения в Школе
+        .l-footer__item Этот сайт я сделала в рамках обучения в Школе
             br
             |онлайн образования LoftSchool.
         .l-footer__item
             ul.c-nav_footer
                 -
-                    var navItems = [["Мои работы", "work"],
-                    ["Обо мне", "about"],
-                    ["Блог", "blog"],
-                    ["Авторизация", "#"]]
-                each navItem in navItems
+                    var navItems = siteNav
+                each item in siteNav
                     li.c-nav_footer__item
-                        a.c-nav_footer__link(href="/" + `${navItem[1]}` +".html")= navItem[0]
+                        a.c-nav_footer__link(href="/" + `${item[1]}` +".html")= item[0]
 
-            ul.socials.socials_footer
-                li.social__item
-                    a(href="#").social__link
-                        svg.social__icon
-                            use(xlink:href="/assets/img/sprite.svg#vk")
-                li.social__item
-                    a(href="#").social__link
-                        svg.social__icon
-                            use(xlink:href="/assets/img/sprite.svg#github")
-                li.social__item
-                    a(href="#").social__link
-                        svg.social__icon
-                            use(xlink:href="/assets/img/sprite.svg#in")
+            +socialIcons("socials_footer")
 
         .l-footer__item
             ul.c-footer__contacts
-                li skype_kdn
-                li astahov@gmail.com
-                li +7 931 200 93 24
-                li г. Новосибирск, ул. Инская, д.4
-    .l-footer__down © Владимир Астахов | Создано с любовью в LoftSchool | 2016
+                - var contacts = userContacts
+                each contact in contacts
+                    li= contact
+    .l-footer__down © #{userName} | © Создано с любовью в LoftSchool | 2017
+
 
 

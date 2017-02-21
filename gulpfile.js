@@ -1,4 +1,5 @@
 'use strict';
+var config = require('./config.json');
 
 global.$ = {
     package: require('./package.json'),
@@ -15,6 +16,9 @@ global.$ = {
     gp: require('gulp-load-plugins')(),
 
 };
+
+
+
 
 $.path.task.forEach(function (taskPath) {
     require(taskPath)();

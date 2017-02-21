@@ -12,19 +12,7 @@ mixin header(userTitle, userDesc)
 
     +user(userTitle, userDesc)
 
-    ul.socials
-        li.social__item
-            a(href="#").social__link
-                svg.social__icon
-                    use(xlink:href="/assets/img/sprite.svg#vk")
-        li.social__item
-            a(href="#").social__link
-                svg.social__icon
-                    use(xlink:href="/assets/img/sprite.svg#github")
-        li.social__item
-            a(href="#").social__link
-                svg.social__icon
-                    use(xlink:href="/assets/img/sprite.svg#in")
+    +socialIcons()
 
     ul.socials.socials_nav-page
         li.social__item

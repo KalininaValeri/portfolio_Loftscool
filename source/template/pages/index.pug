@@ -1,7 +1,7 @@
 extends ../_template
 
 block variables
-  - var title = 'Home'
+  - var title = 'home'
 
 block content
   .wrapper.l-section_bg
@@ -12,34 +12,18 @@ block content
       include partails/_header_insides
       +user("Валерия Калинина", "Личный сайт веб разработчика")
 
-      ul.socials.socials_index
-        li.social__item
-          a(href="#").social__link
-            svg.social__icon
-              use(xlink:href="/assets/img/sprite.svg#vk")
-        li.social__item
-          a(href="#").social__link
-            svg.social__icon
-              use(xlink:href="/assets/img/sprite.svg#github")
-        li.social__item
-          a(href="#").social__link
-            svg.social__icon
-              use(xlink:href="/assets/img/sprite.svg#in")
+      +socialIcons("socials_index")
 
-      ul.c-block-info-nav
+      ul.c-nav_block-info
         -
-            var navItems = [["Мои работы", "work"],
-                            ["Обо мне", "about"],
-                            ["Блог", "blog"]]
-
+            var navItems = [siteNav.work, siteNav.about, siteNav.blog]
         each navItem in navItems
-
-          li.c-block-info-nav__item
-            a.c-block-info-nav__link(href="/" + `${navItem[1]}` +".html")= navItem[0]
+          li.c-nav_block-info__item
+            a.c-nav_block-info__link(href="/" + `${navItem[1]}` +".html")= navItem[0]
 
 
     .push-small
-  footer.l-footer-small © Владимир Астахов | создано с любовью в LoftSchool | 2016
+  footer.l-footer-small © #{userName} | создано с любовью в LoftSchool | 2017
 
 
 
