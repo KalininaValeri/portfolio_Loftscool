@@ -24,10 +24,6 @@ mixin nav(className, list, active)
 
 mixin navigationSite(activeEl)
     .c-nav_site-list
-        a(href="#").c-block-close
-            svg.c-block-close__pic
-                use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
-
         +nav("site", siteNav, activeEl)
 
 mixin user(title, desc)
@@ -46,10 +42,5 @@ mixin header(userTitle, userDesc)
 
     +socialIcons()
 
-    ul.socials.socials_nav-page
-        li.social__item
-            a(href="#").social__link
-                svg.social__icon
-                    use(xlink:href="/assets/img/sprite.svg#hamburger")
 
 

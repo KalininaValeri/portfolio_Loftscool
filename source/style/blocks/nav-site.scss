@@ -15,26 +15,6 @@
   display: block;
 }
 
-.c-block-close {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-}
-
-.c-block-close__pic {
-  height: 25px;
-  width: 35px;
-  fill: white;
-}
-
-.c-block-close:hover {
-  .c-block-close__pic {
-    //fill: $lightBlue;
-  }
-}
 
 .c-nav_site__link {
   @extend %fontTitle;
