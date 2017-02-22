@@ -13,7 +13,7 @@ block content
                 svg(viewBox="0 0 1000 110" preserveAspectRatio="none").l-about__triangle
                     polygon(points="0,0 0,110 1000,110")
                 .c-section-title.c-section-title_col.l-about-col__item.l-about-col__item_left(style="background-image: url(/assets/img/decor/stars2.png)") Обо мне
-                .c-about.l-about-col__item
+                .c-about.l-about-col__item.l-about-col__item_right
                     .c-about__pic-cotainer
                         img.c-about__pic(src="/assets/img/content/user.jpg").
                     .c-block-title Кто я
@@ -30,49 +30,50 @@ block content
                     .l-skills__text
                         p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
                     ul.l-skills-group
+
                         li.l-skills-group__item
-                          .c-skills-group__title Frontend
-                           ul.l-skils-list
-                               li.l-skills-list_item
-                                   -
-                                       var list = [["HTML5", "93"],
-                                                   ["CSS3", "9"],
-                                                   ["JavaScript & jQuery", "9"]]
-                                   each item in list
-                                       .c-skill
-                                           svg.c-skill__circle
-                                               circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                               circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
-                                           .c-skill__title= item[0]
+                            .c-skills-group__title Frontend
+                            ul.l-skils-list
+                                li.l-skills-list_item
+                                    -
+                                        var list = [["HTML5", "93"],
+                                                      ["CSS3", "9"],
+                                                      ["JavaScript & jQuery", "9"]]
+                                    each item in list
+                                        .c-skill
+                                            svg.c-skill__circle
+                                                circle(r="45" cx="50%" cy="50%").c-skills__circle-under
+                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
+                                            .c-skill__title= item[0]
                         li.l-skills-group__item
                             .c-skills-group__title Backend
-                                ul.l-skils-list
-                                    li.l-skills-list_item
-                                        -
-                                            var list = [["PHP", "4"],
-                                                        ["mySQL", "55"],
-                                                        ["Node.js & npm", "35"],
-                                                        ["Mongo.db", "6"]]
-                                        each item in list
-                                            .c-skill
-                                                svg.c-skill__circle
-                                                    circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
-                                                .c-skill__title= item[0]
+                            ul.l-skils-list
+                                li.l-skills-list_item
+                                    -
+                                        var list = [["PHP", "4"],
+                                                    ["mySQL", "55"],
+                                                    ["Node.js & npm", "35"],
+                                                    ["Mongo.db", "6"]]
+                                    each item in list
+                                        .c-skill
+                                            svg.c-skill__circle
+                                                circle(r="45" cx="50%" cy="50%").c-skills__circle-under
+                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
+                                            .c-skill__title= item[0]
                         li.l-skills-group__item
                             .c-skills-group__title WorkFlow
-                                ul.l-skils-list
-                                    li.l-skills-list_item
-                                        -
-                                            var list = [["Git", "9"],
-                                                        ["Gulp", "75"],
-                                                        ["Bower", "6"]]
-                                        each item in list
-                                            .c-skill
-                                                svg.c-skill__circle
-                                                    circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
-                                                .c-skill__title= item[0]
+                            ul.l-skils-list
+                                li.l-skills-list_item
+                                    -
+                                        var list = [["Git", "9"],
+                                        ["Gulp", "75"],
+                                        ["Bower", "6"]]
+                                    each item in list
+                                        .c-skill
+                                            svg.c-skill__circle
+                                                circle(r="45" cx="50%" cy="50%").c-skills__circle-under
+                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
+                                            .c-skill__title= item[0]
 
         section.l-section.l-map.l-section_bg
             .c-block-bg(style="background-image: url('/assets/img/content/map.jpg');")

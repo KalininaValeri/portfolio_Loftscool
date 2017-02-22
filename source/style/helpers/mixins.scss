@@ -36,6 +36,12 @@
 }
 
 @mixin desctop {
+  @media (max-width: 1800px) {
+    @content;
+  }
+}
+
+@mixin smallDesctop {
   @media (max-width: 1200px) {
     @content;
   }

@@ -39,7 +39,12 @@
 }
 
 .l-about-col__item {
-  @extend %float50;
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
+  //margin-right: 20px;
+  //margin-left: 20px;
+
   box-sizing: border-box;
 
   @include desctop {
@@ -50,13 +55,17 @@
 }
 
 .l-about-col__item_left {
+  width: calc(100% - 485px - 40px);
+}
 
+.l-about-col__item_right {
+  width: 445px;
 }
 
 .c-about__pic-cotainer {
   height: 390px;
   overflow: hidden;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 
   @include desctop {
     margin-bottom: 30px;

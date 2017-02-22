@@ -1,11 +1,22 @@
 .l-skills {
-  width: 515px;
-  margin: auto;
+  margin-right: 35px;
+  margin-left: 35px;
+
+  @include desctop {
+    width: 515px;
+    margin: auto;
+  }
+
 }
 
 .l-skills__text {
   color: $textBlack;
   font-size: 16px;
+  margin-bottom: 40px;
+
+  @include desctop {
+    margin-bottom: 50px;
+  }
 }
 
 .l-skills-group__item {
@@ -20,10 +31,18 @@
   margin-bottom: 20px;
 }
 
+.l-skills-list_item {
+  @extend %clearfix;
+}
+
 .c-skill {
   position: relative;
   float: left;
   width: percentage(1 / 6);
+
+  @include desctop {
+    width: percentage(1 / 4);
+  }
 }
 
 .c-skill__circle {
