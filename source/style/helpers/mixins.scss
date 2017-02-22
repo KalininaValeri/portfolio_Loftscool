@@ -36,13 +36,13 @@
 }
 
 @mixin desctop {
-  @media (max-width: 1799px) {
+  @media (max-width: 1800px) {
     @content;
   }
 }
 
 @mixin laptop {
-  @media (max-width: 1199px) {
+  @media (max-width: 1200px) {
     @content;
   }
 }

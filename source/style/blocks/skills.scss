@@ -11,6 +11,11 @@
     width: 475px;
   }
 
+  @include tablet {
+    width: 95%;
+    margin: auto;
+  }
+
 }
 
 .l-skills__text {
@@ -22,9 +27,6 @@
     margin-bottom: 50px;
   }
 
-  @include tablet {
-    width: 475px;
-  }
 }
 
 

@@ -75,6 +75,10 @@
     width: 445px;
     margin: auto;
   }
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .l-about-col__item_left {
@@ -90,6 +94,11 @@
   @include laptop {
     width: 475px;
   }
+
+  @include tablet {
+    width: 100%;
+  }
+
 }
 
 .c-about__pic-cotainer {

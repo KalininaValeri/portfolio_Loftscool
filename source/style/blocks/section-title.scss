@@ -15,10 +15,14 @@
     padding: 34px 80px;
   }
 
-  @include tablet {
+  @include laptop {
     font-size: 48px;
     padding: 20px 80px;
   }
+  @include tablet {
+    font-size: 30px;
+  }
+
 }
 
 .c-section-title__bg {
@@ -32,6 +36,10 @@
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 0.6;
+
+  @include tablet {
+    display: none;
+  }
 }
 
 .c-section-title__content {
@@ -44,7 +52,6 @@
 
   @include laptop {
     margin-top: -15px;
-    font-size: 48px;
   }
 }
 
