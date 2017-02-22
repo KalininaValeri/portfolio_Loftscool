@@ -4,13 +4,7 @@ footer.l-footer
             br
             |онлайн образования LoftSchool.
         .l-footer__item
-            ul.c-nav_footer
-                -
-                    var navItems = siteNav
-                each item in siteNav
-                    li.c-nav_footer__item
-                        a.c-nav_footer__link(href="/" + `${item[1]}` +".html")= item[0]
-
+            +nav("footer", siteNav, '')
             +socialIcons("socials_footer")
 
         .l-footer__item

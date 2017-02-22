@@ -6,7 +6,6 @@ block variables
 block content
     .wrapper
         section.l-section.l-hero.l-hero_work
-            include partails/_header_insides
             +header("Валерия Калинина", "Личный сайт веб разработчика")
             .c-page-title
                 .c-page-title__container
@@ -70,7 +69,7 @@ block content
                     input(type='submit' value="Отправить").c-form__submit.c-form__buttom-item
                     input(type="button" value="Очистить").c-form__buttom.c-form__buttom-item
 
-        +navigationSite(0)
+        +navigationSite('work')
 
 
 

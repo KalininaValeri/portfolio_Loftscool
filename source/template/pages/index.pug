@@ -13,14 +13,7 @@ block content
       +user("Валерия Калинина", "Личный сайт веб разработчика")
 
       +socialIcons("socials_index")
-
-      ul.c-nav_block-info
-        -
-            var navItems = [siteNav.work, siteNav.about, siteNav.blog]
-        each navItem in navItems
-          li.c-nav_block-info__item
-            a.c-nav_block-info__link(href="/" + `${navItem[1]}` +".html")= navItem[0]
-
+      +nav('block-info', [siteNav.work, siteNav.about, siteNav.blog], '')
 
     .push-small
   footer.l-footer-small © #{userName} | создано с любовью в LoftSchool | 2017

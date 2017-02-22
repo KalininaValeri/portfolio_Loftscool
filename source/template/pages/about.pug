@@ -6,7 +6,6 @@ block variables
 block content
     .wrapper
         section.l-section.l-hero
-            include partails/_header_insides
             +header(userName, pageSignature)
 
         section.l-section.l-about
@@ -89,7 +88,7 @@ block content
                                     use(xlink:href="/assets/img/sprite.svg#" + `${contact[0]}` + "_n")
                             .c-contacts__title.c-contacts_col= contact[1]
 
-        +navigationSite(1)
+        +navigationSite('about')
 
         .push
     include partails/_footer

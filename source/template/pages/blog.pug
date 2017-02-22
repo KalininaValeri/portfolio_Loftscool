@@ -6,7 +6,6 @@ block variables
 block content
     .wrapper
         section.l-section.l-hero
-            include partails/_header_insides
             +header("Блог", "Статьи, которые я написал")
         .l-block-main
             .l-about__col.l-about__col_left
@@ -42,7 +41,7 @@ block content
                             li.l-page-nav__item
                                 a(href="#" + `${navItem[1]}`).l-page-nav__link.l-page-nav__link= navItem[0]
 
-        +navigationSite(2)
+        +navigationSite('blog')
 
         .push
     include partails/_footer

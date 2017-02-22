@@ -14,16 +14,42 @@ mixin nav(className, list, active)
             var navList = list
 
         each navItem, ndx in navList
-
-
-            li.c-nav_site__item
-                a.c-nav_site__link(href="/" + `${navItem[1]}` +".html" class=((ndx === active) ? 'c-nav_site__link_active' : ''))= navItem[0]
+            li(class="c-nav_" + `${className}` + "__item")
+                if ndx === active
+                    a(href="/" + `${navItem[1]}` +".html" class="c-nav_" + `${className}` + "__link c-nav_" + `${className}` + "__link_active")= navItem[0]
+                    //a.c-nav_site__link(href="/" + `${navItem[1]}` +".html" class=((ndx === activeEl) ? 'c-nav_site__link_active' : ''))= navItem[0]
+                else
+                    a(href="/" + `${navItem[1]}` +".html" class="c-nav_" + `${className}` + "__link")= navItem[0]
 
 
 mixin navigationSite(activeEl)
-    .c-nav_site
+    .c-nav_site-list
         a(href="#").c-block-close
             svg.c-block-close__pic
                 use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
 
-        +nav("site__list", siteNav, activeEl)
+        +nav("site", siteNav, activeEl)
+
+mixin user(title, desc)
+    .c-user(style="background-image: url(/assets/img/decor/strars1.png)")
+        .c-user__pic-container
+            img.c-user__pic(src="/assets/img/content/user.jpg")
+        .c-user__name= title
+        .c-user__desc= desc
+
+mixin header(userTitle, userDesc)
+    .l-hero__bg
+        //img(src="/assets/img/bg/portfolio.jpg")
+    .l-hero__container
+
+    +user(userTitle, userDesc)
+
+    +socialIcons()
+
+    ul.socials.socials_nav-page
+        li.social__item
+            a(href="#").social__link
+                svg.social__icon
+                    use(xlink:href="/assets/img/sprite.svg#hamburger")
+
+
