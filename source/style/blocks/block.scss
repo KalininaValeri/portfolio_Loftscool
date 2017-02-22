@@ -6,6 +6,10 @@
   text-transform: uppercase;
   margin-bottom: 30px;
 
+  @include desctop {
+    margin-bottom: 15px;
+  }
+
   &:after {
     content: '';
     display: block;
@@ -14,6 +18,10 @@
     margin: auto;
     background: rgba($textBlack, 0.5);
     margin-top: 15px;
+
+    @include desctop {
+      margin-top: 0;
+    }
   }
 }
 

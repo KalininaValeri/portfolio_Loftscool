@@ -9,6 +9,10 @@
   background-repeat: no-repeat;
   @extend %fontTitle;
   text-transform: uppercase;
+
+  @include desctop {
+    padding: 34px 80px;
+  }
 }
 
 .c-section-title_col {

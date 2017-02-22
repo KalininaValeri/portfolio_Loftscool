@@ -5,7 +5,8 @@
 
 .l-about__col {
   @extend %float50;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   box-sizing: border-box;
   position: relative;
 
@@ -40,10 +41,24 @@
 .l-about-col__item {
   @extend %float50;
   box-sizing: border-box;
+
+  @include desctop {
+    float: none;
+    width: 445px;
+    margin: auto;
+  }
+}
+
+.l-about-col__item_left {
+
 }
 
 .c-about__pic-cotainer {
   height: 390px;
   overflow: hidden;
   margin-bottom: 40px;
+
+  @include desctop {
+    margin-bottom: 30px;
+  }
 }
