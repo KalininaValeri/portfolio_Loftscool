@@ -9,11 +9,11 @@
 }
 
 .l-about__col {
-  @extend %float50;
   padding-top: 20px;
   padding-bottom: 20px;
   box-sizing: border-box;
   position: relative;
+  flex: 1;
 
   @include laptop {
     float: none;
@@ -23,7 +23,7 @@
 
   &_left {
     background: $white;
-    @extend %clearfix;
+    display: flex;
 
     .l-about__triangle {
       left: 0;
@@ -59,11 +59,10 @@
 }
 
 .l-about-col__item {
-  float: left;
   margin-right: 20px;
   margin-left: 20px;
-
   box-sizing: border-box;
+  align-self: flex-start;
 
   @include desctop {
     float: none;
