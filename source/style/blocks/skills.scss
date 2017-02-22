@@ -17,6 +17,10 @@
   @include desctop {
     margin-bottom: 50px;
   }
+
+  @include tablet {
+    width: 475px;
+  }
 }
 
 .l-skills-group__item {

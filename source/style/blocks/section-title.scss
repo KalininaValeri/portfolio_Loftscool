@@ -13,11 +13,21 @@
   @include desctop {
     padding: 34px 80px;
   }
+
+  @include tablet {
+    font-size: 48px;
+    padding: 20px 80px;
+  }
 }
 
 .c-section-title_col {
   margin-top: -45px;
   position: relative;
+
+  @include tablet {
+    margin-top: 0;
+    font-size: 48px;
+  }
 }
 
 

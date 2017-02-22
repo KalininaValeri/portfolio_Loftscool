@@ -41,14 +41,8 @@
   }
 }
 
-@mixin smallDesctop {
-  @media (max-width: 1200px) {
-    @content;
-  }
-}
-
 @mixin laptop {
-  @media (max-width: 992px) {
+  @media (max-width: 1200px) {
     @content;
   }
 }
