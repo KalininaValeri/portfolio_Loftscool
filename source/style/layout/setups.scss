@@ -1,5 +1,9 @@
 html {
   height: 100%;
+
+  @include laptop {
+    font-size: 14px;
+  }
 }
 
 body {

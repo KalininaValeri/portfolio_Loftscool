@@ -1,6 +1,10 @@
 .l-about {
   @extend %clearfix;
   display: flex;
+
+  @include tablet {
+    display: block;
+  }
 }
 
 .l-about__col {
@@ -9,6 +13,11 @@
   padding-bottom: 20px;
   box-sizing: border-box;
   position: relative;
+
+  @include laptop {
+    float: none;
+    width: 100%;
+  }
 
   &_left {
     background: $white;
