@@ -42,8 +42,6 @@
   float: left;
   margin-right: 20px;
   margin-left: 20px;
-  //margin-right: 20px;
-  //margin-left: 20px;
 
   box-sizing: border-box;
 
@@ -56,6 +54,9 @@
 
 .l-about-col__item_left {
   width: calc(100% - 485px - 40px);
+  @include desctop {
+    width: 100%;
+  }
 }
 
 .l-about-col__item_right {
