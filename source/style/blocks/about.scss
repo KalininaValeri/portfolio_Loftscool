@@ -24,6 +24,7 @@
   &_left {
     background: $white;
     display: flex;
+    flex-direction: column;
 
     .l-about__triangle {
       left: 0;
