@@ -38,47 +38,50 @@ block content
 
                         li.l-skills-group__item
                             .c-skills-group__title Frontend
-                            ul.l-skils-list
-                                li.l-skills-list_item
+                            ul.l-skils-list.l-skills-list_three
+
                                     -
                                         var list = [["HTML5", "93"],
                                                       ["CSS3", "9"],
                                                       ["JavaScript & jQuery", "9"]]
                                     each item in list
-                                        .c-skill
-                                            svg.c-skill__circle
-                                                circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
-                                            .c-skill__title= item[0]
+                                        li.l-skills-list_item
+                                            .c-skill
+                                                svg.c-skill__circle
+                                                    circle(r="45" cx="50%" cy="50%").c-skills__circle-under
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
+                                                .c-skill__title= item[0]
                         li.l-skills-group__item
                             .c-skills-group__title Backend
                             ul.l-skils-list
-                                li.l-skills-list_item
+
                                     -
                                         var list = [["PHP", "4"],
                                                     ["mySQL", "55"],
                                                     ["Node.js & npm", "35"],
                                                     ["Mongo.db", "6"]]
                                     each item in list
-                                        .c-skill
-                                            svg.c-skill__circle
-                                                circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
-                                            .c-skill__title= item[0]
+                                        li.l-skills-list_item
+                                            .c-skill
+                                                svg.c-skill__circle
+                                                    circle(r="45" cx="50%" cy="50%").c-skills__circle-under
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
+                                                .c-skill__title= item[0]
                         li.l-skills-group__item
                             .c-skills-group__title WorkFlow
-                            ul.l-skils-list
-                                li.l-skills-list_item
+                            ul.l-skils-list.l-skills-list_three
+
                                     -
                                         var list = [["Git", "9"],
                                         ["Gulp", "75"],
                                         ["Bower", "6"]]
                                     each item in list
-                                        .c-skill
-                                            svg.c-skill__circle
-                                                circle(r="45" cx="50%" cy="50%").c-skills__circle-under
-                                                circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
-                                            .c-skill__title= item[0]
+                                        li.l-skills-list_item
+                                            .c-skill
+                                                svg.c-skill__circle
+                                                    circle(r="45" cx="50%" cy="50%").c-skills__circle-under
+                                                    circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
+                                                .c-skill__title= item[0]
 
         section.l-section.l-map.l-section_bg
             .c-block-bg(style="background-image: url('/assets/img/content/map.jpg');")

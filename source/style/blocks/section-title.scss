@@ -42,8 +42,8 @@
   margin-top: -45px;
   position: relative;
 
-  @include tablet {
-    margin-top: 0;
+  @include laptop {
+    margin-top: -15px;
     font-size: 48px;
   }
 }

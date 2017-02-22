@@ -2,7 +2,7 @@
   @extend %clearfix;
   display: flex;
 
-  @include tablet {
+  @include laptop {
     display: block;
     position: relative;
   }
@@ -35,14 +35,19 @@
   &_right {
     background: $bej;
 
+    @include laptop {
+      padding-top: 45px;
+    }
+
     .l-about__triangle {
       right: 0;
       fill: $bej;
 
-      @include tablet {
+      @include laptop {
         fill: $white;
         padding-top: 50px;
       }
+
     }
   }
 }
@@ -54,7 +59,7 @@
   position: absolute;
   bottom: 100%;
 
-  @include tablet {
+  @include laptop {
     width: 50%;
   }
 }
@@ -82,7 +87,7 @@
 .l-about-col__item_right {
   width: 445px;
 
-  @include tablet {
+  @include laptop {
     width: 475px;
   }
 }
@@ -96,13 +101,14 @@
     margin-bottom: 30px;
   }
 
-  @include tablet {
-    height: 433px;
+  @include laptop {
+    height: 412px;
+    margin-bottom: 40px;
   }
 }
 
 .c-about__pic {
-  @include tablet {
+  @include laptop {
     height: 100%;
   }
 }

@@ -10,6 +10,10 @@
     margin-bottom: 15px;
   }
 
+  @include laptop{
+    font-size: 30px;
+  }
+
   &:after {
     content: '';
     display: block;
@@ -22,6 +26,12 @@
     @include desctop {
       margin-top: 0;
     }
+
+    @include laptop {
+      margin-top: 10px;
+    }
+
+
   }
 }
 

@@ -7,6 +7,10 @@
     margin: auto;
   }
 
+  @include laptop {
+    width: 475px;
+  }
+
 }
 
 .l-skills__text {
@@ -23,6 +27,8 @@
   }
 }
 
+
+
 .l-skills-group__item {
   @extend %clearfix;
   margin-bottom: 40px;
@@ -33,13 +39,18 @@
   font-size: 28px;
   font-weight: 500;
   margin-bottom: 20px;
+  
+  @include laptop {
+    text-align: center;
+    font-size: 20px;
+  }
 }
 
-.l-skills-list_item {
+.l-skils-list {
   @extend %clearfix;
 }
 
-.c-skill {
+.l-skills-list_item {
   position: relative;
   float: left;
   width: percentage(1 / 6);
