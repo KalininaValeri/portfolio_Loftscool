@@ -49,16 +49,26 @@
 }
 
 .l-skils-list {
-  @extend %clearfix;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include laptop {
+    justify-content: space-around;
+  }
 }
 
 .l-skills-list_item {
   position: relative;
-  float: left;
   width: percentage(1 / 6);
+
 
   @include desctop {
     width: percentage(1 / 4);
+  }
+
+  @include tablet {
+    width: 50%;
+    margin-bottom: 30px;
   }
 }
 
