@@ -18,6 +18,11 @@
   width: 35px;
   height: 25px;
   fill: white;
+
+  @include tablet {
+    width: 24px;
+    height: 17px;
+  }
 }
 
 .social__link:hover {

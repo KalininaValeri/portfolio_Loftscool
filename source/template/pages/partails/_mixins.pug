@@ -26,13 +26,18 @@ mixin navigationSite(activeEl)
     .c-nav_site-list
         +nav("site", siteNav, activeEl)
 
-mixin user(title, desc)
+mixin user(title, desc, bg)
     .c-user()
+        if bg === "false"
+            .c-user__bg(style="display: none;")
+        else
+             .c-user__bg
         a(href="/index.html").c-user__pic-container
             img.c-user__pic(src="/assets/img/content/user.jpg")
         .c-user__name= title
         .c-user__desc= desc
-        .c-user__bg
+
+
 
 mixin header(userTitle, userDesc)
     .l-hero__bg

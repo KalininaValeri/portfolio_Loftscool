@@ -5,6 +5,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 35px 45px 10px 105px;
+
+  @include laptop {
+    padding: 0;
+  }
+
+  @include tablet {
+    padding: 20px 27px 0 35px;
+  }
+
+  @include phone {
+    padding: 0;
+  }
 }
 
 .c-user__bg {
@@ -19,6 +31,18 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   opacity: .09;
+
+  @include laptop {
+    bottom: 85px;
+  }
+
+  @include tablet {
+    bottom: 105px;
+  }
+
+  @include phone {
+    display: none;
+  }
 }
 
 .c-user__pic-container {
@@ -28,6 +52,8 @@
   margin-bottom: 25px;
   overflow: hidden;
   display: inline-block;
+  position: relative;
+  position: relative;
 }
 
 .c-user__pic {
@@ -39,11 +65,23 @@
   color: #ffffff;
   font-size: 35px;
   text-transform: uppercase;
+
+  @include laptop {
+    text-transform: none;
+  }
+
+  @include tablet {
+    font-size: 21px;
+  }
 }
 
 .c-user__desc{
   color: #ffffff;
   font-size: 16px;
+
+  @include tablet {
+    font-size: 14px;
+  }
 }
 
 .c-block-info .c-user{
