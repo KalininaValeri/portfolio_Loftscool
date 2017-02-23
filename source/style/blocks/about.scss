@@ -24,12 +24,18 @@
   &_left {
     background: $white;
     display: flex;
-    flex-direction: column;
+
+    @include desctop {
+      flex-direction: column;
+    }
+
 
     .l-about__triangle {
       left: 0;
       fill: $white;
     }
+
+
   }
 
   &_right {
