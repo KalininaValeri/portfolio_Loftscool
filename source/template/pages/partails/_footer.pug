@@ -1,11 +1,11 @@
 footer.l-footer
     .l-footer__container
-        .l-footer__item.l-footer_first Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.
-        .l-footer__item.l-footer_center
+        .l-footer__item.l-footer__item_first Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.
+        .l-footer__item.l-footer__item_center
             +nav("footer", siteNav, '')
             +socialIcons("socials_footer")
 
-        .l-footer__item.l-footer_last
+        .l-footer__item.l-footer__item_last
             ul.c-footer__contacts
                 - var contacts = userContacts
                 each contact in contacts
