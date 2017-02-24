@@ -19,26 +19,24 @@ body {
   min-height: 100%;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 .l-footer {
   position: relative;
+  flex: 0 0 auto;
 }
 
 ul {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-.l-footer {
-  margin-top: -190px;
-}
-.push {
-  height: 190px;
-}
-
-.push-small {
-  height: 80px;
 }
 
 

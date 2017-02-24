@@ -5,79 +5,75 @@ block variables
 
 block content
     .wrapper
-        section.l-section.l-hero.l-hero_work
-            +header("Валерия Калинина", "Личный сайт веб разработчика")
-            .c-page-title
-                .c-page-title__container
-                    .c-page-title__triangle-item
-                        svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
-                            polygon(points="0,0 0,110 1000,110")
-                    .c-page-title__triangle-item
-                        svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
-                            polygon(points="0,110 1000,110 1000,0")
-                .c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Мои работы
-        section.l-section.l-slider
-            .l-slider__container
-                .l-slider__item.l-slider__item_left
-                    .l-slider__wrapper
-                        .c-block-title Сайт школы онлайн образования
-                        .c-block-text_blue HTML , CSS, JAVASCRIPT
-                        a(href="#").c-block-link_blue
-                            span.c-block-link__icon
-                                svg.c-block-link__pic
-                                    use(xlink:href="/assets/img/sprite.svg#link")
-                            | Посмотреть сайт
-                .l-slider__item.l-slider__item_right
-                    .l-slider__pic-wrapper
-                        img(src="/assets/img/content/site.png").l-slider__pic
-                    .l-slider__arrows
-                        .l-slider__arrows-down.l-slider__arrows-item
-                            img(src="/assets/img/content/site.png").l-slider__arrow-pic
-                            .l-slider__arrow-dark
-                            a(href="#").c-block-arrow
-                                svg.c-block-arrow__pic
-                                    use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
-                        .l-slider__arrows-up.l-slider__arrows-item
-                            img(src="/assets/img/content/site.png").l-slider__arrow-pic
-                            .l-slider__arrow-dark
-                            a(href="#").c-block-arrow
-                                svg.c-block-arrow__pic
-                                    use(xlink:href="/assets/img/sprite.svg#portf_arrow_up")
-        section.l-section.l-section_bg.l-reviews
-            .c-block-bg(style="background-image: url('/assets/img/bg/bg_work.jpg');")
-            .c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Что обо мне говорят
-            .l-reviews__container
-                .l-review__item_offset
-                .l-review__item.l-review__item_first
-                    .l-review__pic-cotainer
-                        img(src="/assets/img/content/photo-rev-1.jpg").l-reviews_pic
-                    .l-review__content Этот парень проходил обучение веб-разработке е где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    .l-review__name Ковальчук Дмитрий
-                    .l-review__position — основатель Loftschool
-                .l-review__item.l-review__item_second
-                    .l-review__pic-cotainer
-                        img(src="/assets/img/content/photo-rev-2.jpg").l-reviews_pic
-                    .l-review__content Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
-                    .l-review__name Александр Собакарь
-                    .l-review__position —  наставник
-            form.c-form
-                .c-block-title.c-block-title_white Связаться со мной
-                input.c-form__input(placeholder="Ваше имя")
-                input.c-form__input(placeholder="Ваш email")
-                textarea.c-form__input.c-form__input_textarea(placeholder="Ваше сообщение")
-                .c-form__button-container
-                    input(type='submit' value="Отправить").c-form__submit.c-form__buttom-item
-                    input(type="button" value="Очистить").c-form__buttom.c-form__buttom-item
+        .content
+            section.l-section.l-hero.l-hero_work
+                +header("Валерия Калинина", "Личный сайт веб разработчика")
+                .c-page-title
+                    .c-page-title__container
+                        .c-page-title__triangle-item
+                            svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
+                                polygon(points="0,0 0,110 1000,110")
+                        .c-page-title__triangle-item
+                            svg(viewBox="0 0 1000 110" preserveAspectRatio="none").c-page-title__triangle
+                                polygon(points="0,110 1000,110 1000,0")
+                    .c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Мои работы
+            section.l-section.l-slider
+                .l-slider__container
+                    .l-slider__item.l-slider__item_left
+                        .l-slider__wrapper
+                            .c-block-title Сайт школы онлайн образования
+                            .c-block-text_blue HTML , CSS, JAVASCRIPT
+                            a(href="#").c-block-link_blue
+                                span.c-block-link__icon
+                                    svg.c-block-link__pic
+                                        use(xlink:href="/assets/img/sprite.svg#link")
+                                | Посмотреть сайт
+                    .l-slider__item.l-slider__item_right
+                        .l-slider__pic-wrapper
+                            img(src="/assets/img/content/site.png").l-slider__pic
+                        .l-slider__arrows
+                            .l-slider__arrows-down.l-slider__arrows-item
+                                img(src="/assets/img/content/site.png").l-slider__arrow-pic
+                                .l-slider__arrow-dark
+                                a(href="#").c-block-arrow
+                                    svg.c-block-arrow__pic
+                                        use(xlink:href="/assets/img/sprite.svg#portf_arrow_down")
+                            .l-slider__arrows-up.l-slider__arrows-item
+                                img(src="/assets/img/content/site.png").l-slider__arrow-pic
+                                .l-slider__arrow-dark
+                                a(href="#").c-block-arrow
+                                    svg.c-block-arrow__pic
+                                        use(xlink:href="/assets/img/sprite.svg#portf_arrow_up")
+            section.l-section.l-section_bg.l-reviews
+                .c-block-bg(style="background-image: url('/assets/img/bg/bg_work.jpg');")
+                .c-section-title(style="background-image: url(/assets/img/decor/stars-works.png)") Что обо мне говорят
+                .l-reviews__container
+                    .l-review__item_offset
+                    .l-review__item.l-review__item_first
+                        .l-review__pic-cotainer
+                            img(src="/assets/img/content/photo-rev-1.jpg").l-reviews_pic
+                        .l-review__content Этот парень проходил обучение веб-разработке е где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .l-review__name Ковальчук Дмитрий
+                        .l-review__position — основатель Loftschool
+                    .l-review__item.l-review__item_second
+                        .l-review__pic-cotainer
+                            img(src="/assets/img/content/photo-rev-2.jpg").l-reviews_pic
+                        .l-review__content Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .l-review__name Александр Собакарь
+                        .l-review__position —  наставник
+                form.c-form
+                    .c-block-title.c-block-title_white Связаться со мной
+                    input.c-form__input(placeholder="Ваше имя")
+                    input.c-form__input(placeholder="Ваш email")
+                    textarea.c-form__input.c-form__input_textarea(placeholder="Ваше сообщение")
+                    .c-form__button-container
+                        input(type='submit' value="Отправить").c-form__submit.c-form__buttom-item
+                        input(type="button" value="Очистить").c-form__buttom.c-form__buttom-item
 
-        +navigationSite('work')
+            +navigationSite('work')
 
+        include partails/_footer
 
-
-
-        .push
-
-
-    include partails/_footer
 
 
 
