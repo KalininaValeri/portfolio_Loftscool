@@ -2,6 +2,12 @@
   height: 930px;
   background-size: cover;
   position: relative;
+  display: flex;
+
+  @include tablet {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 }
 
 .c-contacts {
@@ -9,15 +15,30 @@
   background: rgba(white, .7);
   padding: 40px 20px;
   width: 580px;
+
+  @include laptop {
+    width: 348px;
+  }
+
+  @include tablet {
+    position: static;
+    transform: none;
+    width: 100%;
+  }
 }
 
 .c-contacts__container {
-  @extend %clearfix;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 
 .c-contacts__item {
-  @extend %float50;
+  width: 50%;
+
+  @include laptop {
+    width: 100%;
+  }
 }
 
 
