@@ -4,29 +4,25 @@
 
   .c-section-title {
     color: white;
+    position: absolute;
+    bottom: 10px;
+    @include centered(x);
   }
 }
 .c-page-title {
-  height: 180px;
-  background: rgba($fonBlack, .85);
+  height: 340px;
   position: absolute;
   width: 100%;
   bottom: 0;
   text-align: center;
 }
 
-.c-page-title__container {
-  @extend %clearfix;
+.c-page-title__bg {
+  height: 100%;
+}
+
+.c-page-title__pic {
   width: 100%;
-  position: absolute;
-  top: -105px;
-}
-
-.c-page-title__triangle-item {
-  @extend %float50;
-}
-
-.c-page-title__triangle {
+  height: 100%;
   fill: rgba($fonBlack, .85);
-  stroke: none;
 }
