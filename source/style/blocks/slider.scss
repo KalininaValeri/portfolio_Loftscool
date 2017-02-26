@@ -1,20 +1,41 @@
 .l-slider {
   height: 750px;
+
+  @include laptop {
+    height: auto;
+  }
 }
 
 .l-slider__container, .l-slider__arrows {
-  @extend %clearfix;
+
 }
 
 .l-slider__item, .l-slider__arrows-item {
-  @extend %float50;
 }
+
+
 
 .l-slider__container, .l-slider__item {
   height: 100%;
+
+  @include laptop {
+    height: auto;
+  }
+}
+
+.l-slider__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include laptop {
+    flex-direction: row;
+    height: auto;
+  }
 }
 
 .l-slider__item_left {
+  width: 50%;
   text-align: center;
   vertical-align: middle;
   background: $white;
@@ -27,24 +48,64 @@
     background: red;
     vertical-align: middle;
   }
+
+  @include laptop {
+    padding: 45px 0 60px;
+    width: 100%;
+    order: 2;
+  }
 }
 
 .l-slider__pic-wrapper {
   height: 70%;
   position: relative;
+  background: $bej;
+  width: 50%;
+
+  @include laptop {
+    width: 100%;
+    order: 1;
+    height: 768px;
+  }
+
+  @include tablet {
+    height: 258px;
+  }
 }
 
 .l-slider__pic, .l-slider__arrow-pic {
   @include centered();
+
+  @include tablet {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.l-slider__pic {
+  @include tablet {
+    height: 100%;
+    width: auto;
+  }
 }
 
 .l-slider__arrows {
   height: 30%;
+  display: flex;
+  @include laptop {
+    height: 225px;
+    width: 100%;
+    order: 3;
+  }
+
 }
 
 .l-slider__arrows-item {
   position: relative;
   height: 100%;
+  width: 50%;
+
+
 }
 
 .l-slider__arrow-pic {
@@ -59,7 +120,8 @@
 }
 
 .l-slider__item_right {
-  background: $bej;
+
+  width: 50%;
 }
 
 .l-slider__arrow-dark {
