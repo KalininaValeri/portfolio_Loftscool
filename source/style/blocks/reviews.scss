@@ -6,16 +6,31 @@
 .l-reviews {
   padding: 70px;
   text-align: center;
+
+  @include tablet {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .l-reviews__container {
-  @extend %clearfix;
-  margin-bottom: 70px;
+  width: 735px;
+  margin: auto;
+  margin-bottom: 45px;
+  display: flex;
+
+  @include laptop {
+    width: 700px;
+  }
+
+  @include tablet {
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
 
 .l-review__item {
-  float: left;
-  width: 25%;
+  width: 50%;
   box-sizing: border-box;
   padding-left: 10px;
   padding-right: 10px;
@@ -23,6 +38,15 @@
   text-align: center;
   font-style: italic;
   font-size: 16px;
+
+  @include tablet {
+    width: 100%;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .l-review__item_offset {

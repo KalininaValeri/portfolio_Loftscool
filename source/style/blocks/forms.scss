@@ -3,6 +3,10 @@
   margin: auto;
   background: rgba(white, .05);
   padding: 40px 20px 0;
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .c-form__input {
