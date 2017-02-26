@@ -1,12 +1,23 @@
 .l-footer {
+  display: flex;
+  flex-direction: column;
   background: rgba($fonBlack, .85);
   color: rgba(white, 0.5);
   font-size: 16px;
+  height: 190px;
 
+  @include laptop {
+    height: 275px;
+  }
+
+  @include tablet {
+    height: 518px;
+  }
 
 }
 
 .l-footer__container {
+  flex: 1;
   display: flex;
   padding-left: 30px;
   padding-right: 30px;
