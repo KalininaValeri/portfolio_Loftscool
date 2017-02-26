@@ -3,17 +3,39 @@
 }
 
 .l-block-main__container   {
-  @extend %clearfix;
-  width: 1270px;
   margin: auto;
+  width: 1280px;
+  display: flex;
+
+  @include desctop {
+    width: 1180px;
+  }
+
+  @include laptop {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+  }
 }
 
 .l-page-nav_aside {
-  width: 270px;
+  flex: 1;
+  margin-right: 117px;
 
+  @include desctop {
+    margin-right: 100px;
+  }
+
+  @include laptop {
+    display: none;
+  }
 }
 
 .l-block-main_content {
-  float: right;
-  width: 880px;
+  flex: 3;
+
+  @include laptop {
+    flex: 1;
+  }
 }

@@ -16,6 +16,10 @@
   color: $textGray;
   font-weight: bold;
   margin-bottom: 30px;
+
+  @include tablet {
+    font-size: 21px;
+  }
 }
 
 .l-block-article__data {
