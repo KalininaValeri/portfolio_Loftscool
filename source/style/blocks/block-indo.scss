@@ -7,4 +7,9 @@
   background: rgba($fonBlack, .5);
   padding: 40px 65px 0;
   @include centered();
+
+  @include tablet {
+    width: 70%;
+    margin: auto;
+  }
 }
