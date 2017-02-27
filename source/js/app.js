@@ -21,21 +21,48 @@ var blur = (function () {
             // blurCss.backgroundSize = imgWidth + 'px' + ' ' + imgHeight + 'px';
             // blurCss.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
             form.css({'background-size': imgWidth + 'px' + ' ' + imgHeight + 'px', 'background-position': posLeft + 'px' + ' ' + posTop + 'px'});
-
-            console.log('imgWidth', imgWidth);
-            console.log('imgHeight', imgHeight);
-            console.log('posTop', posTop);
-            console.log('posLeft', posLeft);
-
-
         }
     }
 }());
 
+var parallax = (function (){
+    var bg = document.querySelector('.l-hero__bg-pic');
+    var user = document.querySelector('.c-user');
+    var fon = document.querySelector('.c-user__bg');
+
+    return {
+        move: function(block, windowScroll, strafeAmound){
+            var strafe = windowScroll / -strafeAmound + '%';
+            var transformString = 'translate3d(0,' + strafe + ', 0)';
+            var style = block.style;
+
+            style.transform = transformString;
+            style.webkitTransform = transformString;
+
+        },
+        init: function(wScroll) {
+            this.move(bg, wScroll, 80);
+            this.move(fon, wScroll, 20);
+        }
+    }
+
+}());
+
+
+
 $(function () {
+    $('.l-hero').height($(window).height());
+
+    window.onscroll = function(){
+        var wScroll = window.pageYOffset;
+        parallax.init(wScroll);
+    };
+
     blur.set();
     $(window).resize(function () {
         blur.set();
-    })
+    });
+
+
 
 });

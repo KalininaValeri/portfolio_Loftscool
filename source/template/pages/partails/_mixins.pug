@@ -27,7 +27,7 @@ mixin navigationSite(activeEl)
         +nav("site", siteNav, activeEl)
 
 mixin user(title, desc, bg)
-    .c-user()
+    .c-user
         if bg === "false"
             .c-user__bg(style="display: none;")
         else
@@ -41,7 +41,7 @@ mixin user(title, desc, bg)
 
 mixin header(userTitle, userDesc)
     .l-hero__bg
-        img(src="/assets/img/bg/portfolio.jpg")
+        img.l-hero__bg-pic(src="/assets/img/bg/portfolio.jpg")
     .l-hero__container
 
     +user(userTitle, userDesc)
