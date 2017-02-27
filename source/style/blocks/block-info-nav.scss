@@ -1,34 +1,32 @@
 .c-nav_block-info {
-  text-align: justify;
   margin-left: -65px;
   margin-right: -65px;
-  margin-bottom: -20px;
-
-  &:after {
-   content: '';
-    display: inline-block;
-    height: 0px;
-    width: 100%;
-    background: #000;
-  }
+  display: flex;
 }
 
 .c-nav_block-info__item {
-  display: inline-block;
-  margin-right: -4px;
   border-right: 1px solid white;
+  flex: 1;
 
   &:last-child {
-    margin-right: 0;
     border-right: none;
   }
+}
+
+.c-nav_block-info__item_0 {
+}
+
+.c-nav_block-info__item_1 {
+}
+
+.c-nav_block-info__item_2 {
 }
 
 .c-nav_block-info__link {
   display: block;
   text-decoration: none;
   color: white;
-  padding: 14px 60px;
+  padding: 14px 0;
   text-align: center;
   background: $blue;
   

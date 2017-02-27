@@ -14,7 +14,7 @@ mixin nav(className, list, active)
             var navList = list
 
         each navItem, ndx in navList
-            li(class="c-nav_" + `${className}` + "__item")
+            li(class="c-nav_" + `${className}` + "__item c-nav_" + `${className}` + "__item_" + `${ndx}`)
                 if ndx === active
                     a(href="/" + `${navItem[1]}` +".html" class="c-nav_" + `${className}` + "__link c-nav_" + `${className}` + "__link_active")= navItem[0]
                     //a.c-nav_site__link(href="/" + `${navItem[1]}` +".html" class=((ndx === activeEl) ? 'c-nav_site__link_active' : ''))= navItem[0]
