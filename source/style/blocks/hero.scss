@@ -25,4 +25,12 @@
 .l-header-index {
   padding: 24px 100px;
   text-align: right;
+
+  @include desctop {
+    padding: 24px;
+  }
+
+  @include tablet {
+    text-align: center;
+  }
 }
