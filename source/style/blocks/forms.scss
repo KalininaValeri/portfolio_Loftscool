@@ -1,8 +1,23 @@
-.c-form {
+.c-form-container {
   width: 380px;
   margin: auto;
-  background: rgba(white, .05);
   padding: 40px 20px 0;
+  position: relative;
+}
+
+.c-form {
+  position: relative;
+}
+
+.c-form-wrapper {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url("/assets/img/bg/bg_work.jpg") no-repeat;
+  filter: blur(10px);
 
   @include tablet {
     width: 100%;
