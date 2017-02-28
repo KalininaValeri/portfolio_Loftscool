@@ -26,7 +26,7 @@ var blur = (function () {
 }());
 
 var parallax = (function (){
-    var bg = document.querySelector('.l-hero__bg-pic');
+    var bg = document.querySelector('.l-hero__bg');
     var user = document.querySelector('.c-user');
     var fon = document.querySelector('.c-user__bg');
 
@@ -41,7 +41,7 @@ var parallax = (function (){
 
         },
         init: function(wScroll) {
-            this.move(bg, wScroll, 80);
+            this.move(bg, wScroll, 50);
             this.move(fon, wScroll, 20);
         }
     }

@@ -22,15 +22,16 @@
 .c-user__bg {
   content: '';
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-image: url(/assets/img/decor/strars1.png);
+  top: 50%;
+  left: 50%;
+  background: url(/assets/img/decor/strars1.png) no-repeat 50% 50%;
   background-size: contain;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
   opacity: .09;
+  height: 270px;
+  width: 460px;
+  margin-top: -135px;
+  margin-left: -230px;
+  transform: translateZ(0px) scale(1);
 
   @include laptop {
     bottom: 85px;

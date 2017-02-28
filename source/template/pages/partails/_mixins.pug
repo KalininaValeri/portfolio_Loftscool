@@ -28,10 +28,6 @@ mixin navigationSite(activeEl)
 
 mixin user(title, desc, bg)
     .c-user
-        if bg === "false"
-            .c-user__bg(style="display: none;")
-        else
-             .c-user__bg
         a(href="/index.html").c-user__pic-container
             img.c-user__pic(src="/assets/img/content/user.jpg")
         .c-user__name= title
@@ -41,9 +37,10 @@ mixin user(title, desc, bg)
 
 mixin header(userTitle, userDesc)
     .l-hero__bg
-        img.l-hero__bg-pic(src="/assets/img/bg/portfolio.jpg")
+        video.l-hero__bg-item.l-hero__bg-item_video(src="/assets/img/night.mp4" autoplay loop)
+        img.l-hero__bg-item.l-hero__bg-item_pic(src="/assets/img/bg/bg_portfolio.png")
     .l-hero__container
-
+    .c-user__bg
     +user(userTitle, userDesc)
 
     +socialIcons()

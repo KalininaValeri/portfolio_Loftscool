@@ -5,8 +5,25 @@
 }
 
 .l-hero__bg {
-  @include centered();
   width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $nightSky;
+  transform: translateZ(-50px) scale(1.5);
+}
+
+.l-hero__bg-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.l-hero__bg-item_pic {
+  top: 50%;
+  margin-top: -1000px;
 }
 
 .l-hero__container {
