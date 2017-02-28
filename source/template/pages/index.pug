@@ -6,12 +6,14 @@ block variables
 block content
   .wrapper.l-section_bg
     .content
-      .c-block-bg(style="background-image: url('/assets/img/bg/portfolio.jpg');")
+      .c-block-bg.c-mouse-parallax#paralax
+        video.c-mouse-parallax__item.c-mouse-parallax__item_video(src="/assets/img/night.mp4" autoplay loop)
+        img.c-mouse-parallax__item.c-mouse-parallax__item_pic(src="/assets/img/bg/bg_portfolio.png")
       header.l-header-index
         a.c-block-link_to-avtor(href='#') Авторизоваться
       .c-block-info
         include partails/_header_insides
-        +user("Валерия Калинина", "Личный сайт веб разработчика", "false")
+        +user("Валерия Калинина", "Личный сайт веб разработчика")
 
         +socialIcons("socials_index")
         +nav('block-info', [siteNav.work, siteNav.about, siteNav.blog], '')
