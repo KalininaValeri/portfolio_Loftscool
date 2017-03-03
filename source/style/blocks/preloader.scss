@@ -1,0 +1,43 @@
+.preloader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba($darkBlue, 1);
+}
+
+.preloder__percentages-container {
+  height: 62px;
+  width: 62px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.preloader__cercles {
+  fill: none;
+  stroke-width: 3;
+}
+
+.preloader__cercle-percentages {
+  stroke: white;
+  stroke-dasharray: .001 150.79644737231007;
+  transition: stroke-dasharray 3s ease 0s;
+}
+
+.preloader__cercles:hover {
+  .preloader__cercle-percentages {
+    stroke-dasharray: 150.79644737231007 150.79644737231007;
+  }
+}
+
+.preloder__percentages {
+  position: absolute;
+}
