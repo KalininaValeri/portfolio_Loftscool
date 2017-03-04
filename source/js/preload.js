@@ -43,18 +43,15 @@ var Preload = (function () {
 
     var animatePercents = function (animatePercent) {
         var circlePercentages = $('.preloader__cercle-percentages')[0],
-            dashoffset = animatePercent / 100 * 150.79644737231007,
-            circleRunner = $('.preloader__cercle-runner'),
-            degTransformRotate = (animatePercent + 1) * 360 / 100;
+            dashoffset = animatePercent / 100 * 150.79644737231007;
 
         circlePercentages.style.strokeDasharray = dashoffset +' 150.79644737231007';
         console.log(circlePercentages.style.strokeDasharray);
-        circleRunner.attr('transform', 'rotate(' + degTransformRotate + ' 31 31)');
     };
     
     var animateRunner = function () {
         
-    }
+    };
 
     var setPercents = function(total, current) {
       var percents = Math.ceil(current / total * 100);
