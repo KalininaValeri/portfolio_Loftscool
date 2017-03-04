@@ -1,23 +1,3 @@
-/**
- * Created by lera on 3/3/17.
- */
-// var preload = {
-//
-//     percentageLoad: function(){
-//         var percentage;
-//         percentage = 10;
-//         return percentage;
-//     },
-//
-//     strokeDasharray: function () {
-//         var cerclePercentages = document.querySelector('.preloader__cercle-percentages'),
-//             styleCerclePercentages = cerclePercentages.style.strokeDasharray;
-//
-//         styleCerclePercentages = '(' + percentageLoad + ' 150.79644737231007)';
-//
-//     }
-// };
-
 var Preload = (function () {
     var percentsTotal = 0,
         preloder = $('.preloader');
@@ -49,10 +29,6 @@ var Preload = (function () {
         console.log(circlePercentages.style.strokeDasharray);
     };
     
-    var animateRunner = function () {
-        
-    };
-
     var setPercents = function(total, current) {
       var percents = Math.ceil(current / total * 100);
 
@@ -93,7 +69,3 @@ var Preload = (function () {
 
 
 }());
-
-$(function () {
-
-});

@@ -77,6 +77,7 @@ var App = (function () {
     return{
         init: function () {
             Preload.init();
+            Navigation.init();
         }
     }
 })();

@@ -1,6 +1,6 @@
 'use strict';
 
 module.exports = [
-  './source/js/app.js',
-  './source/js/preload.js'
+    './source/js/modules/*.js',
+    './source/js/app.js'
 ];
