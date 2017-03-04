@@ -51,30 +51,33 @@ var parallax = (function () {
 
 }());
 
-var parallaxMouse = function (e) {
-    var parallaxContainer = document.getElementById('paralax'),
-        layers = parallaxContainer.children,
-        pageX = e.pageX,
-        pageY = e.pageY,
-        initialX = (window.innerWidth / 2) - pageX,
-        initialY = (window.innerHeight / 2) - pageY;
+// var parallaxMouse = function (e) {
+//     var parallaxContainer = document.getElementById('paralax'),
+//         layers = parallaxContainer.children,
+//         pageX = e.pageX,
+//         pageY = e.pageY,
+//         initialX = (window.innerWidth / 2) - pageX,
+//         initialY = (window.innerHeight / 2) - pageY;
+//
+//     [].slice.call(layers).forEach(function (layer, i) {
+//         var divider = (i + 2) / 50,
+//             bottomPosition = (window.innerHeight / 2) * divider,
+//             positionX = initialX * divider,
+//             positionY = initialY * divider,
+//             layerStyle = layer.style,
+//             transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0px)';
+//         layerStyle.transform = transformString;
+//         // layerStyle.bottom = '-' + bottomPosition + 'px';
+//         console.log(i);
+//
+//     })
+// };
 
-    [].slice.call(layers).forEach(function (layer, i) {
-        var divider = (i + 2) / 50,
-            bottomPosition = (window.innerHeight / 2) * divider,
-            positionX = initialX * divider,
-            positionY = initialY * divider,
-            layerStyle = layer.style,
-            transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0px)';
-        layerStyle.transform = transformString;
-        // layerStyle.bottom = '-' + bottomPosition + 'px';
-        console.log(i);
-
-    })
-};
 
 
 $(function () {
+    // App.init();
+
     $('.l-hero').height($(window).height());
 
     window.onscroll = function () {
@@ -82,13 +85,13 @@ $(function () {
         parallax.init(wScroll);
     };
 
-    window.addEventListener('mousemove', function (e) {
-        parallaxMouse(e);
-    });
+    // window.addEventListener('mousemove', function (e) {
+    //     parallaxMouse(e);
+    // });
 
-    blur.set();
-    $(window).resize(function () {
-        blur.set();
-    });
+    // blur.set();
+    // $(window).resize(function () {
+    //     blur.set();
+    // });
 
 });
