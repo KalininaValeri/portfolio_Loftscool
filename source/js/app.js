@@ -78,6 +78,7 @@ var App = (function () {
         init: function () {
             Preload.init();
             Navigation.init();
+            Slider.init();
         }
     }
 })();
