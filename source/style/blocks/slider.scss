@@ -114,10 +114,11 @@
   height: 100%;
   width: 50%;
   overflow: hidden;
+  display: none;
 }
 
-.l-slider__arrows-item_hidden {
-  display: none;
+.l-slider__arrows-item_visible {
+  display: block;
 }
 
 .l-slider__arrow-pic {
