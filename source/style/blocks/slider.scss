@@ -90,6 +90,7 @@
 }
 
 .l-slider__arrows {
+  position: relative;
   height: 30%;
   display: flex;
   @include laptop {
@@ -100,16 +101,28 @@
 
 }
 
+.c-block-arrows-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .l-slider__arrows-item {
   position: relative;
   height: 100%;
   width: 50%;
+  overflow: hidden;
+}
 
-
+.l-slider__arrows-item_hidden {
+  display: none;
 }
 
 .l-slider__arrow-pic {
-  height: 100%;
+  max-width: 90%;
+  margin: auto;
 }
 
 .l-slider__wrapper {
@@ -120,7 +133,6 @@
 }
 
 .l-slider__item_right {
-
   width: 50%;
 }
 
