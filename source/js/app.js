@@ -73,10 +73,17 @@ var parallax = (function () {
 //     })
 // };
 
+var App = (function () {
+    return{
+        init: function () {
+            Preload.init();
+        }
+    }
+})();
 
 
 $(function () {
-    // App.init();
+    App.init();
 
     $('.l-hero').height($(window).height());
 

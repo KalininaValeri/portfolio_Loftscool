@@ -95,5 +95,5 @@ var Preload = (function () {
 }());
 
 $(function () {
-    Preload.init();
+
 });
