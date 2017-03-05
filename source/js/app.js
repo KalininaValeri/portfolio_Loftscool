@@ -10,16 +10,19 @@ var blur = (function () {
     var container = $('.c-form-container'),
         form = $('.c-form-wrapper');
 
+    if (container.length === 0) return false;
+
     return {
         set: function () {
             var img = $('.c-block-bg_pic'),
                 imgWidth = img.width(),
                 imgHeight = img.height(),
+                blurCss = form[0].style,
                 posLeft = -container.offset().left,
                 posTop = -container.position().top;
 
-            // blurCss.backgroundSize = imgWidth + 'px' + ' ' + imgHeight + 'px';
-            // blurCss.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
+            blurCss.backgroundSize = imgWidth + 'px' + ' ' + imgHeight + 'px';
+            blurCss.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
             form.css({
                 'background-size': imgWidth + 'px' + ' ' + imgHeight + 'px',
                 'background-position': posLeft + 'px' + ' ' + posTop + 'px'
@@ -51,40 +54,46 @@ var parallax = (function () {
 
 }());
 
-// var parallaxMouse = function (e) {
-//     var parallaxContainer = document.getElementById('paralax'),
-//         layers = parallaxContainer.children,
-//         pageX = e.pageX,
-//         pageY = e.pageY,
-//         initialX = (window.innerWidth / 2) - pageX,
-//         initialY = (window.innerHeight / 2) - pageY;
-//
-//     [].slice.call(layers).forEach(function (layer, i) {
-//         var divider = (i + 2) / 50,
-//             bottomPosition = (window.innerHeight / 2) * divider,
-//             positionX = initialX * divider,
-//             positionY = initialY * divider,
-//             layerStyle = layer.style,
-//             transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0px)';
-//         layerStyle.transform = transformString;
-//         // layerStyle.bottom = '-' + bottomPosition + 'px';
-//         console.log(i);
-//
-//     })
-// };
+var parallaxMouse = function (e) {
+    if (document.getElementById('paralax') === null) return false;
+
+    var parallaxContainer = document.getElementById('paralax'),
+        layers = parallaxContainer.children,
+        pageX = e.pageX,
+        pageY = e.pageY,
+        initialX = (window.innerWidth / 2) - pageX,
+        initialY = (window.innerHeight / 2) - pageY;
+
+    [].slice.call(layers).forEach(function (layer, i) {
+        var divider = (i + 2) / 50,
+            bottomPosition = (window.innerHeight / 2) * divider,
+            positionX = initialX * divider,
+            positionY = initialY * divider,
+            layerStyle = layer.style,
+            transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0px)';
+        layerStyle.transform = transformString;
+    })
+};
 
 var App = (function () {
     return{
         init: function () {
             Preload.init();
             Navigation.init();
-            Slider.init();
+
+            if (document.querySelector('.l-slider') === null) {
+                return false;
+            } else {
+                Slider.init();
+            }
         }
     }
 })();
 
 
 $(function () {
+    console.log('123');
+
     App.init();
 
     $('.l-hero').height($(window).height());
@@ -94,13 +103,19 @@ $(function () {
         parallax.init(wScroll);
     };
 
-    // window.addEventListener('mousemove', function (e) {
-    //     parallaxMouse(e);
-    // });
+    window.addEventListener('mousemove', function (e) {
+        parallaxMouse(e);
+    });
 
-    // blur.set();
-    // $(window).resize(function () {
-    //     blur.set();
-    // });
+    if (document.querySelector('.c-form-container') ===null) {
+        return false
+    } else {
+        blur.set();
+        $(window).resize(function () {
+            blur.set();
+        });
+    }
+
+
 
 });

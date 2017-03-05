@@ -30,6 +30,11 @@ var sliderContent = [
 ];
 
 var Slider = (function () {
+
+    if (document.querySelector('.l-slider') === null) {
+        return false;
+    }
+
     var doc = document;
     var arrowNext = doc.querySelector('#arrow-up'),
         arrowPrev = doc.querySelector('#arrow-down'),
@@ -38,7 +43,7 @@ var Slider = (function () {
         $slideActiveCaptionTechnology = $slideActiveCaption.find('.c-block-text_blue'),
         $slideActiveCaptionLink = $slideActiveCaption.find('.c-block-link_blue'),
         $sliderActivePicWrapper = $('#slide-active-pic'),
-        $slideActivePicSpan = $('#slide-active-pic').find('span'),
+        $slideActivePicSpan = $sliderActivePicWrapper.find('span'),
         $slideActivePic = $('.l-slider__pic'),
         $sliderItems = $('#slide-items'),
         $fonDark= $('.l-slider__arrow-dark'),

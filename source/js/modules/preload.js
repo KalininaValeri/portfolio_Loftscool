@@ -1,6 +1,8 @@
 var Preload = (function () {
+
     var percentsTotal = 0,
         preloder = $('.preloader');
+
 
     var imgPath = $('*').map(function (ndx, element) {
         var background = $(element).css('background-image'),
@@ -26,10 +28,10 @@ var Preload = (function () {
             dashoffset = animatePercent / 100 * 150.79644737231007;
 
         circlePercentages.style.strokeDasharray = dashoffset +' 150.79644737231007';
-        console.log(circlePercentages.style.strokeDasharray);
     };
-    
+
     var setPercents = function(total, current) {
+
       var percents = Math.ceil(current / total * 100);
 
       $('.preloder__percentages').text(percents);
@@ -42,7 +44,8 @@ var Preload = (function () {
     };
 
     var loadImages = function (images) {
-      if (!images.length) preloder.fadeOut();
+
+        if (!images.length) preloder.fadeOut();
 
       images.forEach(function (img, i, images) {
           var fakeImage = $('<img>' || '<video>', {
@@ -57,13 +60,15 @@ var Preload = (function () {
           })
       })
     };
-    
+
     return {
         init: function () {
-            var imgs = imgPath.toArray();
+            console.log('123');
 
+            var imgs = imgPath.toArray();
             loadImages(imgs);
 
+            console.log('123');
         }
     }
 
