@@ -44,7 +44,29 @@
   opacity: 1;
 }
 
+.c-nav_site {
+  position: relative;
+  z-index: 10;
+}
 
+.c-nav_site__item {
+  opacity: 0;
+}
+
+.c-nav_site__item.c-nav_site__hidden {
+  animation: ascent 200ms linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ascent {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 
 .c-nav_site__link {
   @extend %fontTitle;
