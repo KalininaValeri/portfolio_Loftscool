@@ -11,12 +11,25 @@ block content
         img.c-mouse-parallax__item.c-mouse-parallax__item_pic(src="/assets/img/bg/bg_portfolio.png")
       header.l-header-index
         a.c-block-link_to-avtor(href='#') Авторизоваться
-      .c-block-info
-        include partails/_header_insides
-        +user("Валерия Калинина", "Личный сайт веб разработчика")
+      .flip-container
+        .flipper
+          .c-block-info#front
+            include partails/_header_insides
+            +user("Валерия Калинина", "Личный сайт веб разработчика")
 
-        +socialIcons("socials_index")
-        +nav('block-info', [siteNav.work, siteNav.about, siteNav.blog], '')
+            +socialIcons("socials_index")
+            +nav('block-info', [siteNav.work, siteNav.about, siteNav.blog], '')
+
+          .c-block-info#back
+            form
+              .c-user__name Авторизуйтесь
+              input(placeholder="Логин")
+              input(placeholder="Пароль")
+              input(type="submit" value="123")
+              br
+              a#go-home(href="#") На главную
+
+
 
     footer.l-footer.l-footer-small © #{userName} | создано с любовью в LoftSchool | 2017
 

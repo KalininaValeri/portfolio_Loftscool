@@ -81,11 +81,17 @@ var App = (function () {
             Preload.init();
             Navigation.init();
 
-            if (document.querySelector('.l-slider') === null) {
-                return false;
-            } else {
+            if (!!(document.querySelector('.l-slider'))) {
                 Slider.init();
+                console.log('slider')
             }
+
+            if (!!(document.querySelector('.flip-container'))) {
+                Flip.init();
+                console.log('flip');
+            }
+
+
         }
     }
 })();

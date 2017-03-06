@@ -4,11 +4,29 @@
 
 .c-block-info {
   text-align: center;
-  width: 550px;
-  box-sizing: border-box;
   background: rgba($fonBlack, .5);
   padding: 40px 65px 0;
+}
+
+#back {
+  height: 411px;
+}
+
+.flip-container {
+  perspective: 1000;
+}
+
+.flip-container.flip-container_back  {
+  .flipper {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-container {
   @include centered();
+  width: 550px;
+  height: 411px;
+
 
   @include laptop {
     width: 500px;
@@ -17,8 +35,32 @@
   @include tablet {
     width: 90%;
   }
+}
 
+.flipper {
+  box-sizing: border-box;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  height: 100%;
   .c-user {
     padding: 0;
   }
+}
+
+#front, #back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#front {
+  z-index: 2;
+}
+
+#back {
+  transform: rotateY(180deg);
 }
