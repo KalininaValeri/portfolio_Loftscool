@@ -39,7 +39,7 @@
 }
 
 .preloder__percentages {
-  position: absolute;
+  @include centered();
 }
 
 .preloader__cercle-runner  {
