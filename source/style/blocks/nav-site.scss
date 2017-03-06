@@ -5,15 +5,45 @@
   right: 0;
   bottom: 0;
   min-height: 100%;
-  background: rgba($darkBlue, 0.9);
+
   padding-top: 250px;
   text-align: center;
   display: none;
+
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: rgba($darkBlue, 0.9);
+    animation: menu-blind 500ms linear;
+    animation-fill-mode: forwards;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+@keyframes menu-blind {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 50%;
+  }
 }
 
 .c-nav_site_active {
   display: block;
+  opacity: 1;
 }
+
 
 
 .c-nav_site__link {
