@@ -95,6 +95,11 @@ var App = (function () {
                 console.log('asside');
                 Asside.init();
             }
+
+            if (!!(document.querySelector('.c-form-avtor'))) {
+                console.log('form avtorisation');
+                ValidationAvtor.init();
+            }
         }
     }
 })();
@@ -125,7 +130,6 @@ $(function () {
 
     $(window).scroll(function () {
         console.log($(window).scrollTop());
-        console.log('456');
     });
 
 

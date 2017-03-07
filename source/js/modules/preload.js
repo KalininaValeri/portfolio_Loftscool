@@ -63,12 +63,8 @@ var Preload = (function () {
 
     return {
         init: function () {
-            console.log('123');
-
             var imgs = imgPath.toArray();
             loadImages(imgs);
-
-            console.log('123');
         }
     }
 
