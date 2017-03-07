@@ -8,8 +8,6 @@ var Asside = (
 
         if (!($('.l-page-nav_aside').length)) return false;
 
-        console.log('456');
-
         var showSection = function (article, isAnimate) {
             var
                 direction = article.replace('#', ''),
@@ -86,8 +84,6 @@ var Asside = (
                     showSection($(this).attr('href'), true);
 
                 });
-
-                console.log('hash ',window.location.hash);
 
                 if (!!(location.hash)){
                     showSection(window.location.hash, false);

@@ -20,8 +20,6 @@ var ValidationAvtor = (function () {
 
                $this.parents('.c-form-avtor__input-wrapper ')
                    .css({'border' : '2px solid red'});
-               // $this.parents('.c-form-avtor__content')
-               //     .append('<span style="color: red">Заполните все поля формы</span>');
             } else {
                 numberEmptyInput++;
             }
@@ -43,8 +41,6 @@ var ValidationAvtor = (function () {
             }
         });
 
-        console.log(numberChecekd, numberEmptyInput);
-
         if (numberEmptyInput <= 1) {
             $('.c-form-avtor__content').append('<span class="error" style="color: red">Заполните все поля формы</span>');
             return false;
@@ -54,16 +50,12 @@ var ValidationAvtor = (function () {
             $('.c-form-avtor__content').append('<span class="error" style="color: red">Роботам тут не место</span>');
             return false;
         }
-
-
-
     };
 
     return {
         init: function () {
             $('.c-form-avtor').submit(function (e) {
                 e.preventDefault();
-                console.log('submit');
                 valid();
             });
         }

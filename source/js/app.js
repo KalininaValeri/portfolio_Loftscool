@@ -127,10 +127,4 @@ $(function () {
             blur.set();
         });
     }
-
-    $(window).scroll(function () {
-        console.log($(window).scrollTop());
-    });
-
-
 });
