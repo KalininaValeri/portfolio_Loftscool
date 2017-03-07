@@ -11,7 +11,7 @@ block content
         img.c-mouse-parallax__item.c-mouse-parallax__item_pic(src="/assets/img/bg/bg_portfolio.png")
       header.l-header-index
         a.c-block-link_to-avtor(href='#') Авторизоваться
-      .flip-container
+      .flip-container.flip-container_back
         .flipper
           .c-block-info#front
             include partails/_header_insides
@@ -22,28 +22,30 @@ block content
 
           .c-block-info#back
             form.c-form-avtor
-              .c-block-title.c-block-title_white Авторизуйтесь
-              fieldset.c-form-avtor__fieldset
-                .c-form-avtor__input-wrapper.c-form-avtor__input-wrapper_login
-                  input.c-form-avtor__input(placeholder="Логин" name="login")
-                .c-form-avtor__input-wrapper.c-form-avtor__input-wrapper_password
-                  input.c-form-avtor__input(placeholder="Пароль" name="password")
+              .c-form-avtor__container
+                .c-form-avtor__content
+                  .c-block-title.c-block-title_white Авторизуйтесь
+                  fieldset.c-form-avtor__fieldset
+                    .c-form-avtor__input-wrapper.c-form-avtor__input-wrapper_login
+                      input.c-form-avtor__input(placeholder="Логин" name="login")
+                    .c-form-avtor__input-wrapper.c-form-avtor__input-wrapper_password
+                      input.c-form-avtor__input(placeholder="Пароль" name="password")
 
-              fieldset.c-form-avtor__fieldset
-                input(type="checkbox" name="man").c-form-avtor__checkbox#i-man
-                label.c-form-avtor__label.c-fom-avtor__label_checkbox(for="i-man") Я человек
+                  fieldset.c-form-avtor__fieldset
+                    input(type="checkbox" name="man").c-form-avtor__checkbox#i-man
+                    label.c-form-avtor__label.c-fom-avtor__label_checkbox(for="i-man") Я человек
 
-              fieldset.c-form-avtor__fieldset
-                legend.c-form-avtor__legend Вы точно не робот?
+                  fieldset.c-form-avtor__fieldset
+                    legend.c-form-avtor__legend Вы точно не робот?
 
-                input(type="radio" name="robot").c-form-avtor__radio#yes
-                label.c-form-avtor__label.c-fom-avtor__label_radio(for="yes") Да
+                    input(type="radio" name="robot").c-form-avtor__radio#yes
+                    label.c-form-avtor__label.c-fom-avtor__label_radio(for="yes") Да
 
-                input(type="radio" name="robot").c-form-avtor__radio#hz
-                label.c-form-avtor__label.c-fom-avtor__label_radio(for="hz") Не уверен
-              .c-form-avtor__footer
-                a.c-form-avtor__button#go-home(href="#") На главную
-                input.c-form-avtor__button(type="submit" value="Войти")
+                    input(type="radio" name="robot").c-form-avtor__radio#hz
+                    label.c-form-avtor__label.c-fom-avtor__label_radio(for="hz") Не уверен
+                .c-form-avtor__footer
+                  a.c-form-avtor__button#go-home(href="#") На главную
+                  input.c-form-avtor__button(type="submit" value="Войти")
 
 
 

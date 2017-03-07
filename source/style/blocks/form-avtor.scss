@@ -108,6 +108,11 @@
   display: flex;
   margin-left: -65px;
   margin-right: -65px;
+
+  @include phone {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }
 
 .c-form-avtor__button {
@@ -129,6 +134,20 @@
   &:last-child {
     border: none;
   }
+}
+
+.c-form-avtor {
+  height: 100%;
+}
+
+.c-form-avtor__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-form-avtor__content {
+  flex: 1;
 }
 
 

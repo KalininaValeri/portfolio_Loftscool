@@ -6,6 +6,11 @@
   text-align: center;
   background: rgba($fonBlack, .5);
   padding: 40px 65px 0;
+
+  @include phone {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 #back {
