@@ -18,8 +18,8 @@ var ValidationAvtor = (function () {
 
             if ($this.val() === '') {
 
-               $this.parents('.c-form-avtor__input-wrapper ')
-                   .css({'border' : '2px solid red'});
+                $this.parents('.c-form-avtor__input-wrapper ')
+                    .css({'border': '2px solid red'});
             } else {
                 numberEmptyInput++;
             }
@@ -28,15 +28,15 @@ var ValidationAvtor = (function () {
         $checkBox.each(function () {
             var $this = $(this);
 
-            if (!!$this.prop('checked')){
-               numberChecekd++;
+            if (!!$this.prop('checked')) {
+                numberChecekd++;
             }
         });
 
         $radio.each(function () {
             var $this = $(this);
 
-            if (!!$this.prop('checked')){
+            if (!!$this.prop('checked')) {
                 numberChecekd++;
             }
         });
@@ -61,3 +61,59 @@ var ValidationAvtor = (function () {
         }
     }
 })();
+
+var ValidationContactMe = (function () {
+        if (!$('.c-form_contact-me').length) return false;
+
+        var $formContactMe = $('.c-form_contact-me'),
+            $inputs = $formContactMe.find('.c-form__input');
+
+        var reset = function () {
+            $formContactMe.find('.error').remove();
+            $inputs.each(function () {
+                $(this).css({'boreder': 'none'});
+            });
+        };
+
+        var valid = function () {
+
+
+            var
+                counter = 0;
+
+            $inputs.each(function () {
+                var $this = $(this);
+
+                if (!!$this.val()) {
+                    counter++;
+                }
+
+                if (!$this.val()) {
+                    $this.css({'border': '1px solid red'});
+                }
+            });
+
+            if (counter < 3) {
+                $formContactMe.find('.c-form__button-container')
+                    .before('<span class="error" style="color: red">Заполните все поля формы</span>');
+            }
+        };
+
+        return {
+            init: function () {
+                $formContactMe.find('.c-form').submit(function (e) {
+                    e.preventDefault();
+                    reset();
+                    valid();
+                });
+
+                $formContactMe.find('.c-form__buttom').click(function () {
+                    reset();
+                    $inputs.each(function () {
+                        var $this = $(this);
+                        $this.val('');
+                    })
+                });
+            }
+        }
+    })();

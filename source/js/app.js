@@ -100,6 +100,11 @@ var App = (function () {
                 console.log('form avtorisation');
                 ValidationAvtor.init();
             }
+
+            if (!!(document.querySelector('.c-form_contact-me'))) {
+                console.log('form contacts-me');
+                ValidationContactMe.init();
+            }
         }
     }
 })();
