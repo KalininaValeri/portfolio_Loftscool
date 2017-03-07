@@ -2,6 +2,7 @@
   background: $white;
   padding-top: 70px;
   padding-bottom: 70px;
+  position: relative;
 }
 
 .l-block-main__container   {
@@ -21,18 +22,6 @@
   }
 }
 
-.l-page-nav_aside {
-  flex: 1;
-  margin-right: 117px;
-
-  @include desctop {
-    margin-right: 100px;
-  }
-
-  @include laptop {
-    display: none;
-  }
-}
 
 .l-block-main_content {
   flex: 3;

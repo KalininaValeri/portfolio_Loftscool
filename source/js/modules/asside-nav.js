@@ -46,15 +46,19 @@ var Asside = (
             })
         };
 
-
-
         return {
             init: function () {
 
+                if ($(window).width() < 1200) {
+                    $('.l-page-nav_aside').click(function () {
+                        $('.l-page-nav_aside').toggleClass('l-page-nav_active');
+                    });
+                }
+
                 $(window).scroll(function (e) {
                     var
-                        asside = $('.l-page-nav_aside'),
-                        navTop = $(window).scrollTop() - asside.position().top + 40;
+                        blockMain = $('.l-block-main'),
+                        navTop = $(window).scrollTop() - blockMain.position().top + 40;
 
                     checkSection();
 
@@ -76,6 +80,7 @@ var Asside = (
                 if (!!(location.hash)){
                     showSection(window.location.hash, false);
                 }
+
             }
         }
     }

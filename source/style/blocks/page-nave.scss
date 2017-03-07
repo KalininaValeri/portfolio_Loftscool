@@ -1,11 +1,69 @@
 .l-page-nav_aside {
+  flex: 1;
+  margin-right: 117px;
   position: relative;
+
+  @include desctop {
+    margin-right: 100px;
+  }
+
+  @include laptop {
+    position: absolute;
+    width: 0;
+    background: $nightSky;
+    top: 0;
+    bottom: 0;
+    color: white;
+    padding-left: 30px;
+    margin: 0;
+    left: -20px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      background: $nightSky;
+      border-radius: 50%;
+      cursor: pointer;
+      right: -20px;
+      top: 30%;
+    }
+
+    .l-page-nav__list {
+      display: none;
+    }
+  }
 }
+
+.l-page-nav_aside.l-page-nav_active {
+  width: 35%;
+  left: 0;
+
+  @include tablet {
+    width: 50%;
+  }
+
+  @include phone {
+    width: 80%;
+  }
+
+
+  .l-page-nav__list {
+    display: block;
+  }
+}
+
 
 .l-page-nav__list {
   position: absolute;
   top: 0;
   left: 0;
+
+  @include laptop {
+    left: 30px;
+    right: 20px;
+  }
 }
 
 .l-page-nav__link {
@@ -16,6 +74,11 @@
   text-align: right;
   font-size: 16px;
   line-height: 26px;
+  
+  @include laptop {
+    color: white;
+    opacity: 0.4;
+  }
 }
 
 .l-page-nav__link.l-page-nav__link_active {
@@ -33,4 +96,12 @@
     right: 0;
   }
 
+  @include laptop {
+    color: white;
+    opacity: 1;
+    
+    &:after {
+      background-color: #fff;
+    }
+  }
 }
