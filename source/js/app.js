@@ -91,18 +91,19 @@ var App = (function () {
                 console.log('flip');
             }
 
-
+            if (!!(document.querySelector('.l-page-nav_aside'))) {
+                console.log('asside');
+                Asside.init();
+            }
         }
     }
 })();
 
 
 $(function () {
-    console.log('123');
+    $('.l-hero').height($(window).height());
 
     App.init();
-
-    $('.l-hero').height($(window).height());
 
     window.onscroll = function () {
         var wScroll = window.pageYOffset;
@@ -121,7 +122,4 @@ $(function () {
             blur.set();
         });
     }
-
-
-
 });
