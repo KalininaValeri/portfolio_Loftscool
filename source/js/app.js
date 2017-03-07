@@ -122,4 +122,11 @@ $(function () {
             blur.set();
         });
     }
+
+    $(window).scroll(function () {
+        console.log($(window).scrollTop());
+        console.log('456');
+    });
+
+
 });

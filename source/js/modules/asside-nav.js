@@ -4,7 +4,7 @@
 
 var Asside = (
     function () {
-        var asside = $('.l-page-nav_aside');
+
 
         if (!($('.l-page-nav_aside').length)) return false;
 
@@ -51,8 +51,18 @@ var Asside = (
         return {
             init: function () {
 
-                $(window).scroll(function () {
+                $(window).scroll(function (e) {
+                    var
+                        asside = $('.l-page-nav_aside'),
+                        navTop = $(window).scrollTop() - asside.position().top + 40;
+
                     checkSection();
+
+                    if (navTop < 0) {
+                        navTop = 0;
+                    }
+
+                    $('.l-page-nav__list').css('top', navTop);
                 });
 
                 $('.l-page-nav__link').on('click', function (e) {

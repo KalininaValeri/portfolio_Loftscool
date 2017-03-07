@@ -1,3 +1,13 @@
+.l-page-nav_aside {
+  position: relative;
+}
+
+.l-page-nav__list {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .l-page-nav__link {
   color: $textGray;
   text-decoration: none;
