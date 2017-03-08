@@ -46,31 +46,24 @@ var Slider = (function () {
         $slideActivePicSpan = $sliderActivePicWrapper.find('span'),
         $slideActivePic = $('.l-slider__pic'),
         $sliderItems = $('#slide-items'),
-        $fonDark= $('.l-slider__arrow-dark'),
+        $fonDark = $('.l-slider__arrow-dark'),
         currentSlide = 0,
         size = sliderContent.length;
 
     var Listener = function () {
         arrowNext.addEventListener('click', function (e) {
             e.preventDefault();
-            clearItem();
             currentSlide = limiter(currentSlide + 1);
-            buildSlider();
+            deterActiveSlide();
+            console.log(currentSlide);
         });
 
         arrowPrev.addEventListener('click', function (e) {
             e.preventDefault();
-            clearItem();
             currentSlide = limiter(currentSlide - 1);
-            buildSlider();
+            deterActiveSlide();
+            console.log(currentSlide);
         });
-    };
-
-    var clearItem = function () {
-        nextNextSlideElement.innerHTML = '';
-        nextSlideElement.innerHTML = '';
-        prevSlideElement.innerHTML = '';
-        prevPrevSlideElement.innerHTML = '';
     };
 
     var createElement = function (classPosition, classVisible) {
@@ -83,15 +76,9 @@ var Slider = (function () {
         return element;
     };
 
-    var nextNextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next-next'),
-        nextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next'),
-        prevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev'),
-        prevPrevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev-prev');
+    var nextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next-next'),
+        prevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev');
 
-    $sliderItems[0].insertBefore(prevPrevSlideElement, $fonDark[0]);
-    $sliderItems[0].insertBefore(prevSlideElement, $fonDark[0]);
-    $sliderItems[0].insertBefore(nextSlideElement, $fonDark[0]);
-    $sliderItems[0].insertBefore(nextNextSlideElement, $fonDark[0]);
 
     var createImgElement = function (src) {
         var img = document.createElement('img');
@@ -110,37 +97,60 @@ var Slider = (function () {
 
 
     var buildSlider = function () {
-        var mainSlide = sliderContent[currentSlide],
-            prevSlide = sliderContent[limiter(currentSlide - 1)],
-            nextSlide = sliderContent[limiter(currentSlide + 1)],
-            nextNextSlide = sliderContent[limiter(limiter(currentSlide + 1) + 1)];
 
-        $sliderItems.addClass('l-slider__arrows_transform');
-        $sliderActivePicWrapper.addClass('l-slider__pic-wrapper_transform');
+        for (var i = 0; i < sliderContent.length; i++) {
+            var prevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev');
+            prevSlideElement.setAttribute('id', 'prev' + i);
+            prevSlideElement.appendChild(createImgElement(sliderContent[i].imgSrc));
+            prevSlideElement.appendChild(createDivElement(sliderContent[i].number));
+            $sliderItems[0].insertBefore(prevSlideElement, $fonDark[0]);
+        }
 
+        for (var j = 0; j < sliderContent.length; j++) {
+            var nextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next');
+            nextSlideElement.setAttribute('id', 'next' + i);
+            nextSlideElement.appendChild(createImgElement(sliderContent[j].imgSrc));
+            nextSlideElement.appendChild(createDivElement(sliderContent[j].number));
+            $sliderItems[0].insertBefore(nextSlideElement, $fonDark[0]);
+        }
+    };
 
-        setTimeout(function () {
-            $sliderActivePicWrapper.removeClass('l-slider__pic-wrapper_transform');
-            $sliderItems.removeClass('l-slider__arrows_transform');
+    var deterActiveSlide = function () {
+        var
+            mainSlide = sliderContent[limiter(currentSlide)],
+            itemsPrev = $sliderItems.children('.l-slider__arrows-prev'),
+            itemsNext = $sliderItems.children('.l-slider__arrows-next'),
+            newItemActiveNext = [],
+            newItemActivePrev = [];
 
-            nextNextSlideElement.appendChild(createImgElement(nextNextSlide.imgSrc));
-            nextNextSlideElement.appendChild(createDivElement(nextNextSlide.number));
+        $('.l-slider__arrows-next.l-slider__arrows-item_active').animate({top: '-100%'}, 1000);
+        $('#next' + [limiter(currentSlide + 1)]).animate({top: '0'}, 1000);
+        $('.l-slider__arrows-prev.l-slider__arrows-item_active').animate({top: '100%'}, 1000);
+        $('#prev' + [limiter(currentSlide - 1)]).animate({top: '0'}, 1000);
 
-            nextSlideElement.appendChild(createImgElement(nextSlide.imgSrc));
-            nextSlideElement.appendChild(createDivElement(nextSlide.number));
+        for (var i = 0; i < itemsPrev.length; i++){
+            itemsPrev[i].classList.remove('l-slider__arrows-item_active');
+            itemsNext[i].classList.remove('l-slider__arrows-item_active');
 
-            prevSlideElement.appendChild(createImgElement(prevSlide.imgSrc));
-            prevSlideElement.appendChild(createDivElement(prevSlide.number));
+            if (itemsPrev[i].hasAttribute('style')) {
+                itemsPrev[i].removeAttribute('style');
+            }
 
-            prevPrevSlideElement.appendChild(createImgElement(mainSlide.imgSrc));
-            prevPrevSlideElement.appendChild(createDivElement(mainSlide.number));
+            if (itemsNext[i].hasAttribute('style')) {
+                itemsNext[i].removeAttribute('style');
+            }
+        }
 
+        itemsPrev[limiter(currentSlide - 1)].classList.add('l-slider__arrows-item_active');
+        itemsNext[limiter(currentSlide + 1)].classList.add('l-slider__arrows-item_active');
+
+        setTimeout(function (){
             $slideActivePic[0].setAttribute('src', mainSlide.imgSrc);
             $slideActivePicSpan[0].innerText = mainSlide.number;
             $slideActiveCaptionTitle[0].innerText = mainSlide.title;
             $slideActiveCaptionTechnology[0].innerText = mainSlide.technology;
             $slideActiveCaptionLink[0].setAttribute('href', mainSlide.siteUrl);
-        }, 500);
+        }, 1000);
     };
 
     var limiter = function (val) {
@@ -159,6 +169,7 @@ var Slider = (function () {
     return {
         init: function () {
             buildSlider();
+            deterActiveSlide();
             Listener();
         }
     }
