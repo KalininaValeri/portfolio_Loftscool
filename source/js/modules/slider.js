@@ -48,19 +48,36 @@ var Slider = (function () {
         $sliderItems = $('#slide-items'),
         $fonDark = $('.l-slider__arrow-dark'),
         currentSlide = 0,
-        size = sliderContent.length;
+        size = sliderContent.length,
+        inProcessNext = false,
+        inProcessPrev = false,
+        animationEnd;
 
     var Listener = function () {
         arrowNext.addEventListener('click', function (e) {
             e.preventDefault();
             currentSlide = limiter(currentSlide + 1);
-            deterActiveSlide();
+
+            if (animationEnd >= 3) inProcessNext = false;
+
+            if (!inProcessNext) {
+                inProcessNext = true;
+                deterActiveSlide();
+                animationEnd = 0;
+            }
         });
 
         arrowPrev.addEventListener('click', function (e) {
             e.preventDefault();
             currentSlide = limiter(currentSlide - 1);
-            deterActiveSlide();
+
+            if (animationEnd >= 3) inProcessPrev = false;
+
+            if (!inProcessPrev) {
+                inProcessPrev = true;
+                deterActiveSlide();
+                animationEnd = 0;
+            }
         });
     };
 
@@ -116,8 +133,8 @@ var Slider = (function () {
 
             if (counterTitle === charsTitle.length) {
                 clearInterval(timer);
+                animationEnd++;
             }
-
         };
 
         var eachCharTech = function () {
@@ -130,8 +147,8 @@ var Slider = (function () {
 
             if (counterTech === charsTechnology.length) {
                 clearInterval(timer);
+                animationEnd++;
             }
-
         };
 
         eachCharTitle();
@@ -142,7 +159,9 @@ var Slider = (function () {
     var buildSlider = function () {
 
         for (var i = 0; i < sliderContent.length; i++) {
-            var prevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev');
+            var
+                prevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev');
+
             prevSlideElement.setAttribute('id', 'prev' + i);
             prevSlideElement.appendChild(createImgElement(sliderContent[i].imgSrc));
             prevSlideElement.appendChild(createDivElement(sliderContent[i].number));
@@ -150,8 +169,10 @@ var Slider = (function () {
         }
 
         for (var j = 0; j < sliderContent.length; j++) {
-            var nextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next');
-            nextSlideElement.setAttribute('id', 'next' + i);
+            var
+                nextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next');
+
+            nextSlideElement.setAttribute('id', 'next' + j);
             nextSlideElement.appendChild(createImgElement(sliderContent[j].imgSrc));
             nextSlideElement.appendChild(createDivElement(sliderContent[j].number));
             $sliderItems[0].insertBefore(nextSlideElement, $fonDark[0]);
@@ -162,29 +183,26 @@ var Slider = (function () {
         var
             mainSlide = sliderContent[limiter(currentSlide)],
             itemsPrev = $sliderItems.children('.l-slider__arrows-prev'),
-            itemsNext = $sliderItems.children('.l-slider__arrows-next'),
-            newItemActiveNext = [],
-            newItemActivePrev = [];
+            itemsNext = $sliderItems.children('.l-slider__arrows-next');
 
         textAnimate();
 
         $sliderActivePicWrapper[0].classList.add('l-slider__pic-wrapper_transform');
 
-        setTimeout(function (){
+        setTimeout(function () {
             $sliderActivePicWrapper[0].classList.remove('l-slider__pic-wrapper_transform');
             $slideActivePic[0].setAttribute('src', mainSlide.imgSrc);
             $slideActivePicSpan[0].innerText = mainSlide.number;
-            // $slideActiveCaptionTitle[0].innerText = mainSlide.title;
-            // $slideActiveCaptionTechnology[0].innerText = mainSlide.technology;
             $slideActiveCaptionLink[0].setAttribute('href', mainSlide.siteUrl);
-        }, 1000);
+            animationEnd++;
+        }, 500);
 
-        $('.l-slider__arrows-next.l-slider__arrows-item_active').animate({top: '-100%'}, 1000);
-        $('#next' + [limiter(currentSlide + 1)]).animate({top: '0'}, 1000);
-        $('.l-slider__arrows-prev.l-slider__arrows-item_active').animate({top: '100%'}, 1000);
-        $('#prev' + [limiter(currentSlide - 1)]).animate({top: '0'}, 1000);
+        $('.l-slider__arrows-next.l-slider__arrows-item_active').animate({top: '-100%'}, 500);
+        $('#next' + [limiter(currentSlide + 1)]).animate({top: '0'}, 500);
+        $('.l-slider__arrows-prev.l-slider__arrows-item_active').animate({top: '100%'}, 500);
+        $('#prev' + [limiter(currentSlide - 1)]).animate({top: '0'}, 500);
 
-        for (var i = 0; i < itemsPrev.length; i++){
+        for (var i = 0; i < itemsPrev.length; i++) {
             itemsPrev[i].classList.remove('l-slider__arrows-item_active');
             itemsNext[i].classList.remove('l-slider__arrows-item_active');
 
@@ -199,8 +217,6 @@ var Slider = (function () {
 
         itemsPrev[limiter(currentSlide - 1)].classList.add('l-slider__arrows-item_active');
         itemsNext[limiter(currentSlide + 1)].classList.add('l-slider__arrows-item_active');
-
-
     };
 
     var limiter = function (val) {
