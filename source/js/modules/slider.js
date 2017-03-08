@@ -55,14 +55,12 @@ var Slider = (function () {
             e.preventDefault();
             currentSlide = limiter(currentSlide + 1);
             deterActiveSlide();
-            console.log(currentSlide);
         });
 
         arrowPrev.addEventListener('click', function (e) {
             e.preventDefault();
             currentSlide = limiter(currentSlide - 1);
             deterActiveSlide();
-            console.log(currentSlide);
         });
     };
 
@@ -95,6 +93,51 @@ var Slider = (function () {
         return div;
     };
 
+    var textAnimate = function () {
+        var
+            strTitle = sliderContent[currentSlide].title,
+            strTechnology = sliderContent[currentSlide].technology,
+            charsTitle = strTitle.split(''),
+            charsTechnology = strTechnology.split(''),
+            counterTitle = 0,
+            counterTech = 0,
+            timer;
+
+        $slideActiveCaptionTitle[0].innerHTML = '';
+        $slideActiveCaptionTechnology[0].innerHTML = '';
+
+        var eachCharTitle = function () {
+            var char = doc.createTextNode(charsTitle[counterTitle]);
+
+            $slideActiveCaptionTitle[0].appendChild(char);
+
+            counterTitle++;
+            timer = setTimeout(eachCharTitle, 50);
+
+            if (counterTitle === charsTitle.length) {
+                clearInterval(timer);
+            }
+
+        };
+
+        var eachCharTech = function () {
+            var char = doc.createTextNode(charsTechnology[counterTech]);
+
+            $slideActiveCaptionTechnology[0].appendChild(char);
+
+            counterTech++;
+            timer = setTimeout(eachCharTech, 50);
+
+            if (counterTech === charsTechnology.length) {
+                clearInterval(timer);
+            }
+
+        };
+
+        eachCharTitle();
+        eachCharTech();
+    };
+
 
     var buildSlider = function () {
 
@@ -123,6 +166,19 @@ var Slider = (function () {
             newItemActiveNext = [],
             newItemActivePrev = [];
 
+        textAnimate();
+
+        $sliderActivePicWrapper[0].classList.add('l-slider__pic-wrapper_transform');
+
+        setTimeout(function (){
+            $sliderActivePicWrapper[0].classList.remove('l-slider__pic-wrapper_transform');
+            $slideActivePic[0].setAttribute('src', mainSlide.imgSrc);
+            $slideActivePicSpan[0].innerText = mainSlide.number;
+            // $slideActiveCaptionTitle[0].innerText = mainSlide.title;
+            // $slideActiveCaptionTechnology[0].innerText = mainSlide.technology;
+            $slideActiveCaptionLink[0].setAttribute('href', mainSlide.siteUrl);
+        }, 1000);
+
         $('.l-slider__arrows-next.l-slider__arrows-item_active').animate({top: '-100%'}, 1000);
         $('#next' + [limiter(currentSlide + 1)]).animate({top: '0'}, 1000);
         $('.l-slider__arrows-prev.l-slider__arrows-item_active').animate({top: '100%'}, 1000);
@@ -144,13 +200,7 @@ var Slider = (function () {
         itemsPrev[limiter(currentSlide - 1)].classList.add('l-slider__arrows-item_active');
         itemsNext[limiter(currentSlide + 1)].classList.add('l-slider__arrows-item_active');
 
-        setTimeout(function (){
-            $slideActivePic[0].setAttribute('src', mainSlide.imgSrc);
-            $slideActivePicSpan[0].innerText = mainSlide.number;
-            $slideActiveCaptionTitle[0].innerText = mainSlide.title;
-            $slideActiveCaptionTechnology[0].innerText = mainSlide.technology;
-            $slideActiveCaptionLink[0].setAttribute('href', mainSlide.siteUrl);
-        }, 1000);
+
     };
 
     var limiter = function (val) {
