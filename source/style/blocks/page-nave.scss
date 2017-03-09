@@ -13,16 +13,16 @@
 
   @include laptop {
     position: fixed;
-    width: 0;
+    width: 35%;
     background: $nightSky;
     top: 0;
     bottom: 0;
     color: white;
     padding-left: 30px;
     margin: 0;
-    left: -30px;
+    left: -340px;
     z-index: 10;
-    transition: width 1s ease-out;
+    transition: left 1s ease-out;
 
     .l-page-nav_aside__protractor {
       position: absolute;
@@ -36,15 +36,10 @@
       margin-top: -20px;
       display: block;
     }
-
-    .l-page-nav__list {
-      display: none;
-    }
   }
 }
 
 .l-page-nav_aside.l-page-nav_active {
-  width: 35%;
   left: 0;
 
   @include tablet {
@@ -53,11 +48,6 @@
 
   @include phone {
     width: 80%;
-  }
-
-
-  .l-page-nav__list {
-    display: block;
   }
 }
 
