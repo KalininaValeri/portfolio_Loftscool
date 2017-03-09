@@ -20,7 +20,7 @@
     color: white;
     padding-left: 30px;
     margin: 0;
-    left: -340px;
+    left: -37%;
     z-index: 10;
     transition: left 1s ease-out;
 
@@ -36,6 +36,14 @@
       margin-top: -20px;
       display: block;
     }
+  }
+
+  @include tablet {
+    left: -37%;
+  }
+
+  @include phone {
+    left: -40%;
   }
 }
 
