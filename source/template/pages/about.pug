@@ -45,7 +45,7 @@ block content
                                     each item in list
                                         li.l-skills-list_item
                                             .c-skill
-                                                svg.c-skill__circle
+                                                svg.c-skill__circle(style="height: 110px; width: 110px")
                                                     circle(r="45" cx="50%" cy="50%").c-skills__circle-under
                                                     circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
                                                 .c-skill__title= item[0]
@@ -61,7 +61,7 @@ block content
                                     each item in list
                                         li.l-skills-list_item
                                             .c-skill
-                                                svg.c-skill__circle
+                                                svg.c-skill__circle(style="height: 110px; width: 110px")
                                                     circle(r="45" cx="50%" cy="50%").c-skills__circle-under
                                                     circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
                                                 .c-skill__title= item[0]
@@ -76,13 +76,13 @@ block content
                                     each item in list
                                         li.l-skills-list_item
                                             .c-skill
-                                                svg.c-skill__circle
+                                                svg.c-skill__circle(style="height: 110px; width: 110px")
                                                     circle(r="45" cx="50%" cy="50%").c-skills__circle-under
                                                     circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="c-skills__circle-above_" + `${item[1]}`).c-skills__circle-above
                                                 .c-skill__title= item[0]
 
-            section.l-section.l-map.l-section_bg#map
-                .c-block-bg.c-block-bg_map(style="background-image: url('/assets/img/content/map.jpg');")
+            section.l-section.l-map.l-section_bg
+                .c-block-bg.c-block-bg_map#map()
                 .c-contacts
                     .c-block-title Контакты
                     ul.c-contacts__container
