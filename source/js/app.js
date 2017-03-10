@@ -83,21 +83,21 @@ var App = (function () {
 
             if (!!(document.querySelector('.l-slider'))) {
                 Slider.init();
-                console.log('slider')
+                console.info('slider')
             }
 
             if (!!(document.querySelector('.flip-container'))) {
                 Flip.init();
-                console.log('flip');
+                console.info('flip');
             }
 
             if (!!(document.querySelector('.l-page-nav_aside'))) {
-                console.log('asside');
+                console.info('asside');
                 Asside.init();
             }
 
             if (!!(document.querySelector('.c-form-avtor'))) {
-                console.log('form avtorisation');
+                console.info('form avtorisation');
                 ValidationAvtor.init();
             }
 
@@ -111,41 +111,92 @@ var App = (function () {
 
 
 $(function () {
-
+    var formUpload = document.querySelector('#upload');
 
     $('.l-hero').height($(window).height());
 
     App.init();
 
-    window.onscroll = function () {
-        var wScroll = window.pageYOffset;
-        parallax.init(wScroll);
+    // window.onscroll = function () {
+    //     var wScroll = window.pageYOffset;
+    //     parallax.init(wScroll);
+    // };
+    //
+    // window.addEventListener('mousemove', function (e) {
+    //     parallaxMouse(e);
+    // });
+
+    var fileUpload = function(url, data, cb){
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+
+        xhr.onload = function (e) {
+            var result = JSON.parse(xhr.responseText);
+            cb(result.status);
+        };
+
+        xhr.send(data);
     };
 
-    window.addEventListener('mousemove', function (e) {
-        parallaxMouse(e);
-    });
+    function prepareSendFile(e) {
+        e.preventDefault();
+        var resultContainer = document.querySelector('.status');
+        var formData = new FormData();
+        var file = document
+            .querySelector('#file-select')
+            .files[0];
+        var name = document
+            .querySelector('#file-desc')
+            .value;
 
-    console.log('123');
-    // ymaps.ready(init);
-    var myMap,
-        myPlacemark;
+        formData.append('photo', file, file.name);
+        formData.append('name', name);
 
-    // function init(){
-    //
-    //     myMap = new ymaps.Map("map", {
-    //         center: [55.76, 37.64],
-    //         zoom: 7
-    //     });
-    //
-    //     myPlacemark = new ymaps.Placemark([55.76, 37.64], {
-    //         hintContent: 'Москва!',
-    //         balloonContent: 'Столица России'
-    //     });
-    //
-    //     myMap.geoObjects.add(myPlacemark);
-    // }
+        resultContainer.innerHTML = 'Uploading...';
+        fileUpload('/upload', formData, function (data) {
+            resultContainer.innerHTML = data;
+        });
+    }
 
+    if (formUpload) {
+        formUpload.addEventListener('submit', prepareSendFile);
+    }
+
+    // mail
+
+    const formMail = document.querySelector('#mail');
+
+    if (formMail) {
+        formMail.addEventListener('submit', prepareSendMail);
+    }
+
+    function prepareSendMail(e) {
+        e.preventDefault();
+        var resultContainer = document.querySelector('.status');
+        var data = {
+            name: formMail.name.value,
+            email: formMail.email.value,
+            text: formMail.text.value
+        };
+        resultContainer.innerHTML = 'Sending...';
+        sendMailData('/contact', data, function (data) {
+            resultContainer.innerHTML = data;
+        });
+    }
+
+    function sendMailData(url, data, cb) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function (e) {
+            var result = JSON.parse(xhr.responseText);
+            cb(result.status);
+        };
+        xhr.send(JSON.stringify(data));
+    }
+
+
+//blur
     if (document.querySelector('.c-form-container') ===null) {
         return false
     } else {
@@ -154,7 +205,4 @@ $(function () {
             blur.set();
         });
     }
-
-
-
 });

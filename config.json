@@ -17,5 +17,11 @@
     "vk": ["vk", "https://vk.com/bashinova_v"],
     "github": ["github", "https://github.com/KalininaValeri"],
     "in": ["in", "#"]
+  },
+  "upload" : "./upload",
+  "mail": {
+    "subject": "Сообщение с сайта-портфолио",
+    "user": "vlalkalinina@gmail.com",
+    "pass": "weppNME12"
   }
 }

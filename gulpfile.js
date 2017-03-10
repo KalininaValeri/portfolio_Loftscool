@@ -13,6 +13,7 @@ global.$ = {
     gulp: require('gulp'),
     del: require('del'),
     browserSync: require('browser-sync').create(),
+    nodemon: require('nodemon'),
     gp: require('gulp-load-plugins')(),
 
 };
@@ -29,7 +30,7 @@ $.gulp.task('default', $.gulp.series(
     'clean',
     $.gulp.parallel(
         'sass',
-        'pug',
+        // 'pug',
         'js:foundation',
         'js:process',
         'copy:image',
@@ -37,6 +38,9 @@ $.gulp.task('default', $.gulp.series(
         'css:foundation',
         'sprite:svg',
         'sprite'
+    ),
+    $.gulp.parallel(
+        'nodemon'
     ),
     $.gulp.parallel(
         'watch',
