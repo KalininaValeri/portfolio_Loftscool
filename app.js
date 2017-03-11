@@ -10,6 +10,15 @@ const currentStatic = require('./gulp/config').root;
 const config = require('./config.json');
 const uploadDir = config.upload;
 
+const mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+
+mongoose.connect('mongodb://loft-admin:loft-admin@ds127190.mlab.com:27190/portfolio');
+
+//models
+require('./models/blog');
+require('./models/pic');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -22,6 +31,7 @@ app.use(express.static(path.join(__dirname, currentStatic)));
 app.use('/', require('./routes/index'));
 app.use('/upload', require('./routes/upload'));
 app.use('/contact', require('./routes/mail'));
+app.use('/addpost', require('./routes/addpost'));
 
 // 404 catch-all handler (middleware)
 app.use(function (req, res, next) {

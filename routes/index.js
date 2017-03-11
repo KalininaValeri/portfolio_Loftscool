@@ -1,17 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const article = require('../source/data/article.json');
+const mongoose = require('mongoose');
 
-/* GET home page. */
-router.get('/', function (req, res) {
+router.get('/', function(req, res) {
     let obj = {title: 'Главная страница'};
+    const Model = mongoose.model('pic');
+
+    Model.find().then(function(items) {
+        Object.assign(obj, {items: items});
     res.render('pages/index', obj);
 });
 
-router.get('/blog', function (req, res) {
+});
+
+router.get('/blog', function(req, res) {
     let obj = {title: 'Blog'};
-    Object.assign(obj, article);
+    const Model = mongoose.model('blog');
+
+    Model.find().then(function(items) {
+        Object.assign(obj, {items: items});
     res.render('pages/blog', obj);
+});
+
 });
 
 module.exports = router;
