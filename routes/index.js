@@ -22,6 +22,21 @@ router.get('/blog', function(req, res) {
     res.render('pages/blog', obj);
 });
 
+
+
+});
+
+router.get('/admin', function(req, res) {
+    let obj = {title: 'Admin'};
+    // const Model = mongoose.model('admin');
+
+    res.render('pages/admin', obj);
+
+    // Model.find().then(function(items) {
+    //     Object.assign(obj, {items: items});
+    //     res.render('pages/admin', obj);
+    // });
+
 });
 
 module.exports = router;
