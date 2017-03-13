@@ -3,39 +3,50 @@ const router = express.Router();
 const mongoose = require('mongoose');
 
 router.get('/', function(req, res) {
-    let obj = {title: 'Главная страница'};
-    const Model = mongoose.model('pic');
-
-    Model.find().then(function(items) {
-        Object.assign(obj, {items: items});
+    let obj = {title: 'Портфолио'};
     res.render('pages/index', obj);
+    // const Model = mongoose.model('pic');
+    //
+    // Model.find().then(function(items) {
+    //     Object.assign(obj, {items: items});
+    // res.render('pages/index', obj);
+// });
+
 });
 
+router.get('/work', function(req, res) {
+    let obj = {title: 'Мои работы'};
+    res.render('pages/work', obj);
+});
+
+router.get('/about', function(req, res) {
+    let obj = {title: 'Мои работы'};
+    res.render('pages/about', obj);
 });
 
 router.get('/blog', function(req, res) {
-    let obj = {title: 'Blog'};
-    const Model = mongoose.model('blog');
-
-    Model.find().then(function(items) {
-        Object.assign(obj, {items: items});
+    let obj = {title: 'Блог'};
     res.render('pages/blog', obj);
 });
 
+// router.get('/blog', function(req, res) {
+//     let obj = {title: 'Blog'};
+//     const Model = mongoose.model('blog');
+//
+//     Model.find().then(function(items) {
+//         Object.assign(obj, {items: items});
+//     res.render('pages/blog', obj);
+// });
 
 
-});
+
+// });
 
 router.get('/admin', function(req, res) {
     let obj = {title: 'Admin'};
-    // const Model = mongoose.model('admin');
 
     res.render('pages/admin', obj);
 
-    // Model.find().then(function(items) {
-    //     Object.assign(obj, {items: items});
-    //     res.render('pages/admin', obj);
-    // });
 
 });
 

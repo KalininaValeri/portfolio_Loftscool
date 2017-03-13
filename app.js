@@ -47,11 +47,13 @@ app.use(session({
     store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
+//routing
+
 app.use('/', require('./routes/index'));
-app.use('/upload', require('./routes/upload'));
-app.use('/contact', require('./routes/mail'));
-app.use('/addpost', require('./routes/addpost'));
-app.use('/login', require('./routes/login'));
+// app.use('/upload', require('./routes/upload'));
+// app.use('/contact', require('./routes/mail'));
+// app.use('/addpost', require('./routes/addpost'));
+// app.use('/login', require('./routes/login'));
 
 // 404 catch-all handler (middleware)
 app.use(function (req, res, next) {
