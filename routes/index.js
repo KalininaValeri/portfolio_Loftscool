@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const article = require('../source/data/article.json');
 
 router.get('/', function(req, res) {
     let obj = {title: 'Портфолио'};
@@ -26,6 +27,7 @@ router.get('/about', function(req, res) {
 
 router.get('/blog', function(req, res) {
     let obj = {title: 'Блог'};
+    Object.assign(obj, article);
     res.render('pages/blog', obj);
 });
 

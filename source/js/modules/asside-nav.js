@@ -61,17 +61,20 @@ var Asside = (
                 }
 
                 if ($(window).width() > 1200) {
+                    console.log($(window).width());
 
                     $(window).scroll(function (e) {
                         var
                             blockMain = $('.l-block-main'),
-                            navTop = $(window).scrollTop() - blockMain.position().top + 40;
+                            navTop = $(window).scrollTop() - blockMain.position().top + 40,
+                            navTopBottom = $('.l-page-nav_aside').height() - $('.l-page-nav__list').height();
+
 
                         checkSection();
 
-                        if (navTop < 0) {
-                            navTop = 0;
-                        }
+                        if (navTop < 0) navTop = 0;
+
+                        if (navTop >= navTopBottom ) navTop = navTopBottom;
 
                         $('.l-page-nav__list').css('top', navTop);
                     });

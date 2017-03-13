@@ -59,14 +59,14 @@ block content
                         .l-review__name Александр Собакарь
                         .l-review__position —  наставник
                 .c-form-container.c-form_contact-me
-                    form.c-form
+                    form.c-form#mail(action='contact' method="POST")
                         .c-block-title.c-block-title_white Связаться со мной
-                        input.c-form__input(placeholder="Ваше имя")
-                        input.c-form__input(placeholder="Ваш email")
-                        textarea.c-form__input.c-form__input_textarea(placeholder="Ваше сообщение")
+                        input.c-form__input(placeholder="Ваше имя" type="text" name="name")
+                        input.c-form__input(placeholder="Ваш email" type="email" name="email")
+                        textarea.c-form__input.c-form__input_textarea(placeholder="Ваше сообщение" name="text")
                         .c-form__button-container
-                            input(type='submit' value="Отправить").c-form__submit.c-form__buttom-item
-                            input(type="button" value="Очистить").c-form__buttom.c-form__buttom-item
+                            button(type='submit' value="Отправить" name="").c-form__submit.c-form__buttom-item
+                            button(type="button" value="Очистить" name="").c-form__buttom.c-form__buttom-item
                     .c-form-wrapper
 
             +navigationSite('work')
