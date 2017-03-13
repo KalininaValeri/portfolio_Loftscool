@@ -51,7 +51,7 @@ app.use(session({
 
 app.use('/', require('./routes/index'));
 app.use('/upload', require('./routes/upload'));
-// app.use('/contact', require('./routes/mail'));
+app.use('/work', require('./routes/work'));
 app.use('/addpost', require('./routes/addpost'));
 // app.use('/login', require('./routes/login'));
 

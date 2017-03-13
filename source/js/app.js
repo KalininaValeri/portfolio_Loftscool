@@ -164,6 +164,7 @@ $(function () {
 
     // mail
 
+    //------------ block mail
     const formMail = document.querySelector('#mail');
 
     if (formMail) {
@@ -178,10 +179,22 @@ $(function () {
             email: formMail.email.value,
             text: formMail.text.value
         };
+        console.log(data);
         resultContainer.innerHTML = 'Sending...';
-        sendAjaxJson('/contact', data, function (data) {
+        sendMailData('/work', data, function (data) {
             resultContainer.innerHTML = data;
         });
+    }
+
+    function sendMailData(url, data, cb) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function (e) {
+            var result = JSON.parse(xhr.responseText);
+            cb(result.status);
+        };
+        xhr.send(JSON.stringify(data));
     }
 
     function sendAjaxJson(url, data, cb) {

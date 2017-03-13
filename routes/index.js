@@ -15,10 +15,10 @@ router.get('/', function(req, res) {
 
 });
 
-router.get('/work', function(req, res) {
-    let obj = {title: 'Мои работы'};
-    res.render('pages/work', obj);
-});
+// router.get('/work', function(req, res) {
+//     let obj = {title: 'Мои работы'};
+//     res.render('pages/work', obj);
+// });
 
 router.get('/about', function(req, res) {
     let obj = {title: 'Мои работы'};
