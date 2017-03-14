@@ -1,10 +1,12 @@
 .c-block-title {
   @extend  %fontTitle;
+  height: 350px;
   color: $textBlack;
   font-size: 35px;
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 30px;
+  vertical-align: bottom;
 
   @include desctop {
     margin-bottom: 15px;
@@ -16,6 +18,15 @@
 
   @include tablet {
     font-size: 21px;
+  }
+
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0px;
+    background: #000;
+    vertical-align: bottom;
   }
 
   &:after {
@@ -39,6 +50,11 @@
   }
 }
 
+.c-block-title__text {
+  display: inline-block;
+  width: 90%;
+}
+
 .c-block-text {
   color: $textBlack;
   font-size: 16px;
@@ -52,6 +68,7 @@
 .c-block-text_blue {
   color: rgba($blue, 0.85);
   margin-bottom: 88px;
+  text-transform: uppercase;
 }
 
 .c-block-link_to-avtor {

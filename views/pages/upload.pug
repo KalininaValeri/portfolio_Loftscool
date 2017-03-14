@@ -9,7 +9,11 @@ block content
             .form__subtitle Загрузите картинку на сервер
             .status
             label.form__input-line
-                input(name="name" type="text" placeholder="Описание картинки").form__input#file-desc
+                input(name="title" type="text" placeholder="Название проекта").form__input#file-title
+            label.form__input-line
+                input(name="technology" type="text" placeholder="Технологии").form__input#file-tech
+            label.form__input-line
+                input(name="siteUrl" type="text" placeholder="Адрес проекта").form__input#file-site
             label.form__input-line
                 input(name="photo" type="file" required accept="image/*").form__input#file-select
             .form__btns.form__input-line

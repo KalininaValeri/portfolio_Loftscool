@@ -29,7 +29,6 @@ router.get('/blog', function(req, res) {
     const Model = mongoose.model('blog');
     Model.find().then(function (items) {
         Object.assign(obj, {items: items});
-        console.log(obj);
         res.render('pages/blog', obj);
     });
 });

@@ -4,6 +4,7 @@ block variables
     - var title = 'Work'
 
 block content
+    #db(data-db = items)
     .wrapper
         .content
             section.l-section.l-hero.l-hero_work
@@ -22,6 +23,7 @@ block content
                     .l-slider__item.l-slider__item_left#slide-active-caption
                         .l-slider__wrapper
                             .c-block-title
+                                span.c-block-title__text
                             .c-block-text_blue
                             a(href="#" target="_blank").c-block-link_blue
                                 span.c-block-link__icon

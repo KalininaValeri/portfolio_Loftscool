@@ -139,18 +139,34 @@ $(function () {
     };
 
     function prepareSendFile(e) {
+        console.log('kdjfkjfasfjhasgf')
+
         e.preventDefault();
         var resultContainer = document.querySelector('.status');
         var formData = new FormData();
         var file = document
             .querySelector('#file-select')
             .files[0];
-        var name = document
-            .querySelector('#file-desc')
+        var title = document
+            .querySelector('#file-title')
+            .value;
+        var tech = document
+            .querySelector('#file-tech')
+            .value;
+        var siteUrl = document
+            .querySelector('#file-site')
             .value;
 
         formData.append('photo', file, file.name);
-        formData.append('name', name);
+        formData.append('title', title);
+        formData.append('technology', tech);
+        formData.append('siteUrl', siteUrl);
+
+        console.log('file', file);
+        console.log('file.name', file.name);
+        console.log('title', title);
+        console.log('tech', tech);
+        console.log('siteUrl', siteUrl);
 
         resultContainer.innerHTML = 'Uploading...';
         fileUpload('/upload', formData, function (data) {
@@ -244,17 +260,6 @@ $(function () {
             }
         });
     }
-
-    function get() {
-        $.ajax({
-            url: "obj.json",
-            success: function(data){
-                console.log( "Прибыли данные: " + data );
-            }
-        });
-    }
-
-    get();
 
 //blur
     if (document.querySelector('.c-form-container') ===null) {

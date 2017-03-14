@@ -29,6 +29,27 @@ var sliderContent = [
     }
 ];
 
+
+var sliderParseContent = function () {
+    var strDb = document.querySelector('#db').getAttribute('data-db');
+    var arrStr = [];
+    strDb = strDb.replace("[{","");
+    strDb = strDb.replace("}]","");
+    arrStr = strDb.split('},{');
+
+    for (var i = 0; i < arrStr.length; i++){
+        arrStr[i] = '{' +arrStr[i]+ '}';
+        arrStr[i] = JSON.parse(arrStr[i]);
+    }
+
+    return arrStr;
+};
+
+sliderContent = sliderParseContent();
+
+console.log(sliderContent);
+
+
 var Slider = (function () {
 
     if (document.querySelector('.l-slider') === null) {
@@ -39,7 +60,7 @@ var Slider = (function () {
     var arrowNext = doc.querySelector('#arrow-up'),
         arrowPrev = doc.querySelector('#arrow-down'),
         $slideActiveCaption = $('#slide-active-caption'),
-        $slideActiveCaptionTitle = $slideActiveCaption.find('.c-block-title'),
+        $slideActiveCaptionTitle = $slideActiveCaption.find('.c-block-title__text'),
         $slideActiveCaptionTechnology = $slideActiveCaption.find('.c-block-text_blue'),
         $slideActiveCaptionLink = $slideActiveCaption.find('.c-block-link_blue'),
         $sliderActivePicWrapper = $('#slide-active-pic'),
@@ -98,7 +119,7 @@ var Slider = (function () {
     var createImgElement = function (src) {
         var img = document.createElement('img');
         img.classList.add('l-slider__arrow-pic');
-        img.setAttribute('src', src);
+        img.setAttribute('src', '/assets' + src);
 
         return img;
     };
@@ -163,7 +184,7 @@ var Slider = (function () {
                 prevSlideElement = createElement('l-slider__arrows-down', 'l-slider__arrows-prev');
 
             prevSlideElement.setAttribute('id', 'prev' + i);
-            prevSlideElement.appendChild(createImgElement(sliderContent[i].imgSrc));
+            prevSlideElement.appendChild(createImgElement(sliderContent[i].picture));
             prevSlideElement.appendChild(createDivElement( i+1 ));
             $sliderItems[0].insertBefore(prevSlideElement, $fonDark[0]);
         }
@@ -173,7 +194,7 @@ var Slider = (function () {
                 nextSlideElement = createElement('l-slider__arrows-up', 'l-slider__arrows-next');
 
             nextSlideElement.setAttribute('id', 'next' + j);
-            nextSlideElement.appendChild(createImgElement(sliderContent[j].imgSrc));
+            nextSlideElement.appendChild(createImgElement(sliderContent[j].picture));
             nextSlideElement.appendChild(createDivElement(j + 1));
             $sliderItems[0].insertBefore(nextSlideElement, $fonDark[0]);
         }
@@ -191,7 +212,7 @@ var Slider = (function () {
 
         setTimeout(function () {
             $sliderActivePicWrapper[0].classList.remove('l-slider__pic-wrapper_transform');
-            $slideActivePic[0].setAttribute('src', mainSlide.imgSrc);
+            $slideActivePic[0].setAttribute('src', '/assets' + mainSlide.picture);
             $slideActivePicSpan[0].innerText = currentSlide + 1;
             $slideActiveCaptionLink[0].setAttribute('href', mainSlide.siteUrl);
             animationEnd++;

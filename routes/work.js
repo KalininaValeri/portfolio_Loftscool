@@ -3,12 +3,19 @@ const router = express.Router();
 const nodemailer = require('nodemailer');
 const config = require('../config.json');
 const smtpTransport = require('nodemailer-smtp-transport');
+const mongoose = require('mongoose');
 
 router.get('/', function (req, res) {
     let obj = {
         title: 'Мои работы'
     };
-    res.render('pages/work', obj);
+
+    const Model = mongoose.model('pic');
+    Model.find().then(function (items) {
+        Object.assign(obj, {items: items});
+        console.log(obj);
+        res.render('pages/work', obj);
+    });
 });
 
 router.post('/', function (req, res) {
