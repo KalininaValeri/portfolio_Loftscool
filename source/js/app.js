@@ -181,20 +181,9 @@ $(function () {
         };
         console.log(data);
         resultContainer.innerHTML = 'Sending...';
-        sendMailData('/work', data, function (data) {
+        sendAjaxJson('/work', data, function (data) {
             resultContainer.innerHTML = data;
         });
-    }
-
-    function sendMailData(url, data, cb) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function (e) {
-            var result = JSON.parse(xhr.responseText);
-            cb(result.status);
-        };
-        xhr.send(JSON.stringify(data));
     }
 
     function sendAjaxJson(url, data, cb) {
@@ -206,6 +195,7 @@ $(function () {
             cb(result.status);
         };
         xhr.send(JSON.stringify(data));
+        console.log(data);
     }
 
     //block blog
@@ -254,6 +244,17 @@ $(function () {
             }
         });
     }
+
+    function get() {
+        $.ajax({
+            url: "obj.json",
+            success: function(data){
+                console.log( "Прибыли данные: " + data );
+            }
+        });
+    }
+
+    get();
 
 //blur
     if (document.querySelector('.c-form-container') ===null) {

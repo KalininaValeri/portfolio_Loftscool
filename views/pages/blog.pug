@@ -21,12 +21,12 @@ block content
                                 ["Приёмы в вёрсткебез которых не обходится ни один сайт", "art2"],
                                 ["Самый необходимый набор Gulp плагинов", "art3"],
                                 ["Почему я выбрал Jade", "art4"]]
-                            each index, ndx in db
+                            each index, ndx in items
                                 li.l-page-nav__item
                                     a(href="#art" + `${ndx}`).l-page-nav__link.l-page-nav__link= index.title
 
                     main.l-block-main_content
-                        each index, ndx in db
+                        each index, ndx in items
                             article.l-block-article.data-section(data-section='art' + `${ndx}`)
                                 div.l-block-article__title= index.title
                                 div.l-block-article__data= index.data
