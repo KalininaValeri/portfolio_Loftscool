@@ -21,7 +21,13 @@ router.get('/', function(req, res) {
 
 router.get('/about', function(req, res) {
     let obj = {title: 'Мои работы'};
-    res.render('pages/about', obj);
+    const Model = mongoose.model('skills');
+    Model.find().then(function (items) {
+
+        Object.assign(obj, {items: items[items.length - 1]});
+        res.render('pages/about', obj);
+        console.log(obj);
+    });
 });
 
 router.get('/blog', function(req, res) {
@@ -45,13 +51,5 @@ router.get('/blog', function(req, res) {
 
 
 // });
-
-router.get('/admin', function(req, res) {
-    let obj = {title: 'Admin'};
-
-    res.render('pages/admin', obj);
-
-
-});
 
 module.exports = router;

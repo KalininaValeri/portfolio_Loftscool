@@ -15,7 +15,6 @@
     width: 95%;
     margin: auto;
   }
-
 }
 
 .l-skills__text {
@@ -88,36 +87,12 @@
   stroke-dasharray: mySection($radiusCircle, 0.93) myCircumference($radiusCircle);
 }
 
-.c-skills__circle-above_35 {
-      stroke-dasharray: mySection($radiusCircle, .35) myCircumference($radiusCircle);
-      stroke: rgba($lightBlue, .35);
-    }
-.c-skills__circle-above_4 {
-  stroke-dasharray: mySection($radiusCircle, .4) myCircumference($radiusCircle);
-  stroke: rgba($lightBlue, .4);
+@for $i from 0 to 100 {
+  .c-skills__circle-above_#{$i + 1} {
+    stroke-dasharray: mySection($radiusCircle, ($i+1)/100) myCircumference($radiusCircle);
+    stroke: rgba($lightBlue, ($i+1)/100);
+  }
 }
-.c-skills__circle-above_55 {
-  stroke-dasharray: mySection($radiusCircle, .55) myCircumference($radiusCircle);
-  stroke: rgba($lightBlue, .55);
-}
-.c-skills__circle-above_6 {
-  stroke-dasharray: mySection($radiusCircle, .6) myCircumference($radiusCircle);
-  stroke: rgba($lightBlue, .6);
-}
-.c-skills__circle-above_75 {
-  stroke-dasharray: mySection($radiusCircle, .75) myCircumference($radiusCircle);
-  stroke: rgba($lightBlue, .75);
-}
-.c-skills__circle-above_9 {
-  stroke-dasharray: mySection($radiusCircle, .9) myCircumference($radiusCircle);
-  stroke: rgba($lightBlue, .9);
-}
-.c-skills__circle-above_93 {
-  stroke-dasharray: mySection($radiusCircle, .93) myCircumference($radiusCircle);
-  stroke: rgba($lightBlue, .93);
-}
-
-
 
 .c-skill__title {
   @include centered();

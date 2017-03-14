@@ -139,8 +139,6 @@ $(function () {
     };
 
     function prepareSendFile(e) {
-        console.log('kdjfkjfasfjhasgf')
-
         e.preventDefault();
         var resultContainer = document.querySelector('.status');
         var formData = new FormData();
@@ -177,8 +175,6 @@ $(function () {
     if (formUpload) {
         formUpload.addEventListener('submit', prepareSendFile);
     }
-
-    // mail
 
     //------------ block mail
     const formMail = document.querySelector('#mail');
@@ -232,6 +228,38 @@ $(function () {
         };
         resultContainer.innerHTML = 'Sending...';
         sendAjaxJson('/addpost', data, function (data) {
+            resultContainer.innerHTML = data;
+        });
+    }
+
+    //block skills
+
+    const formSkills = document.querySelector('#skills');
+
+    if (formSkills) {
+        formSkills.addEventListener('submit', prepareSendSkills);
+    }
+
+    function prepareSendSkills(e) {
+        e.preventDefault();
+        var resultContainer = document.querySelector('.status');
+        var data = {
+            html: formSkills.html.value,
+            css: formSkills.css.value,
+            js: formSkills.js.value,
+            php: formSkills.php.value,
+            sql: formSkills.sql.value,
+            node: formSkills.node.value,
+            mongo: formSkills.mongo.value,
+            git: formSkills.git.value,
+            gulp: formSkills.gulp.value,
+            bower: formSkills.bower.value
+        };
+
+        console.log(data);
+
+        resultContainer.innerHTML = 'Sending...';
+        sendAjaxJson('/admin', data, function (data) {
             resultContainer.innerHTML = data;
         });
     }

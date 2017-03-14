@@ -1,6 +1,5 @@
 .c-block-title {
   @extend  %fontTitle;
-  height: 350px;
   color: $textBlack;
   font-size: 35px;
   text-align: center;
@@ -45,8 +44,14 @@
     @include laptop {
       margin-top: 10px;
     }
+  }
+}
 
+.c-block-title_slider {
+  height: 350px;
 
+  @include laptop{
+    height: 200px;
   }
 }
 

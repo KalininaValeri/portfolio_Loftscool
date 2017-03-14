@@ -23,6 +23,7 @@ mongoose.connect('mongodb://loft-admin:loft-admin@ds127190.mlab.com:27190/portfo
 require('./models/blog');
 require('./models/pic');
 require('./models/user');
+require('./models/skills');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -53,6 +54,7 @@ app.use('/', require('./routes/index'));
 app.use('/upload', require('./routes/upload'));
 app.use('/work', require('./routes/work'));
 app.use('/addpost', require('./routes/addpost'));
+app.use('/admin', require('./routes/admin'));
 // app.use('/login', require('./routes/login'));
 
 // 404 catch-all handler (middleware)

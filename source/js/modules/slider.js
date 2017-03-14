@@ -45,16 +45,13 @@ var sliderParseContent = function () {
     return arrStr;
 };
 
-sliderContent = sliderParseContent();
-
-console.log(sliderContent);
-
-
 var Slider = (function () {
 
     if (document.querySelector('.l-slider') === null) {
         return false;
     }
+
+    sliderContent = sliderParseContent();
 
     var doc = document;
     var arrowNext = doc.querySelector('#arrow-up'),
