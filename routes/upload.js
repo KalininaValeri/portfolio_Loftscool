@@ -21,25 +21,41 @@ router.get('/', function (req, res) {
     let obj = {
         title: 'Загрузка картинки'
     };
+
+
+
+    console.log('path!!!!!', dir);
+
     res.render('pages/upload', obj);
 });
 
 router.post('/', function (req, res) {
     let form = new formidable.IncomingForm();
+
     form.uploadDir = config.upload;
     form.parse(req, function (err, fields, files) {
         if (err) {
             return res.json({status: 'Не удалось загрузить картинку'});
         }
+        if (!fields.name) {
+            return res.json({status: 'Не указано описание картинки!'});
+        }
+
+        const Model = mongoose.model('pic');
         fs.rename(files.photo.path, path.join(config.upload, files.photo.name), function (err){
             if (err){
                 fs.unlink(path.join(config.upload, files.photo.name));
                 fs.rename(files.photo.path, files.photo.name);
             }
-            res.json({status: 'Картинка успешно загружена'});
+
+            let dir = config.upload.substr(config.upload.indexOf('/'));
+            const item = new Model({name: fields.name, picture: path.join(dir, files.photo.name)});
+
+            item.save().then(pic => {
+                  res.json({status: 'Картинка успешно загружена'});
+                });
         })
     })
-
 });
 
 // router.post('/', function (req, res) {
