@@ -6,6 +6,18 @@
     }, 1000);
 })();
 
+function sendAjaxJson(url, data, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onload = function (e) {
+        var result = JSON.parse(xhr.responseText);
+        cb(result.status);
+    };
+    xhr.send(JSON.stringify(data));
+    console.log(data);
+}
+
 var blur = (function () {
     var container = $('.c-form-container'),
         form = $('.c-form-wrapper');
@@ -96,10 +108,10 @@ var App = (function () {
                 Asside.init();
             }
 
-            // if (!!(document.querySelector('.c-form-avtor'))) {
-            //     console.info('form avtorisation');
-            //     ValidationAvtor.init();
-            // }
+            if (!!(document.querySelector('.c-form-avtor'))) {
+                console.info('form avtorisation');
+                validationAvtor.init();
+            }
 
             if (!!(document.querySelector('.c-form_contact-me'))) {
                 console.log('form contacts-me');
@@ -198,17 +210,7 @@ $(function () {
         });
     }
 
-    function sendAjaxJson(url, data, cb) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function (e) {
-            var result = JSON.parse(xhr.responseText);
-            cb(result.status);
-        };
-        xhr.send(JSON.stringify(data));
-        console.log(data);
-    }
+
 
     //block blog
 
@@ -266,28 +268,28 @@ $(function () {
 
     //---- block Login
 
-    const formLogin = document.querySelector('#login');
-
-    if (formLogin) {
-        formLogin.addEventListener('submit', prepareAuth);
-    }
-
-    function prepareAuth(e) {
-        e.preventDefault();
-        var resultContainer = document.querySelector('.status');
-        var data = {
-            login: formLogin.login.value,
-            password: formLogin.password.value
-        };
-        resultContainer.innerHTML = 'Sending...';
-        sendAjaxJson('/', data, function (data) {
-            resultContainer.innerHTML = data;
-
-            if (data == 'Авторизация успешна!') {
-                window.location.href = '/admin';
-            }
-        });
-    }
+    // const formLogin = document.querySelector('#login');
+    //
+    // if (formLogin) {
+    //     formLogin.addEventListener('submit', prepareAuth);
+    // }
+    //
+    // function prepareAuth(e) {
+    //     e.preventDefault();
+    //     var resultContainer = document.querySelector('.status');
+    //     var data = {
+    //         login: formLogin.login.value,
+    //         password: formLogin.password.value
+    //     };
+    //     resultContainer.innerHTML = 'Sending...';
+    //     sendAjaxJson('/', data, function (data) {
+    //         resultContainer.innerHTML = data;
+    //
+    //         if (data == 'Авторизация успешна!') {
+    //             window.location.href = '/admin';
+    //         }
+    //     });
+    // }
 
 //blur
     if (document.querySelector('.c-form-container') ===null) {

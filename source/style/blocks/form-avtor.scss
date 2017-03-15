@@ -15,6 +15,7 @@
   height: 45px;
   margin-bottom: 20px;
   display: flex;
+  box-sizing: border-box;
 
   &:before {
     content: '';
@@ -34,6 +35,11 @@
   box-sizing: border-box;
   padding-left: 20px;
   border: none;
+  outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .c-form-avtor__input-wrapper_login {
@@ -148,6 +154,12 @@
 
 .c-form-avtor__content {
   flex: 1;
+}
+
+.c-form-avtor__status {
+  color: red;
+  height: 20px;
+  margin-bottom: 10px;
 }
 
 

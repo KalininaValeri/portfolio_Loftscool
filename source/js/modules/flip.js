@@ -7,13 +7,12 @@ var Flip = (function () {
     
     return {
         init: function () {
-            document.querySelector('.c-block-link_to-avtor').addEventListener('click' ,function () {
-                flipContainer.classList.add('flip-container_back');
-            });
+            var linkAvtor = document.querySelector('.c-block-link_to-avtor');
 
-            document.querySelector('#go-home').addEventListener('click', function (e) {
+            document.querySelector('.c-block-link_to-avtor').addEventListener('click' ,function (e) {
                 e.preventDefault();
-                flipContainer.classList.remove('flip-container_back');
+                flipContainer.classList.toggle('flip-container_back');
+                linkAvtor.classList.toggle('c-block-link_back');
             });
         }
     }

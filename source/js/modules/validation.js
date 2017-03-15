@@ -1,66 +1,94 @@
-// var ValidationAvtor = (function () {
-//     if (!($('.c-form-avtor'))) return false;
-//
-//     var valid = function () {
-//
-//         var
-//             $form = $('.c-form-avtor'),
-//             $input = $form.find('.c-form-avtor__input'),
-//             $checkBox = $form.find('input[type="checkbox"]'),
-//             $radio = $form.find('input[type="radio"]'),
-//             numberEmptyInput = 0,
-//             numberChecekd = 0;
-//
-//         $form.find('.error').remove();
-//
-//         $input.each(function () {
-//             var $this = $(this);
-//
-//             if ($this.val() === '') {
-//
-//                 $this.parents('.c-form-avtor__input-wrapper ')
-//                     .css({'border': '2px solid red'});
-//             } else {
-//                 numberEmptyInput++;
-//             }
-//         });
-//
-//         $checkBox.each(function () {
-//             var $this = $(this);
-//
-//             if (!!$this.prop('checked')) {
-//                 numberChecekd++;
-//             }
-//         });
-//
-//         $radio.each(function () {
-//             var $this = $(this);
-//
-//             if (!!$this.prop('checked')) {
-//                 numberChecekd++;
-//             }
-//         });
-//
-//         if (numberEmptyInput <= 1) {
-//             $('.c-form-avtor__content').append('<span class="error" style="color: red">Заполните все поля формы</span>');
-//             return false;
-//         }
-//
-//         if (numberChecekd <= 2 || $('#hz').prop('checked')) {
-//             $('.c-form-avtor__content').append('<span class="error" style="color: red">Роботам тут не место</span>');
-//             return false;
-//         }
-//     };
-//
-//     return {
-//         init: function () {
-//             $('.c-form-avtor').submit(function (e) {
-//                 e.preventDefault();
-//                 valid();
-//             });
-//         }
-//     }
-// })();
+var validationAvtor = (function () {
+    if (!($('.c-form-avtor'))) return false;
+
+    const formLogin = document.querySelector('#login');
+    var numberChecekd = 0;
+    var resultContainer = document.querySelector('.c-form-avtor__status');
+
+    var valid = function () {
+
+        var
+            $form = $('.c-form-avtor'),
+            $input = $form.find('.c-form-avtor__input'),
+            $checkBox = $form.find('input[type="checkbox"]'),
+            $radio = $form.find('input[type="radio"]'),
+            numberEmptyInput = 0;
+
+        $form.find('.error').remove();
+
+        $input.each(function () {
+            var $this = $(this);
+
+            $this.parents('.c-form-avtor__input-wrapper ')
+                .removeAttr('style');
+
+            if ($this.val() === '') {
+
+                $this.parents('.c-form-avtor__input-wrapper ')
+                    .css({'border': '2px solid red'});
+            } else {
+                numberEmptyInput++;
+            }
+        });
+
+        $checkBox.each(function () {
+            var $this = $(this);
+
+            if (!!$this.prop('checked')) {
+                numberChecekd++;
+            }
+        });
+
+        $radio.each(function () {
+            var $this = $(this);
+
+            if (!!$this.prop('checked')) {
+                numberChecekd++;
+            }
+        });
+
+        if (numberEmptyInput <= 1) {
+            resultContainer.innerHTML = 'Заполните все поля формы';
+            return false
+        }
+
+        if (numberChecekd <= 2 || $('#hz').prop('checked')) {
+            resultContainer.innerHTML = 'Роботам тут не место';
+        }
+    };
+
+    var prepareAuth = function(e) {
+        e.preventDefault();
+
+        valid();
+
+        if (numberChecekd <= 2 || $('#hz').prop('checked')) {
+            return false;
+        }
+
+        var data = {
+            login: formLogin.login.value,
+            password: formLogin.password.value
+        };
+        resultContainer.style.color = 'white';
+        resultContainer.innerHTML = 'Sending...';
+        sendAjaxJson('/', data, function (data) {
+            resultContainer.innerHTML = data;
+
+            if (data == 'Авторизация успешна!') {
+                window.location.href = '/admin';
+            }
+        });
+    }
+
+    return {
+        init: function () {
+
+
+            formLogin.addEventListener('submit', prepareAuth);
+        }
+    }
+})();
 
 var ValidationContactMe = (function () {
         if (!$('.c-form_contact-me').length) return false;
