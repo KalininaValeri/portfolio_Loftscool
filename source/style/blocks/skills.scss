@@ -74,7 +74,7 @@
   display: block;
   fill: transparent;
   stroke-width: 20;
-  stroke: red;
+  //stroke: red;
   margin:auto;
 }
 
@@ -82,16 +82,17 @@
   stroke: #dfdcd5;
 }
 
-.c-skills__circle-above {
-  stroke: #004cd1;
-  stroke-dasharray: mySection($radiusCircle, 0.93) myCircumference($radiusCircle);
-}
-
 @for $i from 0 to 100 {
   .c-skills__circle-above_#{$i + 1} {
     stroke-dasharray: mySection($radiusCircle, ($i+1)/100) myCircumference($radiusCircle);
     stroke: rgba($lightBlue, ($i+1)/100);
+    transition: all 2s;
   }
+}
+
+.c-skills__circle-above_no {
+  stroke: rgba(#004cd1, 0.001);
+  stroke-dasharray: mySection($radiusCircle, 0.001) myCircumference($radiusCircle);
 }
 
 .c-skill__title {

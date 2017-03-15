@@ -79,6 +79,11 @@ var App = (function () {
                 parallaxMouse.init();
             }
 
+            if (!!document.querySelector('.l-skills-group')) {
+                console.info('skills');
+                skillsAnimate.init();
+            }
+
             if (!!(document.querySelector('.l-hero__bg'))) {
                 window.onscroll = function () {
                     var wScroll = window.pageYOffset;
