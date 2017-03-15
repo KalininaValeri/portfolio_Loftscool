@@ -66,26 +66,6 @@ var parallax = (function () {
 
 }());
 
-var parallaxMouse = function (e) {
-    if (document.getElementById('paralax') === null) return false;
-
-    var parallaxContainer = document.getElementById('paralax'),
-        layers = parallaxContainer.children,
-        pageX = e.pageX,
-        pageY = e.pageY,
-        initialX = (window.innerWidth / 2) - pageX,
-        initialY = (window.innerHeight / 2) - pageY;
-
-    [].slice.call(layers).forEach(function (layer, i) {
-        var divider = (i + 2) / 50,
-            bottomPosition = (window.innerHeight / 2) * divider,
-            positionX = initialX * divider,
-            positionY = initialY * divider,
-            layerStyle = layer.style,
-            transformString = 'translate3d(' + positionX + 'px, ' + positionY + 'px, 0px)';
-        layerStyle.transform = transformString;
-    })
-};
 
 var App = (function () {
     return{
@@ -117,6 +97,11 @@ var App = (function () {
                 console.log('form contacts-me');
                 ValidationContactMe.init();
             }
+
+            if (!!document.getElementById('paralax')) {
+                console.log('paralaxMouse');
+                parallaxMouse.init();
+            }
         }
     }
 })();
@@ -133,10 +118,8 @@ $(function () {
     //     var wScroll = window.pageYOffset;
     //     parallax.init(wScroll);
     // };
-    //
-    // window.addEventListener('mousemove', function (e) {
-    //     parallaxMouse(e);
-    // });
+
+
 
     var fileUpload = function(url, data, cb){
         var xhr = new XMLHttpRequest();
@@ -210,8 +193,6 @@ $(function () {
         });
     }
 
-
-
     //block blog
 
     const formBlog = document.querySelector('#blog');
@@ -265,31 +246,6 @@ $(function () {
             resultContainer.innerHTML = data;
         });
     }
-
-    //---- block Login
-
-    // const formLogin = document.querySelector('#login');
-    //
-    // if (formLogin) {
-    //     formLogin.addEventListener('submit', prepareAuth);
-    // }
-    //
-    // function prepareAuth(e) {
-    //     e.preventDefault();
-    //     var resultContainer = document.querySelector('.status');
-    //     var data = {
-    //         login: formLogin.login.value,
-    //         password: formLogin.password.value
-    //     };
-    //     resultContainer.innerHTML = 'Sending...';
-    //     sendAjaxJson('/', data, function (data) {
-    //         resultContainer.innerHTML = data;
-    //
-    //         if (data == 'Авторизация успешна!') {
-    //             window.location.href = '/admin';
-    //         }
-    //     });
-    // }
 
 //blur
     if (document.querySelector('.c-form-container') ===null) {

@@ -1,20 +1,48 @@
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+
 .c-mouse-parallax {
   background: $nightSky;
 }
 
-.c-mouse-parallax__item{
+.c-bg{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: 10%;
 }
 
-.c-mouse-parallax__item_video {
-  width: 2500px;
-  margin-top: -740px;
-  margin-left: -1363px;
+.c-bg_stars {
+  background:#152c55 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+  z-index:-30;
+}
+
+.c-bg_twinkling {
+  background:transparent url('/assets/img/decor/twinkling.png') repeat top center;
+  z-index:-20;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.c-bg_clouds {
+  background:transparent url('/assets/img/decor/clouds.png') repeat top center;
+  z-index:-10;
+  animation:move-clouds-back 200s linear infinite;
+  opacity: 0.13;
 }
 
 .c-mouse-parallax__item_pic {
-  margin-left: -1274px;
-  margin-top: -1027px;
+  width: 120%;
+  position: absolute;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  top: auto;
 }
