@@ -2,25 +2,25 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// const isAdmin = (req, res, next) => {
-//     // если в сессии текущего пользователя есть пометка о том, что он является
-//     // администратором
-//     if (req.session.isAdmin) {
-//         //то всё хорошо :)
-//         return next();
-//     }
-//     //если нет, то перебросить пользователя на главную страницу сайта
-//     res.redirect('/');
-// };
+const isAdmin = (req, res, next) => {
+    // если в сессии текущего пользователя есть пометка о том, что он является
+    // администратором
+    if (req.session.isAdmin) {
+        //то всё хорошо :)
+        return next();
+    }
+    //если нет, то перебросить пользователя на главную страницу сайта
+    res.redirect('/');
+};
 
-router.get('/', function (req, res) {
+router.get('/', isAdmin, function (req, res) {
     let obj = {
         title: 'Добавить запись блога'
     };
     res.render('pages/addpost', obj);
 });
 
-router.post('/', function (req, res) {
+router.post('/', isAdmin, function (req, res) {
     //требуем наличия заголовка, даты и текста
     if (!req.body.title || !req.body.date || !req.body.text) {
         //если что-либо не указано - сообщаем об этом

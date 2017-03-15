@@ -5,7 +5,7 @@ const crypto = require('crypto');
 
 router.get('/', function (req, res) {
     let obj = {
-        title: 'Загрузка картинки'
+        title: 'Логин'
     };
     Object.assign(obj, req.app.locals.settings);
     res.render('pages/login', obj);

@@ -96,10 +96,10 @@ var App = (function () {
                 Asside.init();
             }
 
-            if (!!(document.querySelector('.c-form-avtor'))) {
-                console.info('form avtorisation');
-                ValidationAvtor.init();
-            }
+            // if (!!(document.querySelector('.c-form-avtor'))) {
+            //     console.info('form avtorisation');
+            //     ValidationAvtor.init();
+            // }
 
             if (!!(document.querySelector('.c-form_contact-me'))) {
                 console.log('form contacts-me');
@@ -280,7 +280,7 @@ $(function () {
             password: formLogin.password.value
         };
         resultContainer.innerHTML = 'Sending...';
-        sendAjaxJson('/login', data, function (data) {
+        sendAjaxJson('/', data, function (data) {
             resultContainer.innerHTML = data;
 
             if (data == 'Авторизация успешна!') {

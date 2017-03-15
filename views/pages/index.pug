@@ -18,10 +18,11 @@ block content
             +nav('block-info', [["Мои работы", "work"], ["Обо мне", "about"], ["Блог", "blog"]], '')
 
           .c-block-info#back
-            form.c-form-avtor
+            form.c-form-avtor#login
               .c-form-avtor__container
                 .c-form-avtor__content
                   .c-block-title.c-block-title_white Авторизуйтесь
+                  .status
                   fieldset.c-form-avtor__fieldset
                     .c-form-avtor__input-wrapper.c-form-avtor__input-wrapper_login
                       input.c-form-avtor__input(placeholder="Логин" name="login")
@@ -42,7 +43,7 @@ block content
                     label.c-form-avtor__label.c-fom-avtor__label_radio(for="hz") Не уверен
                 .c-form-avtor__footer
                   a.c-form-avtor__button#go-home(href="#") На главную
-                  input.c-form-avtor__button(type="submit" value="Войти")
+                  button.c-form-avtor__button(type="submit" value="Войти") Войти
 
 
 
