@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 
 router.get('/', function(req, res) {
-    let obj = {title: 'Admin'};
+    let obj = {title: 'Обо мне'};
     res.render('pages/admin', obj);
 });
 

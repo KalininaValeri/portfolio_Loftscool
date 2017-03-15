@@ -8,7 +8,7 @@ const config = require('../config.json');
 
 router.get('/', function (req, res) {
     let obj = {
-        title: 'Загрузка картинки'
+        title: 'Мои работы'
     };
     res.render('pages/upload', obj);
 });
@@ -19,7 +19,7 @@ router.post('/', function (req, res) {
     form.parse(req, function (err, fields, files) {
         console.log(fields);
         if (err) {
-            return res.json({status: 'Не удалось загрузить картинку'});
+            return res.json({status: 'Не удалось загрузить'});
         }
         // if (!fields.name) {
         //     return res.json({status: 'Не указано описание картинки!'});
@@ -46,7 +46,7 @@ router.post('/', function (req, res) {
                 item.save().then(pic => {
                     Model.update({_id: pic._id}, {$set: {picture: path.join(dir, files.photo.name)}}, {upsert: true})
                     .then(
-                        i => res.json({status: 'Картинка успешно загружена'}),
+                        i => res.json({status: 'Успешно загружена'}),
                     e => res.json({status: e.message})
                 );
             });
