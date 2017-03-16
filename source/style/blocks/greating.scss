@@ -1,13 +1,16 @@
 .greating {
   overflow: hidden;
   position: relative;
-  padding: 150px 20px 50px;
-  background: #F44336;
+  padding: 50px 20px 50px;
+  background: $darkBlue;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: baseline;
 
   &_text {
     font: 45px 'Arial', sans-serif;
     color: #fff;
+    flex: 1;
   }
 
   &_picture {
@@ -24,4 +27,13 @@
 
 .greating_picture.m--show {
   transform: translate3D(0, 0, 0);
+}
+
+.greating_link {
+  color: white;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

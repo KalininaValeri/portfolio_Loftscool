@@ -1,24 +1,31 @@
 .menu {
-  background-color: #EC7063;
+  background-color: $bej;
 }
 .menu__container {
   padding: 0;
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
+
 }
 
 .menu__row {
   display: inline-block;
   list-style-type: none;
   transition: all 1s;
-  background-color: #EC7063;
-  border-right: 1px solid #ccc;
+  background-color: $bej;
+  border-right: 1px solid white;
   &:hover {
-    background-color: #943126;
+    background-color: $white;
+
   }
   &:last-child {
     border-right: none;
+  }
+
+  &.active {
+    background-color: $white;
+
+    .menu__link {
+      color: $blue;
+    }
   }
 }
 
@@ -28,8 +35,8 @@
   font: 25px 'Arial', sans-serif;
   color: #353838;
   transition: all 1s;
-  padding: 5px 15px;
+  padding: 20px 40px;
   &:hover {
-    color: #fff;
+    color: $blue;
   }
 }

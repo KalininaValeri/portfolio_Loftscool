@@ -10,6 +10,21 @@
   padding: 20px;
 }
 
+.form_skills {
+  width: 90%;
+}
+
+.form_skills__container {
+  display: flex;
+}
+
+
+
+.form_skills__fieldset {
+  flex: 1;
+  border: none;
+}
+
 .form__subtitle {
   font: 25px 'Arial', sans-serif;
   text-shadow: 1px 1px #ccc;
@@ -25,6 +40,7 @@
   border: 2px dashed darkslateblue;
   padding: 10px 5px;
   width: 100%;
+  box-sizing: border-box;
 }
 .form__input-line, .form__btns {
   display: block;
