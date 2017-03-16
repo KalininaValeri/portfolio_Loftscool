@@ -1,10 +1,10 @@
-(function () {
-    'use strict';
-
-    setTimeout(function () {
-        // document.querySelector('.greating_picture').classList.add('m--show');
-    }, 1000);
-})();
+// (function () {
+//     'use strict';
+//
+//     setTimeout(function () {
+//         // document.querySelector('.greating_picture').classList.add('m--show');
+//     }, 1000);
+// })();
 
 function sendAjaxJson(url, data, cb) {
     var xhr = new XMLHttpRequest();
@@ -47,7 +47,12 @@ var App = (function () {
     return{
         init: function () {
             Preload.init();
-            Navigation.init();
+
+
+            if (!!(document.querySelector('.c-hamburger_nav'))) {
+                navigation.init();
+                console.info('nav')
+            }
 
             if (!!(document.querySelector('.l-slider'))) {
                 Slider.init();
@@ -207,8 +212,6 @@ if (!!(document.getElementById('map'))) {
     };
 }
 
-
-
 $(function () {
     var formUpload = document.querySelector('#upload');
 
@@ -265,9 +268,6 @@ $(function () {
     if (formUpload) {
         formUpload.addEventListener('submit', prepareSendFile);
     }
-
-    //------------ block mail
-
 
     //block blog
 

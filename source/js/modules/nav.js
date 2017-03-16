@@ -1,11 +1,15 @@
-var Navigation = (function () {
+var navigation = (function () {
+    if ($('.c-hamburger_nav').length = 0) { return false }
+
     var navigation = $('.c-nav_site-list'),
         parentNav = $('.content'),
-        hamburger = $('#hamburger'),
+        hamburger = $('.c-hamburger_nav'),
         items = $('.c-nav_site__item'),
         timer;
     var counter = 0;
     var navActive = $('.c-nav_site_active');
+
+
 
     var ascentItems = function () {
         items[counter].classList.add('c-nav_site__hidden');
@@ -20,8 +24,9 @@ var Navigation = (function () {
     };
 
     var listener = function () {
-        hamburger[0].addEventListener('click', function () {
 
+        $('.c-hamburger_nav').click(function () {
+            console.log('click');
             hamburger.toggleClass('c-hamburger_active');
             navigation.toggleClass('c-nav_site_active');
 
@@ -37,8 +42,8 @@ var Navigation = (function () {
                     items[i].classList.remove('c-nav_site__hidden');
                 }
             }
-
         });
+
     };
 
     return {

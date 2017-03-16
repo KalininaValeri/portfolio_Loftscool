@@ -89,8 +89,6 @@ var Asside = (
                     });
                 }
 
-
-
                 $('.l-page-nav__link').on('click', function (e) {
                     e.preventDefault();
                     showSection($(this).attr('href'), true);
