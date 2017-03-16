@@ -35,6 +35,19 @@
       top: 50%;
       margin-top: -20px;
       display: block;
+      user-select: none;
+      outline: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-tap-highlight-color: transparent;
+
+
+      &:focus {
+        user-select: none;
+      }
+
+      &:active {
+        user-select: none;
+      }
     }
   }
 

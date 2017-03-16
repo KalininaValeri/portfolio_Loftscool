@@ -15,6 +15,10 @@
   width: 100%;
   bottom: 0;
   text-align: center;
+
+  @include phone {
+    height: 200px;
+  }
 }
 
 .c-page-title__bg {
@@ -29,6 +33,10 @@
 
 .c-page-title_blog {
   height: 170px;
+
+  @include phone {
+    height: 80px;
+  }
 }
 
 .c-page-title_blog__pic {

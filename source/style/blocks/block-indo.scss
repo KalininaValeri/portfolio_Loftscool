@@ -50,6 +50,18 @@
   }
 }
 
+.flip-container.static {
+  position: static;
+  margin: auto;
+  height: auto;
+  transform: none;
+  margin-bottom: 200px;
+
+  .c-bloch-height {
+    height: 411px;
+  }
+}
+
 .flipper {
   box-sizing: border-box;
   transition: 0.6s;

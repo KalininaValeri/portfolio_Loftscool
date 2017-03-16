@@ -35,7 +35,7 @@ var blur = (function () {
 }());
 
 var App = (function () {
-    return{
+    return {
         init: function () {
             Preload.init();
 
@@ -79,15 +79,36 @@ var App = (function () {
                 };
             }
 
-            if (document.querySelector('.c-form-container') !==null) {
+            if (document.querySelector('.c-form-container') !== null) {
                 blur.set();
                 $(window).resize(function () {
                     blur.set();
                 })
             }
 
-            if (document.querySelector('.l-hero') !==null) {
+            if (document.querySelector('.l-hero') !== null) {
                 $('.l-hero').height($(window).height());
+            }
+
+            if (!!(document.querySelector('.flip-container'))) {
+                console.log('123');
+
+                var
+                    flipContainer = $('.flip-container'),
+                    heightForFlip = $(window).height() - $('.l-header-index').height() - $('.l-footer-small').height() - 20,
+                    heightFlip = flipContainer.height() + 47;
+
+                console.log(heightFlip, heightForFlip);
+
+                if (heightForFlip <= heightFlip) {
+                    flipContainer.addClass('static');
+
+                }
+
+                if (heightForFlip > heightFlip) {
+                    flipContainer.removeClass('static');
+                    console.log(heightFlip, heightForFlip)
+                }
             }
         }
     }
@@ -98,10 +119,10 @@ $(function () {
         ymaps.ready(init);
         var myMap;
 
-        function init(){
+        function init() {
             myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64],
-                zoom: 7
+                center: [55, 82.925233],
+                zoom: 13
             });
         }
     }
@@ -110,7 +131,7 @@ $(function () {
 
     var formUpload = document.querySelector('#upload');
 
-    var fileUpload = function(url, data, cb){
+    var fileUpload = function (url, data, cb) {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', url, true);
 

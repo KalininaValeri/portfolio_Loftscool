@@ -36,6 +36,10 @@
 
   to {
     width: 50%;
+
+    @include phone {
+      width: 50.16%;
+    }
   }
 }
 
@@ -89,6 +93,10 @@
       background: white;
       margin-bottom: -3px;
     }
+  }
+
+  @include phone {
+    font-size: 50px;
   }
 }
 
