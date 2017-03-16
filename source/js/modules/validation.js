@@ -63,9 +63,11 @@ var validationAvtor = (function () {
     var prepareAuth = function (e) {
         e.preventDefault();
 
+        numberChecekd = 0;
+
         valid();
 
-        if (numberChecekd <= 2 || $('#hz').prop('checked')) {
+        if (numberChecekd < 2 || $('#hz').prop('checked')) {
             return false;
         }
 
@@ -137,7 +139,6 @@ var validationContactMe = (function () {
             email: formMail.email.value,
             text: formMail.text.value
         };
-        console.log(data);
         resultContainer.innerHTML = 'Sending...';
         sendAjaxJson('/work', data, function (data) {
             resultContainer.innerHTML = data;

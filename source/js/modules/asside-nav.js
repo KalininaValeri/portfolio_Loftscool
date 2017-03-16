@@ -70,7 +70,6 @@ var Asside = (
                 }
 
                 if ($(window).width() > 1200) {
-                    console.log($(window).width());
 
                     $(window).scroll(function (e) {
                         var

@@ -26,7 +26,6 @@ var navigation = (function () {
     var listener = function () {
 
         $('.c-hamburger_nav').click(function () {
-            console.log('click');
             hamburger.toggleClass('c-hamburger_active');
             navigation.toggleClass('c-nav_site_active');
 

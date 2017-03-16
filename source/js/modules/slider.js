@@ -1,34 +1,3 @@
-var sliderContent = [
-    {
-        "title": "Сайт школы онлайн образования",
-        "technology": "HTML , CSS, JAVASCRIPT",
-        "siteUrl": "https://loftschool.com/",
-        "imgSrc": "/assets/img/content/site.png",
-        "number": "1"
-    },
-    {
-        "title": "Сайт1Google",
-        "technology": "HTML , CSS, JAVASCRIPT",
-        "siteUrl": "https://www.google.ru",
-        "imgSrc": "http://wmarea.net/wp-content/uploads/2016/05/2web_hosting_seo_site.jpg",
-        "number": "2"
-    },
-    {
-        "title": "Сайт2ya",
-        "technology": "HTML , CSS, JAVASCRIPT",
-        "siteUrl": "https://www.yandex.ru/",
-        "imgSrc": "http://bumblebee.artdepo.com.ua/upload/iblock/db9/db937bd4877efe0315396d8a3409afef.jpg",
-        "number": "3"
-    },
-    {
-        "title": "Сайт3mail",
-        "technology": "HTML , CSS, JAVASCRIPT",
-        "siteUrl": "https://mail.ru/",
-        "imgSrc": "http://cs01.services.mya5.ru/-/uRuRHwWV9ckwkEv-so9VGw/sv/themes/central/0/222-0/222-0.png?1452175202",
-        "number": "4"
-    }
-];
-
 
 var sliderParseContent = function () {
     var strDb = document.querySelector('#db').getAttribute('data-db');
@@ -116,14 +85,13 @@ var Slider = (function () {
     var createImgElement = function (src) {
         var img = document.createElement('img');
         img.classList.add('l-slider__arrow-pic');
-        img.setAttribute('src', '/assets' + src);
+        img.setAttribute('src', '../..' + src);
 
         return img;
     };
 
     var createDivElement = function (text) {
         var div = document.createElement('span');
-        div.innerText = text;
 
         return div;
     };
@@ -209,8 +177,8 @@ var Slider = (function () {
 
         setTimeout(function () {
             $sliderActivePicWrapper[0].classList.remove('l-slider__pic-wrapper_transform');
-            $slideActivePic[0].setAttribute('src', '/assets' + mainSlide.picture);
-            $slideActivePicSpan[0].innerText = currentSlide + 1;
+            $slideActivePic[0].setAttribute('src', '../..' + mainSlide.picture);
+            // $slideActivePicSpan[0].innerText = currentSlide + 1;
             $slideActiveCaptionLink[0].setAttribute('href', mainSlide.siteUrl);
             animationEnd++;
         }, 500);
