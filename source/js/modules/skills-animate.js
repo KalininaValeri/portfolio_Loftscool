@@ -21,7 +21,6 @@ var skillsAnimate = (function () {
 
                 if (checkDistnce(scrollTop, $skillsParent)) {
                     for (var i = 0; i < $skills.length; i++) {
-                        console.log($skills[i]);
                         $skills[i].classList.remove('c-skills__circle-above_no');
 
                     }
