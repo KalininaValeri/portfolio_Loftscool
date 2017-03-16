@@ -71,7 +71,7 @@ var App = (function () {
 
             if (!!(document.querySelector('.c-form_contact-me'))) {
                 console.log('form contacts-me');
-                ValidationContactMe.init();
+                validationContactMe.init();
             }
 
             if (!!document.getElementById('paralax')) {
@@ -267,26 +267,7 @@ $(function () {
     }
 
     //------------ block mail
-    const formMail = document.querySelector('#mail');
 
-    if (formMail) {
-        formMail.addEventListener('submit', prepareSendMail);
-    }
-
-    function prepareSendMail(e) {
-        e.preventDefault();
-        var resultContainer = document.querySelector('.status');
-        var data = {
-            name: formMail.name.value,
-            email: formMail.email.value,
-            text: formMail.text.value
-        };
-        console.log(data);
-        resultContainer.innerHTML = 'Sending...';
-        sendAjaxJson('/work', data, function (data) {
-            resultContainer.innerHTML = data;
-        });
-    }
 
     //block blog
 

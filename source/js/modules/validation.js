@@ -1,4 +1,6 @@
 var validationAvtor = (function () {
+
+
     if (!($('.c-form-avtor'))) return false;
 
     const formLogin = document.querySelector('#login');
@@ -13,6 +15,7 @@ var validationAvtor = (function () {
             $checkBox = $form.find('input[type="checkbox"]'),
             $radio = $form.find('input[type="radio"]'),
             numberEmptyInput = 0;
+
 
         $form.find('.error').remove();
 
@@ -57,7 +60,7 @@ var validationAvtor = (function () {
         }
     };
 
-    var prepareAuth = function(e) {
+    var prepareAuth = function (e) {
         e.preventDefault();
 
         valid();
@@ -79,7 +82,7 @@ var validationAvtor = (function () {
                 window.location.href = '/admin';
             }
         });
-    }
+    };
 
     return {
         init: function () {
@@ -90,58 +93,79 @@ var validationAvtor = (function () {
     }
 })();
 
-var ValidationContactMe = (function () {
-        if (!$('.c-form_contact-me').length) return false;
+var validationContactMe = (function () {
+    if (!$('.c-form_contact-me').length) return false;
 
-        var $formContactMe = $('.c-form_contact-me'),
-            $inputs = $formContactMe.find('.c-form__input');
+    var $formContactMe = $('.c-form_contact-me'),
+        $inputs = $formContactMe.find('.c-form__input'),
+        resultContainer = document.querySelector('.c-form-avtor__status');
+    const formMail = document.querySelector('#mail');
 
-        var reset = function () {
-            $formContactMe.find('.error').remove();
-            $inputs.each(function () {
-                $(this).css({'boreder': 'none'});
-            });
-        };
+    var reset = function () {
+        $formContactMe.find('.error').remove();
+        $inputs.each(function () {
+            $(this).css({'boreder': 'none'});
+        });
+    };
 
-        var valid = function () {
+    var valid = function () {
+        var
+            counter = 0;
 
+        $inputs.each(function () {
+            var $this = $(this);
 
-            var
-                counter = 0;
+            $this.removeAttr('style');
 
-            $inputs.each(function () {
-                var $this = $(this);
-
-                if (!!$this.val()) {
-                    counter++;
-                }
-
-                if (!$this.val()) {
-                    $this.css({'border': '1px solid red'});
-                }
-            });
-
-            if (counter < 3) {
-                $formContactMe.find('.c-form__button-container')
-                    .before('<span class="error" style="color: red">Заполните все поля формы</span>');
+            if (!!$this.val()) {
+                counter++;
             }
-        };
 
-        return {
-            init: function () {
-                $formContactMe.find('.c-form').submit(function (e) {
-                    e.preventDefault();
-                    reset();
-                    valid();
-                });
-
-                $formContactMe.find('.c-form__buttom').click(function () {
-                    reset();
-                    $inputs.each(function () {
-                        var $this = $(this);
-                        $this.val('');
-                    })
-                });
+            if (!$this.val()) {
+                $this.css({'border': '1px solid red'});
             }
+        });
+    };
+
+    function prepareSendMail(e) {
+        e.preventDefault();
+
+        valid();
+
+        var data = {
+            name: formMail.name.value,
+            email: formMail.email.value,
+            text: formMail.text.value
+        };
+        console.log(data);
+        resultContainer.innerHTML = 'Sending...';
+        sendAjaxJson('/work', data, function (data) {
+            resultContainer.innerHTML = data;
+        });
+    }
+
+
+    return {
+        init: function () {
+
+
+            formMail.addEventListener('submit', prepareSendMail);
+
+
+            // $formContactMe.find('.c-form').submit(function (e) {
+            //     e.preventDefault();
+            //     reset();
+            //     valid();
+            //
+            // });
+
+            $formContactMe.find('.c-form__buttom').click(function () {
+                reset();
+                $inputs.each(function () {
+                    var $this = $(this);
+                    $this.val('');
+                })
+            });
         }
-    })();
+    }
+})();
