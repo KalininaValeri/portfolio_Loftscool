@@ -8,6 +8,10 @@
     bottom: 10px;
     @include centered(x);
   }
+
+  @include phone {
+    padding-bottom: 95px;
+  }
 }
 .c-page-title {
   height: 340px;

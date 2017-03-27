@@ -5,6 +5,11 @@
   @include laptop {
     height: auto;
   }
+
+  @include phone {
+    padding-top: 95px;
+    margin-top: -95px;
+  }
 }
 
 .l-slider__container, .l-slider__item {
