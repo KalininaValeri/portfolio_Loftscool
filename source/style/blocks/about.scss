@@ -2,6 +2,7 @@
   @extend %clearfix;
   display: flex;
 
+
   @include laptop {
     display: block;
     position: relative;
@@ -24,6 +25,7 @@
   &_left {
     background: $white;
     display: flex;
+    align-items: flex-start;
 
     @include desctop {
       flex-direction: column;

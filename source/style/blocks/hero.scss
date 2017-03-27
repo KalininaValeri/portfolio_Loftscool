@@ -11,7 +11,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  transform: translateZ(-50px) scale(1.5);
+  //transform: translateZ(-50px) scale(1.5);
+  transform: translate3d(0rem, 0%, 0rem);
 }
 
 .l-hero__bg-item {
@@ -21,9 +22,12 @@
 }
 
 .l-hero__bg-item_pic {
-  top: -45%;
+  //top: -45%;
   left: 0;
   bottom: 0;
+  max-height: 110%;
+  min-width: 105%;
+  transform: translate3d(0px, 0%, 0px);
 }
 
 .l-hero__container {

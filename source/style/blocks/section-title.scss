@@ -31,9 +31,17 @@
   width: 100%;
   @include centered();
   //position: absolute;
-  fill: rgba(white, .05);
+
   max-width: 100%;
   max-height: 100%;
+}
+
+.c-section-title__bg_work {
+  fill: rgba(white, .1);
+}
+
+.c-section-title__bg-about {
+opacity: .1;
 }
 
 .c-section-title__content {

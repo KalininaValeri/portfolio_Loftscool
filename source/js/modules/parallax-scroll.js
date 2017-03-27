@@ -18,7 +18,7 @@ var parallax = (function () {
 
         },
         init: function (wScroll) {
-            this.move(bg, wScroll, 50);
+            this.move(bg, wScroll, 100);
             this.move(fon, wScroll, 20);
         }
     }
