@@ -48,10 +48,10 @@
 }
 
 .c-block-title_slider {
-  height: 350px;
+  height: 250px;
 
   @include laptop{
-    height: 200px;
+    height: auto;
   }
 }
 
@@ -72,8 +72,12 @@
 
 .c-block-text_blue {
   color: rgba($blue, 0.85);
-  margin-bottom: 88px;
+  margin-bottom: 20px;
   text-transform: uppercase;
+
+  @include laptop {
+    margin-bottom: 10px;
+  }
 }
 
 .c-block-link_to-avtor {
@@ -125,6 +129,7 @@
       fill: rgba(white, 1);
     }
   }
+
 }
 
 

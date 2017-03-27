@@ -91,7 +91,6 @@ var App = (function () {
             }
 
             if (!!(document.querySelector('.flip-container'))) {
-                console.log('123');
 
                 var
                     flipContainer = $('.flip-container'),
@@ -128,6 +127,8 @@ $(function () {
     }
 
     App.init();
+
+
 
     var formUpload = document.querySelector('#upload');
 
